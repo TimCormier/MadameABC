@@ -34,6 +34,21 @@ public class ClickableScript : MonoBehaviour
     void OnClick() {
         Debug.Log("You have clicked " + gameObject.transform.name);
 
+        /*
+         about switch
+            switch(variable to compare for case){
+            case //variable value goes here//:
+                code instrucitons;
+                break;
+
+            default: //this is for when the variable doesnt apply to any case
+                code instructions;
+                break;
+    
+        } 
+
+          */
+
         switch (name) {
             case "DoorMusic":
                 Debug.Log("Going to music room");
