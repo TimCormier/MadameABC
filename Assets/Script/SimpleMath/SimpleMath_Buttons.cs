@@ -6,27 +6,29 @@ public class SimpleMath_Buttons : MonoBehaviour
 {
     public SpriteRenderer reponse;
     public Sprite image1, image2, image3;
-    private int seed;
+    GameObject manager;
+    GameManagerSimpleMath managerScript;
 
-
-    // Start is called before the first frame update
     void Start()
     {
         reponse = GetComponent<SpriteRenderer>();
-        seed = Random.Range(1, 5);
-        Debug.Log(seed);
+        manager = GameObject.Find("GameManager");
+        managerScript = manager.GetComponent<GameManagerSimpleMath>();
     }
 
     public void SetImage1()
     {
         reponse.sprite = image1;
+        managerScript.answer = 1;
     }
     public void SetImage2()
     {
         reponse.sprite = image2;
+        managerScript.answer = 2;
     }
     public void SetImage3()
     {
         reponse.sprite = image3;
+        managerScript.answer = 3;
     }
 }
