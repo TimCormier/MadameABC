@@ -52,7 +52,6 @@ public class GameManagerSoundMatch : MonoBehaviour
             mauvaiseReponse.SetActive(false);
             goNext.SetActive(true);
             Debug.Log("Bonne Réponse");
-            answer = 0;
         }
         else
         {
