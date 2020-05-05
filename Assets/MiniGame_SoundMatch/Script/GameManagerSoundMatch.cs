@@ -5,7 +5,8 @@ using UnityEngine;
 public class GameManagerSoundMatch : MonoBehaviour
 {
     private int seedSon;
-    public int goodAnwser;
+    public int goodAnswer;
+    public int answer;
     public GameObject chat,chien,guitare;
 
     // Start is called before the first frame update
@@ -16,13 +17,13 @@ public class GameManagerSoundMatch : MonoBehaviour
         switch (seedSon)
         {
             case 1:
-                goodAnwser = 1;
+                goodAnswer = 1;
                 break;
             case 2:
-                goodAnwser = 2;
+                goodAnswer = 2;
                 break;
             case 3:
-                goodAnwser = 3;
+                goodAnswer = 3;
                 break;
         }
         

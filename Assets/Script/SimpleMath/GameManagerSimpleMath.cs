@@ -73,7 +73,6 @@ public class GameManagerSimpleMath : MonoBehaviour
         {
             mauvaiseReponse.SetActive(true);
             bonneReponse.SetActive(false);
-            goNext.SetActive(false);
         }
     }
     public void reload()

@@ -310,7 +310,7 @@ GameObject:
   - component: {fileID: 694386089}
   - component: {fileID: 694386092}
   m_Layer: 5
-  m_Name: CatSoundButton
+  m_Name: QuestionButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -377,7 +377,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 694386090}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 694386092}
+        m_MethodName: SetGoodAnswer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &694386090
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -427,7 +438,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67320187c9d34dc42a1b198093a72d70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sound: {fileID: 8300000, guid: 726fddea2c9f0244e9c07920737d405d, type: 3}
+  chat: {fileID: 8300000, guid: 726fddea2c9f0244e9c07920737d405d, type: 3}
+  chien: {fileID: 8300000, guid: 69e42530de3352c4bb4c1421c22c1819, type: 3}
+  guitare: {fileID: 8300000, guid: d4161b6565c7cba4ea71e0498ddb6ffb, type: 3}
 --- !u!1 &819741151
 GameObject:
   m_ObjectHideFlags: 0
@@ -524,7 +537,7 @@ RectTransform:
   - {fileID: 1250390504}
   - {fileID: 967889904}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -595,7 +608,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &967889903
 GameObject:
@@ -648,7 +661,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67320187c9d34dc42a1b198093a72d70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sound: {fileID: 8300000, guid: 821c81570a6a5fd4fbb79bf009a7ba76, type: 3}
+  chat: {fileID: 8300000, guid: 726fddea2c9f0244e9c07920737d405d, type: 3}
+  chien: {fileID: 8300000, guid: 69e42530de3352c4bb4c1421c22c1819, type: 3}
+  guitare: {fileID: 8300000, guid: d4161b6565c7cba4ea71e0498ddb6ffb, type: 3}
 --- !u!114 &967889906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -691,7 +706,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 967889907}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 967889905}
+        m_MethodName: Setguitare
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &967889907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -780,7 +806,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67320187c9d34dc42a1b198093a72d70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sound: {fileID: 8300000, guid: 821c81570a6a5fd4fbb79bf009a7ba76, type: 3}
+  chat: {fileID: 8300000, guid: 726fddea2c9f0244e9c07920737d405d, type: 3}
+  chien: {fileID: 8300000, guid: 69e42530de3352c4bb4c1421c22c1819, type: 3}
+  guitare: {fileID: 8300000, guid: d4161b6565c7cba4ea71e0498ddb6ffb, type: 3}
 --- !u!114 &1250390506
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -823,7 +851,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1250390507}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1250390505}
+        m_MethodName: SetDog
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1250390507
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -861,6 +900,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1250390503}
   m_CullTransparentMesh: 0
+--- !u!1 &1312382208
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1312382210}
+  - component: {fileID: 1312382209}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1312382209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1312382208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7c74a8105e314c49a3e2577949cc234, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goodAnswer: 0
+  answer: 0
+  chat: {fileID: 1405619658}
+  chien: {fileID: 1250390503}
+  guitare: {fileID: 967889903}
+--- !u!4 &1312382210
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1312382208}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 23.728159, y: 45.546135, z: 77.57399}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1337492454
 GameObject:
   m_ObjectHideFlags: 0
@@ -1016,7 +1103,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1405619661}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1405619663}
+        m_MethodName: SetCat
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1405619661
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1066,4 +1164,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67320187c9d34dc42a1b198093a72d70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sound: {fileID: 8300000, guid: 280819944c6a19f49bece1004e02dcc6, type: 3}
+  chat: {fileID: 8300000, guid: 726fddea2c9f0244e9c07920737d405d, type: 3}
+  chien: {fileID: 8300000, guid: 69e42530de3352c4bb4c1421c22c1819, type: 3}
+  guitare: {fileID: 8300000, guid: d4161b6565c7cba4ea71e0498ddb6ffb, type: 3}

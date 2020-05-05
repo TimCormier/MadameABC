@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class SoundButton : MonoBehaviour
 {
-    public AudioClip sound;
+    public AudioClip chat, chien, guitare;
     private Button button { get { return GetComponent<Button>(); } }
     private AudioSource source { get { return GetComponent<AudioSource>(); } }
     GameObject manager;
@@ -16,16 +16,41 @@ public class SoundButton : MonoBehaviour
     void Start()
     {
         gameObject.AddComponent<AudioSource>();
-        source.clip = sound;
         source.playOnAwake = false;
-        button.onClick.AddListener(() => PlaySound());
         manager = GameObject.Find("GameManager");
         managerScript = manager.GetComponent<GameManagerSoundMatch>();
     }
 
-    // Update is called once per frame
-    void PlaySound()
+    public void SetGoodAnswer()
     {
-        source.PlayOneShot(sound);
+        switch (managerScript.goodAnswer)
+        {
+            case 1:
+                source.PlayOneShot(chat);
+                break;
+            case 2:
+                source.PlayOneShot(guitare);
+                break;
+            case 3:
+                source.PlayOneShot(chien);
+                break;
+        }
     }
+
+    public void SetCat()
+    {
+        source.PlayOneShot(chat);
+        managerScript.answer = 1;
+    }
+    public void Setguitare()
+    {
+        source.PlayOneShot(guitare);
+        managerScript.answer = 2;
+    }
+    public void SetDog()
+    {
+        source.PlayOneShot(chien);
+        managerScript.answer = 3;
+    }
+   
 }
