@@ -8,6 +8,8 @@ public class GameManagerSimpleMath : MonoBehaviour
     private int seed;
     public int answer;
     public int goodAnswer;
+    public GameObject bonneReponse;
+    public GameObject mauvaiseReponse;
    
     void Start()
     {
@@ -26,4 +28,15 @@ public class GameManagerSimpleMath : MonoBehaviour
         }
     }
 
+    public void verification()
+    {
+        if (answer == goodAnswer)
+        {
+            bonneReponse.SetActive(true);
+        }
+        else
+        {
+            mauvaiseReponse.SetActive(true);
+        }
+    }
 }
