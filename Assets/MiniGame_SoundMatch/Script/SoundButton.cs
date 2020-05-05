@@ -41,16 +41,18 @@ public class SoundButton : MonoBehaviour
     {
         source.PlayOneShot(chat);
         managerScript.answer = 1;
+        Debug.Log("Cat Sound");
     }
     public void Setguitare()
     {
         source.PlayOneShot(guitare);
         managerScript.answer = 2;
+        Debug.Log("Guitar Sound");
     }
     public void SetDog()
     {
         source.PlayOneShot(chien);
         managerScript.answer = 3;
+        Debug.Log("Dog Sound");
     }
-   
 }

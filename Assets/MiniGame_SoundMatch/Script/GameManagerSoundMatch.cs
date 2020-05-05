@@ -7,7 +7,11 @@ public class GameManagerSoundMatch : MonoBehaviour
     private int seedSon;
     public int goodAnswer;
     public int answer;
-    public GameObject chat,chien,guitare;
+    public GameObject chat, chien, guitare;
+    public GameObject bonneReponse;
+    public GameObject mauvaiseReponse;
+    public GameObject goNext;
+
 
     // Start is called before the first frame update
     void Start()
@@ -26,12 +30,35 @@ public class GameManagerSoundMatch : MonoBehaviour
                 goodAnswer = 3;
                 break;
         }
-        
+
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        if (answer != 0)
+        {
+            Verification();
+        }
+        if (answer != goodAnswer)
+        {
+            goNext.SetActive(false);
+        }
+    }
+    public void Verification()
+    {
+        if (answer == goodAnswer)
+        {
+            bonneReponse.SetActive(true);
+            mauvaiseReponse.SetActive(false);
+            goNext.SetActive(true);
+            Debug.Log("Bonne Réponse");
+        }
+        else
+        {
+            mauvaiseReponse.SetActive(true);
+            bonneReponse.SetActive(false);
+            Debug.Log("Mauvaise Réponse");
+            answer = 0;
+        }
     }
 }
