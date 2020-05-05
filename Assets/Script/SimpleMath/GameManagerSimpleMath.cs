@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class GameManagerSimpleMath : MonoBehaviour
 {
-    public GameObject questionPack1, questionPack2;
-    private int seed;
+    public GameObject addPack1, addPack2, addPack3;
+    public GameObject sousPack1, sousPack2, sousPack3;
+    public GameObject setReponseAdd1, setReponseSous1;
+    private int seedCalcul;
     public int answer;
     public int goodAnswer;
     public GameObject bonneReponse;
@@ -13,17 +15,39 @@ public class GameManagerSimpleMath : MonoBehaviour
    
     void Start()
     {
-        seed = Random.Range(1, 3);
+        seedCalcul = Random.Range(1, 7);
 
-        switch (seed)
+        switch (seedCalcul)
         {
             case 1:
-                questionPack1.SetActive(true);
+                addPack1.SetActive(true);
+                setReponseAdd1.SetActive(true);
                 goodAnswer = 1;
                 break;
             case 2:
-                questionPack2.SetActive(true);
+                addPack2.SetActive(true);
+                setReponseAdd1.SetActive(true);
                 goodAnswer = 2;
+                break;
+            case 3:
+                addPack3.SetActive(true);
+                setReponseAdd1.SetActive(true);
+                goodAnswer = 3;
+                break;
+            case 4:
+                sousPack1.SetActive(true);
+                setReponseSous1.SetActive(true);
+                goodAnswer = 1;
+                break;
+            case 5:
+                sousPack2.SetActive(true);
+                setReponseSous1.SetActive(true);
+                goodAnswer = 2;
+                break;
+            case 6:
+                sousPack3.SetActive(true);
+                setReponseSous1.SetActive(true);
+                goodAnswer = 1;
                 break;
         }
     }
@@ -33,10 +57,12 @@ public class GameManagerSimpleMath : MonoBehaviour
         if (answer == goodAnswer)
         {
             bonneReponse.SetActive(true);
+            mauvaiseReponse.SetActive(false);
         }
         else
         {
             mauvaiseReponse.SetActive(true);
+            bonneReponse.SetActive(false);
         }
     }
 }

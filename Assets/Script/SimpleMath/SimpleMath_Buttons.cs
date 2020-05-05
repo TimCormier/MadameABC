@@ -20,15 +20,18 @@ public class SimpleMath_Buttons : MonoBehaviour
     {
         reponse.sprite = image1;
         managerScript.answer = 1;
+        managerScript.verification();
     }
     public void SetImage2()
     {
         reponse.sprite = image2;
         managerScript.answer = 2;
+        managerScript.verification();
     }
     public void SetImage3()
     {
         reponse.sprite = image3;
         managerScript.answer = 3;
+        managerScript.verification();
     }
 }
