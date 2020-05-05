@@ -5,7 +5,7 @@ using UnityEngine;
 public class SimpleMath_Buttons : MonoBehaviour
 {
     public SpriteRenderer reponse;
-    public Sprite image1, image2, image3;
+    public Sprite image1, image2, image3, image4, image5, image6, imageReset;
     GameObject manager;
     GameManagerSimpleMath managerScript;
 
@@ -33,5 +33,28 @@ public class SimpleMath_Buttons : MonoBehaviour
         reponse.sprite = image3;
         managerScript.answer = 3;
         managerScript.verification();
+    }
+    public void SetImage4()
+    {
+        reponse.sprite = image4;
+        managerScript.answer = 1;
+        managerScript.verification();
+    }
+    public void SetImage5()
+    {
+        reponse.sprite = image5;
+        managerScript.answer = 2;
+        managerScript.verification();
+    }
+    public void SetImage6()
+    {
+        reponse.sprite = image6;
+        managerScript.answer = 3;
+        managerScript.verification();
+    }
+
+    public void SetImageReset()
+    {
+        reponse.sprite = imageReset;
     }
 }

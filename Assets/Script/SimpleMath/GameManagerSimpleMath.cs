@@ -11,47 +11,61 @@ public class GameManagerSimpleMath : MonoBehaviour
     private int seedCalcul;
     public int answer;
     public int goodAnswer;
+    public int previousSeed = 8;
     public GameObject bonneReponse;
     public GameObject mauvaiseReponse;
     public GameObject goNext;
    
     void Start()
     {
-        seedCalcul = Random.Range(1, 7);
+        nouveauCalcul();
+    }
 
-        switch (seedCalcul)
+    private void nouveauCalcul()
+    {
+        seedCalcul = Random.Range(1, 7);
+        
+        if(seedCalcul != previousSeed)
         {
-            case 1:
-                addPack1.SetActive(true);
-                setReponseAdd1.SetActive(true);
-                goodAnswer = 1;
-                break;
-            case 2:
-                addPack2.SetActive(true);
-                setReponseAdd1.SetActive(true);
-                goodAnswer = 2;
-                break;
-            case 3:
-                addPack3.SetActive(true);
-                setReponseAdd1.SetActive(true);
-                goodAnswer = 3;
-                break;
-            case 4:
-                sousPack1.SetActive(true);
-                setReponseSous1.SetActive(true);
-                goodAnswer = 3;
-                break;
-            case 5:
-                sousPack2.SetActive(true);
-                setReponseSous1.SetActive(true);
-                goodAnswer = 2;
-                break;
-            case 6:
-                sousPack3.SetActive(true);
-                setReponseSous1.SetActive(true);
-                goodAnswer = 3;
-                break;
+            switch (seedCalcul)
+            {
+                case 1:
+                    addPack1.SetActive(true);
+                    setReponseAdd1.SetActive(true);
+                    goodAnswer = 1;
+                    break;
+                case 2:
+                    addPack2.SetActive(true);
+                    setReponseAdd1.SetActive(true);
+                    goodAnswer = 2;
+                    break;
+                case 3:
+                    addPack3.SetActive(true);
+                    setReponseAdd1.SetActive(true);
+                    goodAnswer = 3;
+                    break;
+                case 4:
+                    sousPack1.SetActive(true);
+                    setReponseSous1.SetActive(true);
+                    goodAnswer = 3;
+                    break;
+                case 5:
+                    sousPack2.SetActive(true);
+                    setReponseSous1.SetActive(true);
+                    goodAnswer = 2;
+                    break;
+                case 6:
+                    sousPack3.SetActive(true);
+                    setReponseSous1.SetActive(true);
+                    goodAnswer = 3;
+                    break;
+            }
         }
+        else
+        {
+            nouveauCalcul();
+        }
+        
     }
 
     private void Update()
@@ -75,8 +89,21 @@ public class GameManagerSimpleMath : MonoBehaviour
             bonneReponse.SetActive(false);
         }
     }
-    public void reload()
+    public void goToNext()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        bonneReponse.SetActive(false);
+        mauvaiseReponse.SetActive(false);
+        goNext.SetActive(false);
+        addPack1.SetActive(false);
+        addPack2.SetActive(false);
+        addPack3.SetActive(false);
+        sousPack1.SetActive(false);
+        sousPack2.SetActive(false);
+        sousPack3.SetActive(false);
+        setReponseSous1.SetActive(false);
+        setReponseAdd1.SetActive(false);
+        previousSeed = seedCalcul;
+        nouveauCalcul();
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
