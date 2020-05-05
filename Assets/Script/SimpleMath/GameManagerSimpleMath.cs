@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManagerSimpleMath : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class GameManagerSimpleMath : MonoBehaviour
     public int goodAnswer;
     public GameObject bonneReponse;
     public GameObject mauvaiseReponse;
+    public GameObject goNext;
    
     void Start()
     {
@@ -37,7 +39,7 @@ public class GameManagerSimpleMath : MonoBehaviour
             case 4:
                 sousPack1.SetActive(true);
                 setReponseSous1.SetActive(true);
-                goodAnswer = 1;
+                goodAnswer = 3;
                 break;
             case 5:
                 sousPack2.SetActive(true);
@@ -47,22 +49,35 @@ public class GameManagerSimpleMath : MonoBehaviour
             case 6:
                 sousPack3.SetActive(true);
                 setReponseSous1.SetActive(true);
-                goodAnswer = 1;
+                goodAnswer = 3;
                 break;
         }
     }
 
+    private void Update()
+    {
+        if (answer != goodAnswer)
+        {
+            goNext.SetActive(false);
+        }
+    }
     public void verification()
     {
         if (answer == goodAnswer)
         {
             bonneReponse.SetActive(true);
             mauvaiseReponse.SetActive(false);
+            goNext.SetActive(true);
         }
         else
         {
             mauvaiseReponse.SetActive(true);
             bonneReponse.SetActive(false);
+            goNext.SetActive(false);
         }
+    }
+    public void reload()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
