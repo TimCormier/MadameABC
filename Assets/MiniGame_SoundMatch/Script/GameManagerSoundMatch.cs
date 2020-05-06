@@ -7,28 +7,56 @@ public class GameManagerSoundMatch : MonoBehaviour
     private int seedSon;
     public int goodAnswer;
     public int answer;
-    public GameObject chat, chien, guitare;
+    public int previousSeed = 8;
+    public GameObject chat, chien, guitare, flute, piano, tigre;
+    public GameObject puzzleChat, puzzleChien, puzzleGuitare, puzzleFlute, puzzlePiano, puzzleTigre;
     public GameObject bonneReponse;
     public GameObject mauvaiseReponse;
     public GameObject goNext;
 
-
     // Start is called before the first frame update
-    void Start()
+     void Start()
     {
-        seedSon = Random.Range(1, 4);
+        nouveauCalcul();
+    }
 
-        switch (seedSon)
+    private void nouveauCalcul()
+    {
+        seedSon = Random.Range(1, 7);
+
+        if (seedSon != previousSeed)
         {
-            case 1:
-                goodAnswer = 1;
-                break;
-            case 2:
-                goodAnswer = 2;
-                break;
-            case 3:
-                goodAnswer = 3;
-                break;
+            switch (seedSon)
+            {
+                case 1:
+                    puzzleChat.SetActive(true);
+                    goodAnswer = 1;
+                    break;
+                case 2:
+                    puzzleChien.SetActive(true);
+                    goodAnswer = 2;
+                    break;
+                case 3:
+                    puzzleGuitare.SetActive(true);
+                    goodAnswer = 3;
+                    break;
+                case 4:
+                    puzzleFlute.SetActive(true);
+                    goodAnswer = 4;
+                    break;
+                case 5:
+                    puzzlePiano.SetActive(true);
+                    goodAnswer = 5;
+                    break;
+                case 6:
+                    puzzleTigre.SetActive(true);
+                    goodAnswer = 6;
+                    break;
+            }
+        }
+        else
+        {
+            nouveauCalcul();
         }
 
     }
