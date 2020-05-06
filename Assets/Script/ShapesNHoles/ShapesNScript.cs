@@ -65,8 +65,9 @@ public class ShapesNScript : MonoBehaviour
                 }
 
         if (playanim == true) {
+            gameObject.transform.GetComponent<BoxCollider2D>().isTrigger = false;
             animtimer += 1;
-            transform.position += new Vector3(0f, 0.05f, 0f);
+            transform.position += new Vector3(0f, 0.025f, 0f);
             CAR.transform.position += new Vector3(-15f, 0, 0);
             if (animtimer >= 120) {
                 playanim = false;
@@ -76,6 +77,7 @@ public class ShapesNScript : MonoBehaviour
                 Triangle.transform.GetComponent<DragShape>().RETURN();
                 Circle.transform.GetComponent<DragShape>().RETURN();
                 Square.transform.GetComponent<DragShape>().RETURN();
+                gameObject.transform.GetComponent<BoxCollider2D>().isTrigger = true;
                 GENERATE();
             }
         }
@@ -182,6 +184,7 @@ public class ShapesNScript : MonoBehaviour
         }
         else {
             Circle.transform.GetComponent<DragShape>().RETURN();
+            CAR.transform.GetComponent<AudioSource>().Play();
         }
     }
 
@@ -196,6 +199,7 @@ public class ShapesNScript : MonoBehaviour
         else
         {
             Triangle.transform.GetComponent<DragShape>().RETURN();
+            CAR.transform.GetComponent<AudioSource>().Play();
         }
     }
 
@@ -210,6 +214,7 @@ public class ShapesNScript : MonoBehaviour
         else
         {
             Square.transform.GetComponent<DragShape>().RETURN();
+            CAR.transform.GetComponent<AudioSource>().Play();
         }
     }
 

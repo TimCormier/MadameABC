@@ -7,12 +7,14 @@ public class DragShape : MonoBehaviour
     public float dragspeed;
     private Camera Camera;
     private Vector3 OGpos;
+    private Quaternion OGrot;
 
     // Start is called before the first frame update
     void Start()
     {
         GameObject.Find("Main Camera").transform.GetComponent<Camera>();
         OGpos = gameObject.transform.position;
+        OGrot = gameObject.transform.rotation;
     }
 
     // Update is called once per frame
@@ -37,11 +39,18 @@ public class DragShape : MonoBehaviour
     public void RETURN() {
         gameObject.SetActive(true);
         gameObject.transform.position = OGpos;
+        gameObject.transform.rotation = OGrot;
 
     }
 
-    void OnTriggerEnter2D(Collider2D col) {
+    void OnTriggerStay2D(Collider2D col) {
         Debug.Log(col.transform.name);
+
+        if (Input.GetMouseButton(0))
+        {
+            Debug.Log("You need to release the mouse fun man");
+        }
+        else {
         if (col.transform.name == "SLOT") {
             Debug.Log("Slot found");
             switch (gameObject.transform.name) {
@@ -65,5 +74,8 @@ public class DragShape : MonoBehaviour
 
             }
         }
+        }
+
+       
     }
 }
