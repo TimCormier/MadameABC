@@ -29,10 +29,10 @@ public class SoundButton : MonoBehaviour
                 source.PlayOneShot(chat);
                 break;
             case 2:
-                source.PlayOneShot(guitare);
+                source.PlayOneShot(chien);
                 break;
             case 3:
-                source.PlayOneShot(chien);
+                source.PlayOneShot(guitare);
                 break;
             case 4:
                 source.PlayOneShot(flute);
@@ -52,17 +52,17 @@ public class SoundButton : MonoBehaviour
         managerScript.answer = 1;
         Debug.Log("Cat Sound");
     }
-    public void Setguitare()
-    {
-        source.PlayOneShot(guitare);
-        managerScript.answer = 2;
-        Debug.Log("Guitar Sound");
-    }
     public void SetDog()
     {
         source.PlayOneShot(chien);
-        managerScript.answer = 3;
+        managerScript.answer = 2;
         Debug.Log("Dog Sound");
+    }
+    public void SetGuitare()
+    {
+        source.PlayOneShot(guitare);
+        managerScript.answer = 3;
+        Debug.Log("Guitar Sound");
     }
     public void SetFlute()
     {

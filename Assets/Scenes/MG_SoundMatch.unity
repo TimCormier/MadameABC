@@ -1232,7 +1232,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8262cb421caf7bd439eefdd850e21eed, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6032420dc38c4264cbbac32da17b0df3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1526,7 +1526,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 967889905}
-        m_MethodName: Setguitare
+        m_MethodName: SetGuitare
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
