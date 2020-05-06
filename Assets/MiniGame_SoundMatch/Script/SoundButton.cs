@@ -51,30 +51,35 @@ public class SoundButton : MonoBehaviour
         source.PlayOneShot(chat);
         managerScript.answer = 1;
         Debug.Log("Cat Sound");
+        StopAllAudio();
     }
     public void SetDog()
     {
         source.PlayOneShot(chien);
         managerScript.answer = 2;
         Debug.Log("Dog Sound");
+        StopAllAudio();
     }
     public void SetGuitare()
     {
         source.PlayOneShot(guitare);
         managerScript.answer = 3;
         Debug.Log("Guitar Sound");
+        StopAllAudio();
     }
     public void SetFlute()
     {
         source.PlayOneShot(flute);
         managerScript.answer = 4;
         Debug.Log("Flute Sound");
+        StopAllAudio();
     }
     public void SetPiano()
     {
         source.PlayOneShot(piano);
         managerScript.answer = 5;
         Debug.Log("Piano Sound");
+        StopAllAudio();
     }
     public void SetTiger()
     {
