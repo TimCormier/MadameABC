@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -25,6 +26,12 @@ public class GameManager : MonoBehaviour
     public float SpotOne = 0f;
     private float Rand = 0f;
 
+    public Text scoreText;
+    public float Score = 0f;
+
+    public AudioClip Bravo;
+    public AudioClip TryAgain;
+
 
     public GameObject CouleurJaune;
     public GameObject CouleurRouge;
@@ -43,13 +50,19 @@ public class GameManager : MonoBehaviour
     public GameObject OrangeAnswer;
     public GameObject VertAnswer;
 
+    public GameObject UiGame;
+    public GameObject UiVictory;
+
     public void Start()
     {
         Generate();
+
     }
 
     public void Update()
     {
+        scoreText.text = "Score " + Score;
+
         if (Jaune > 1)
         {
             Jaune -= 1;
@@ -151,6 +164,81 @@ public class GameManager : MonoBehaviour
             Recommencer();
         }
 
+        if (SpotBleu == 1 && Bleu == 1)
+        {
+            Recommencer();
+        }
+
+        if (SpotRouge == 1 && Rouge == 1)
+        {
+            Recommencer();
+        }
+
+        if (Jaune == 1 && SpotJaune == 1)
+        {
+            Recommencer();
+        }
+        //
+        if (RepMauve == 1 && Jaune == 1 && SpotRouge == 1)
+        {
+            Recommencer();
+        }
+
+        if (RepMauve == 1 && SpotJaune == 1 && Rouge == 1)
+        {
+            Recommencer();
+        }
+
+        if (RepMauve == 1 && SpotJaune == 1 && Bleu == 1)
+        {
+            Recommencer();
+        }
+
+        if (RepMauve == 1 && SpotBleu == 1 && Jaune == 1)
+        {
+            Recommencer();
+        }
+        //
+        if (RepOrange == 1 && Bleu == 1 && SpotRouge == 1)
+        {
+            Recommencer();
+        }
+
+        if (RepOrange == 1 && SpotJaune == 1 && Bleu == 1)
+        {
+            Recommencer();
+        }
+
+        if (RepOrange == 1 && SpotBleu == 1 && Jaune == 1)
+        {
+            Recommencer();
+        }
+
+        if (RepOrange == 1 && SpotBleu == 1 && Rouge == 1)
+        {
+            Recommencer();
+        }
+        //
+        if (RepVert == 1 && Bleu == 1 && SpotRouge == 1)
+        {
+            Recommencer();
+        }
+
+        if (RepVert == 1 && SpotJaune == 1 && Rouge == 1)
+        {
+            Recommencer();
+        }
+
+        if (RepVert == 1 && SpotRouge == 1 && Jaune == 1)
+        {
+            Recommencer();
+        }
+
+        if (RepVert == 1 && SpotBleu == 1 && Rouge == 1)
+        {
+            Recommencer();
+        }
+        //
         if (RepMauve == 1 && Bleu == 1 && SpotRouge == 1)
         {
             Victory();
@@ -227,11 +315,36 @@ public class GameManager : MonoBehaviour
         SpotJaune = 0;
         SpotRouge = 0;
         SpotBleu = 0;
+        AudioSource.PlayClipAtPoint(TryAgain, Camera.main.transform.position);
+
     }
 
     public void Victory()
     {
-        Debug.Log("Victory");
+        Jaune = 0;
+        Rouge = 0;
+        Bleu = 0;
+        SpotJaune = 0;
+        SpotRouge = 0;
+        SpotBleu = 0;
+        RepMauve = 0;
+        RepOrange = 0;
+        RepVert = 0;
+        Generate();
+        Score += 1;
+        AudioSource.PlayClipAtPoint(Bravo, Camera.main.transform.position);
+    }
+
+    public void Retry()
+    {
+        UiVictory.SetActive(false);
+        UiGame.SetActive(true);
+        Generate();
+    }
+
+    public void ScoreHandler()
+    {
+        scoreText.text = "Score" + Score;
     }
 
     public void Generate()
@@ -268,3 +381,5 @@ public class GameManager : MonoBehaviour
         }
     }
 }
+
+//SCORE + AUDIO
