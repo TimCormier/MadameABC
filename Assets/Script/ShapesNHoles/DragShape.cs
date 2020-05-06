@@ -39,4 +39,31 @@ public class DragShape : MonoBehaviour
         gameObject.transform.position = OGpos;
 
     }
+
+    void OnTriggerEnter2D(Collider2D col) {
+        Debug.Log(col.transform.name);
+        if (col.transform.name == "SLOT") {
+            Debug.Log("Slot found");
+            switch (gameObject.transform.name) {
+                case "Circle":
+                    col.transform.GetComponent<ShapesNScript>().ENTERCIRCLE();
+                    break;
+
+                case "Triangle":
+                    col.transform.GetComponent<ShapesNScript>().ENTERTRIANGLE();
+                    break;
+
+                case "Square":
+                    col.transform.GetComponent<ShapesNScript>().ENTERSQUARE();
+                    break;
+
+                default:
+                    Debug.Log("Error!");
+                    break;
+                
+
+
+            }
+        }
+    }
 }

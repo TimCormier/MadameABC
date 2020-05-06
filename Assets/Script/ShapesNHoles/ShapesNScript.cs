@@ -29,7 +29,11 @@ public class ShapesNScript : MonoBehaviour
     public Sprite SQUAREHOLE;
     public Sprite SQUAREFILL;
 
+    private bool playanim;
+    private int animtimer;
 
+    private Vector3 OGpos;
+    private Vector3 CAROGpos;
 
     // Start is called before the first frame update
     void Start()
@@ -39,23 +43,54 @@ public class ShapesNScript : MonoBehaviour
         Square = GameObject.Find("Square");
         CAR = GameObject.Find("Car");
         spr = gameObject.transform.GetComponent<SpriteRenderer>();
+        OGpos = transform.position;
+        CAROGpos = CAR.transform.position;
+
+        playanim = false;
+        animtimer = 0;
 
 
+        GENERATE();
 
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+
         
+                if (Input.GetKeyDown("space")) {
+                    GENERATE();
+                }
+
+        if (playanim == true) {
+            animtimer += 1;
+            transform.position += new Vector3(0f, 0.05f, 0f);
+            CAR.transform.position += new Vector3(-15f, 0, 0);
+            if (animtimer >= 120) {
+                playanim = false;
+                animtimer = 0;
+                transform.position = OGpos;
+                CAR.transform.position = CAROGpos;
+                Triangle.transform.GetComponent<DragShape>().RETURN();
+                Circle.transform.GetComponent<DragShape>().RETURN();
+                Square.transform.GetComponent<DragShape>().RETURN();
+                GENERATE();
+            }
+        }
+
+
     }
 
     void GENERATE() {
         rand = Mathf.Round(Random.Range(1f, 3f));
         if (rand == randlast) {
-            //do not do that shit lmao
+            GENERATE();
         }
         else {
+           
+
             switch (rand) {
                 case 1f:
                     spr.sprite = CIRCLEHOLE;
@@ -75,6 +110,9 @@ public class ShapesNScript : MonoBehaviour
 
 
             }
+
+           
+            
 
 
         }
@@ -135,7 +173,51 @@ public class ShapesNScript : MonoBehaviour
         }
     }
 
+    public void ENTERCIRCLE() {
+        if (rand == 1f)
+        {
+            Circle.SetActive(false);
+            spr.sprite = CIRCLEFILL;
+            WINANIM();
+        }
+        else {
+            Circle.transform.GetComponent<DragShape>().RETURN();
+        }
+    }
+
+    public void ENTERTRIANGLE()
+    {
+        if (rand == 2f)
+        {
+            Triangle.SetActive(false);
+            spr.sprite = TRIANGLEFILL;
+            WINANIM();
+        }
+        else
+        {
+            Triangle.transform.GetComponent<DragShape>().RETURN();
+        }
+    }
+
+    public void ENTERSQUARE()
+    {
+        if (rand == 3f)
+        {
+            Square.SetActive(false);
+            spr.sprite = SQUAREFILL;
+            WINANIM();
+        }
+        else
+        {
+            Square.transform.GetComponent<DragShape>().RETURN();
+        }
+    }
+
+
     void WINANIM() {
         Debug.Log("WIN!");
+        randlast = rand;
+        transform.GetComponent<AudioSource>().Play();
+        playanim = true;
     }
 }
