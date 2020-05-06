@@ -89,4 +89,17 @@ public class GameManagerSoundMatch : MonoBehaviour
             answer = 0;
         }
     }
+    public void NextQuestion()
+    {
+        bonneReponse.SetActive(false);
+        mauvaiseReponse.SetActive(false);
+        puzzleChat.SetActive(false);
+        puzzleChien.SetActive(false);
+        puzzleGuitare.SetActive(false);
+        puzzleFlute.SetActive(false);
+        puzzlePiano.SetActive(false);
+        puzzleTigre.SetActive(false);
+        previousSeed = seedSon;
+        nouveauCalcul();
+    }
 }
