@@ -53,10 +53,11 @@ public class GameManager : MonoBehaviour
     public GameObject UiGame;
     public GameObject UiVictory;
 
+    public float PreviousRand;
+
     public void Start()
     {
         Generate();
-
     }
 
     public void Update()
@@ -241,31 +242,37 @@ public class GameManager : MonoBehaviour
         //
         if (RepMauve == 1 && Bleu == 1 && SpotRouge == 1)
         {
+            PreviousRand = Rand;
             Victory();
         }
 
         if (RepOrange == 1 && Jaune == 1 && SpotRouge == 1)
         {
+            PreviousRand = Rand;
             Victory();
         }
 
         if (RepVert == 1 && Bleu == 1 && SpotJaune == 1)
         {
+            PreviousRand = Rand;
             Victory();
         }
 
         if (RepMauve == 1 && SpotBleu == 1 && Rouge == 1)
         {
+            PreviousRand = Rand;
             Victory();
         }
 
         if (RepOrange == 1 && SpotJaune == 1 && Rouge == 1)
         {
+            PreviousRand = Rand;
             Victory();
         }
 
         if (RepVert == 1 && SpotBleu == 1 && Jaune == 1)
         {
+            PreviousRand = Rand;
             Victory();
         }
     }
@@ -319,6 +326,16 @@ public class GameManager : MonoBehaviour
 
     }
 
+    public void ButtonRecommencer()
+    {
+        Jaune = 0;
+        Rouge = 0;
+        Bleu = 0;
+        SpotJaune = 0;
+        SpotRouge = 0;
+        SpotBleu = 0;
+    }
+
     public void Victory()
     {
         Jaune = 0;
@@ -351,35 +368,45 @@ public class GameManager : MonoBehaviour
     {
         Rand = Mathf.Round(Random.Range(1f, 3f));
 
-        switch (Rand)
+        if (Rand != PreviousRand)
         {
-            case 1f:
-                RepMauve = 1;
-                OrangeAnswer.SetActive(false);
-                VertAnswer.SetActive(false);
-                MauveAnswer.SetActive(true);
-                break;
+            switch (Rand)
+            {
+                case 1f:
+                    RepMauve = 1;
+                    OrangeAnswer.SetActive(false);
+                    VertAnswer.SetActive(false);
+                    MauveAnswer.SetActive(true);
+                    break;
 
-            case 2f:
-                RepOrange = 1;
-                MauveAnswer.SetActive(false);
-                VertAnswer.SetActive(false);
-                OrangeAnswer.SetActive(true);
-                break;
+                case 2f:
+                    RepOrange = 1;
+                    MauveAnswer.SetActive(false);
+                    VertAnswer.SetActive(false);
+                    OrangeAnswer.SetActive(true);
+                    break;
 
-            case 3f:
-                RepVert = 1;
-                OrangeAnswer.SetActive(false);
-                MauveAnswer.SetActive(false);
-                VertAnswer.SetActive(true);
-                break;
+                case 3f:
+                    RepVert = 1;
+                    OrangeAnswer.SetActive(false);
+                    MauveAnswer.SetActive(false);
+                    VertAnswer.SetActive(true);
+                    break;
 
-            default:
+                default:
 
-                break;
-            
+                    break;
+
+            }
+        }
+        else
+        {
+            Generate();
         }
     }
-}
 
-//SCORE + AUDIO
+    //IEnumerator Fade()
+    {
+
+    }
+}

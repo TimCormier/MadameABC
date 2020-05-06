@@ -1846,6 +1846,7 @@ MonoBehaviour:
   VertAnswer: {fileID: 817012560}
   UiGame: {fileID: 648068480}
   UiVictory: {fileID: 2043957735}
+  PreviousRand: 0
 --- !u!4 &1053659433
 Transform:
   m_ObjectHideFlags: 0
@@ -3773,7 +3774,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1053659432}
-        m_MethodName: Recommencer
+        m_MethodName: ButtonRecommencer
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
