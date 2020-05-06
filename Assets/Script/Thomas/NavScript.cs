@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class NavScript : MonoBehaviour
 {
 
+    public GameObject classe, music, yoga, craft, library;
 
     private GameObject DOORMUSIC;
     private GameObject DOORCLASS;
@@ -21,7 +23,13 @@ public class NavScript : MonoBehaviour
     public Texture LibraryRoom;
     public Texture YogaRoom;
     public Texture CraftRoom;
-    
+
+
+   /* private void Awake()
+    {
+        DontDestroyOnLoad(this.gameObject);
+    }*/
+
     // Start is called before the first frame update
     void Start()
     {
@@ -77,6 +85,13 @@ public class NavScript : MonoBehaviour
         DOORLIBRARY.SetActive(true);
         DOORYOGA.SetActive(true);
         DOORCRAFT.SetActive(true);
+
+        music.SetActive(false);
+        classe.SetActive(false);
+        library.SetActive(false);
+        yoga.SetActive(false);
+        craft.SetActive(false);
+
         BACKBUTTON.SetActive(false);
     }
 
@@ -84,30 +99,35 @@ public class NavScript : MonoBehaviour
     public void MUSIC() {
         rawimg.texture = MusicRoom;
         HIDE();
-   
+        music.SetActive(true);
+
     }
     public void CLASS()
     {
         rawimg.texture = ClassRoom;
         HIDE();
+        classe.SetActive(true);
 
     }
     public void LIBRARY()
     {
         rawimg.texture = LibraryRoom;
         HIDE();
+        library.SetActive(true);
 
     }
     public void YOGA()
     {
         rawimg.texture = YogaRoom;
         HIDE();
+        yoga.SetActive(true);
 
     }
     public void CRAFT()
     {
         rawimg.texture = CraftRoom;
         HIDE();
+        craft.SetActive(true);
 
     }
 
@@ -117,6 +137,19 @@ public class NavScript : MonoBehaviour
         SHOW();
 
     }
+
+    //Music
+
+    //Class
+    public void SimpleMath()
+    {
+        SceneManager.LoadScene("SimpleMath", LoadSceneMode.Additive);
+    }
+    //Library
+
+    //Yoga
+
+    //Craft
 
 
 }
