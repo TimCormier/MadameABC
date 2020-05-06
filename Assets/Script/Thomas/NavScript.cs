@@ -140,14 +140,18 @@ public class NavScript : MonoBehaviour
 
     //Music
 
+
     //Class
     public void SimpleMath()
     {
         SceneManager.LoadScene("SimpleMath", LoadSceneMode.Additive);
     }
+
     //Library
 
+
     //Yoga
+
 
     //Craft
 
