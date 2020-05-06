@@ -7,12 +7,12 @@ using UnityEngine.UI;
 public class SoundButton : MonoBehaviour
 {
     public AudioClip chat, chien, guitare, flute, piano, tigre;
+    private AudioSource[] allAudioSources;
     private Button button { get { return GetComponent<Button>(); } }
     private AudioSource source { get { return GetComponent<AudioSource>(); } }
     GameObject manager;
     GameManagerSoundMatch managerScript;
 
-    // Use this for initialization
     void Start()
     {
         gameObject.AddComponent<AudioSource>();
@@ -81,5 +81,16 @@ public class SoundButton : MonoBehaviour
         source.PlayOneShot(tigre);
         managerScript.answer = 6;
         Debug.Log("Tiger Sound");
+        StopAllAudio();
+    }
+
+    //Stop all sounds
+    void StopAllAudio()
+    {
+        allAudioSources = FindObjectsOfType(typeof(AudioSource)) as AudioSource[];
+        foreach (AudioSource audioSource in allAudioSources)
+        {
+            audioSource.Stop();
+        }
     }
 }
