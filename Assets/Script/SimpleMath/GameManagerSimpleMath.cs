@@ -108,7 +108,6 @@ public class GameManagerSimpleMath : MonoBehaviour
     }
     public void GoToMenu()
     {
-        //SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
-        //SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.UnloadSceneAsync("SimpleMath");
     }
 }
