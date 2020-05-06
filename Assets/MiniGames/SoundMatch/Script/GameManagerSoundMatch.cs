@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class GameManagerSoundMatch : MonoBehaviour
 {
@@ -13,6 +15,7 @@ public class GameManagerSoundMatch : MonoBehaviour
     public GameObject bonneReponse;
     public GameObject mauvaiseReponse;
     public GameObject goNext;
+
 
     // Start is called before the first frame update
      void Start()
@@ -101,5 +104,10 @@ public class GameManagerSoundMatch : MonoBehaviour
         puzzleTigre.SetActive(false);
         previousSeed = seedSon;
         nouveauCalcul();
+    }
+
+    public void GoToMenu()
+    {
+        SceneManager.UnloadSceneAsync("MG_SoundMatch");
     }
 }
