@@ -53,7 +53,8 @@ public class WhackAScript : MonoBehaviour
     {
 
         if (Input.GetKeyDown("space")) {
-            SPAWNMOLE();
+            // SPAWNMOLE();
+           // Debug.Log(GameObject.Find("MASSIVE Cookie"));
         }
 
         if (MOLEACTIVE == false)
@@ -71,6 +72,10 @@ public class WhackAScript : MonoBehaviour
             if (timer >= 300) {
                 GameObject.Find("Mole" + randlast.ToString()).SetActive(false);
                 SPAWNMOLE();
+                GameObject DelHammmer = GameObject.Find("HammerUp");
+                if (DelHammmer != null) {
+                    GameObject.Find("HammerUp").SetActive(false);
+                }
             }
         }
 
