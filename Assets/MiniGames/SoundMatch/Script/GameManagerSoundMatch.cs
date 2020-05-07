@@ -7,8 +7,8 @@ using UnityEngine.SceneManagement;
 public class GameManagerSoundMatch : MonoBehaviour
 {
     private int seedSon;
-    public int goodAnswer;
-    public int answer;
+    public string goodAnswer;
+    public string answer;
     public int previousSeed = 8;
     public GameObject chat, chien, guitare, flute, piano, tigre;
     public GameObject puzzleChat, puzzleChien, puzzleGuitare, puzzleFlute, puzzlePiano, puzzleTigre;
@@ -33,27 +33,27 @@ public class GameManagerSoundMatch : MonoBehaviour
             {
                 case 1:
                     puzzleChat.SetActive(true);
-                    goodAnswer = 1;
+                    goodAnswer = "chaton";
                     break;
                 case 2:
                     puzzleChien.SetActive(true);
-                    goodAnswer = 2;
+                    goodAnswer = "chien";
                     break;
                 case 3:
                     puzzleGuitare.SetActive(true);
-                    goodAnswer = 3;
+                    goodAnswer = "guitare";
                     break;
                 case 4:
                     puzzleFlute.SetActive(true);
-                    goodAnswer = 4;
+                    goodAnswer = "flute";
                     break;
                 case 5:
                     puzzlePiano.SetActive(true);
-                    goodAnswer = 5;
+                    goodAnswer = "piano";
                     break;
                 case 6:
                     puzzleTigre.SetActive(true);
-                    goodAnswer = 6;
+                    goodAnswer = "tigre";
                     break;
             }
         }
@@ -66,10 +66,6 @@ public class GameManagerSoundMatch : MonoBehaviour
 
     private void Update()
     {
-        if (answer != 0)
-        {
-            Verification();
-        }
         if (answer != goodAnswer)
         {
             goNext.SetActive(false);
@@ -87,7 +83,8 @@ public class GameManagerSoundMatch : MonoBehaviour
         {
             mauvaiseReponse.SetActive(true);
             bonneReponse.SetActive(false);
-            answer = 0;
+            answer = "";
+            goNext.SetActive(false);
         }
     }
     public void NextQuestion()

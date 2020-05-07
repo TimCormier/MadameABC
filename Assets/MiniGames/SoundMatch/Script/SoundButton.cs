@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class SoundButton : MonoBehaviour
 {
     //audioclip bank
-    public AudioClip chat, chien, guitare, flute, piano, tigre;
+    public AudioClip chaton, chien, guitare, flute, piano, tigre;
     //sound button
     private AudioSource[] allAudioSources;
     private Button button { get { return GetComponent<Button>(); } }
@@ -35,75 +35,75 @@ public class SoundButton : MonoBehaviour
     {
         switch (managerScript.goodAnswer)
         {
-            case 1:
+            case "chaton":
                 if (previousSound != null)
                 {
-                    actualSound.PlayOneShot(chat);
+                    source.PlayOneShot(chaton);
                     StopSound();
                 }
                 else
                 {
-                    actualSound.PlayOneShot(chat);
+                    source.PlayOneShot(chaton);
                     previousSound = actualSound;
                 }
                 break;
-            case 2:
+            case "chien":
                 if (previousSound != null)
                 {
-                    actualSound.PlayOneShot(chien);
+                    source.PlayOneShot(chien);
                     StopSound();
                 }
                 else
                 {
-                    actualSound.PlayOneShot(chien);
+                    source.PlayOneShot(chien);
                     previousSound = actualSound;
                 }
                 break;
-            case 3:
+            case "guitare":
                 if (previousSound != null)
                 {
                     StopSound();
-                    actualSound.PlayOneShot(guitare);
+                    source.PlayOneShot(guitare);
                 }
                 else
                 {
-                    actualSound.PlayOneShot(guitare);
+                    source.PlayOneShot(guitare);
                     previousSound = actualSound;
                 }
                 break;
-            case 4:
+            case "flute":
                 if (previousSound != null)
                 {
                     StopSound();
-                    actualSound.PlayOneShot(flute);
+                    source.PlayOneShot(flute);
                 }
                 else
                 {
-                    actualSound.PlayOneShot(flute);
+                    source.PlayOneShot(flute);
                     previousSound = actualSound;
                 }
                 break;
-            case 5:
+            case "piano":
                 if (previousSound != null)
                 {
                     StopSound();
-                    actualSound.PlayOneShot(piano);
+                    source.PlayOneShot(piano);
                 }
                 else
                 {
-                    actualSound.PlayOneShot(piano);
+                    source.PlayOneShot(piano);
                     previousSound = actualSound;
                 }
                 break;
-            case 6:
+            case "tigre":
                 if (previousSound != null)
                 {
                     StopSound();
-                    actualSound.PlayOneShot(tigre);
+                    source.PlayOneShot(tigre);
                 }
                 else
                 {
-                    actualSound.PlayOneShot(tigre);
+                    source.PlayOneShot(tigre);
                     previousSound = actualSound;
                 }
                 break;
@@ -112,11 +112,13 @@ public class SoundButton : MonoBehaviour
 
     public void SetCat()
     {
+        managerScript.answer = "chat";
+        managerScript.Verification();
+
         if (previousSound != null)
         {
-            StopSound();
             actualSound.Play();
-            managerScript.answer = 1;
+            StopSound();
         }
         else
         {
@@ -126,11 +128,13 @@ public class SoundButton : MonoBehaviour
     }
     public void SetDog()
     {
+        managerScript.answer = "chien";
+        managerScript.Verification();
+
         if (previousSound != null)
         {
-            StopSound();
             actualSound.Play();
-            managerScript.answer = 1;
+            StopSound();
         }
         else
         {
@@ -140,11 +144,13 @@ public class SoundButton : MonoBehaviour
     }
     public void SetGuitare()
     {
+        managerScript.answer = "guitare";
+        managerScript.Verification();
+
         if (previousSound != null)
         {
-            StopSound();
             actualSound.Play();
-            managerScript.answer = 1;
+            StopSound();
         }
         else
         {
@@ -154,11 +160,13 @@ public class SoundButton : MonoBehaviour
     }
     public void SetFlute()
     {
+        managerScript.answer = "flute";
+        managerScript.Verification();
+
         if (previousSound != null)
         {
-            StopSound();
             actualSound.Play();
-            managerScript.answer = 1;
+            StopSound();
         }
         else
         {
@@ -168,11 +176,13 @@ public class SoundButton : MonoBehaviour
     }
     public void SetPiano()
     {
+        managerScript.answer = "piano";
+        managerScript.Verification();
+
         if (previousSound != null)
         {
-            StopSound();
             actualSound.Play();
-            managerScript.answer = 1;
+            StopSound();
         }
         else
         {
@@ -182,11 +192,13 @@ public class SoundButton : MonoBehaviour
     }
     public void SetTiger()
     {
+        
+        managerScript.answer = "tigre";
+        managerScript.Verification();
         if (previousSound != null)
         {
-            StopSound();
             actualSound.Play();
-            managerScript.answer = 1;
+            StopSound();
         }
         else
         {
@@ -205,7 +217,8 @@ public class SoundButton : MonoBehaviour
 
             AudioSource[] audios = FindObjectsOfType(typeof(AudioSource)) as AudioSource[];
             foreach (AudioSource aud in audios)
-                aud.volume = 0;
+            aud.volume = 0;
+            source.volume = 0;
 
             actualSound.volume = 1;
             actualSound.Play();
