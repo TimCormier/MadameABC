@@ -56,13 +56,47 @@ public class GameManager : MonoBehaviour
 
     public float PreviousRand;
 
+    public bool timerActive;
+    public int timer;
+
+    public bool timerActiveTryAgain;
+    public int timerTryAgain;
+
     public void Start()
     {
+        timer = 0;
+        timerTryAgain = 0;
+        timerActive = false;
+        timerActiveTryAgain = false;
         Generate();
     }
 
     public void Update()
     {
+        if(timerActive == true)
+        {
+            timer += 1;
+
+            if(timer >= 60)
+            {
+                timerActive = false;
+                timer = 0;
+                Victory();
+            }
+        }
+
+        if (timerActiveTryAgain == true)
+        {
+            timerTryAgain += 1;
+
+            if (timerTryAgain >= 60)
+            {
+                timerActiveTryAgain = false;
+                timerTryAgain = 0;
+                Recommencer2();
+            }
+        }
+
         scoreText.text = "Score " + Score;
 
         if (Jaune > 1)
@@ -243,38 +277,63 @@ public class GameManager : MonoBehaviour
         //
         if (RepMauve == 1 && Bleu == 1 && SpotRouge == 1)
         {
+            if(timerActive == false)
+            {
+                AudioSource.PlayClipAtPoint(Bravo, Camera.main.transform.position);
+            }
+
             PreviousRand = Rand;
-            Victory();
+            timerActive = true;
         }
 
         if (RepOrange == 1 && Jaune == 1 && SpotRouge == 1)
         {
+            if (timerActive == false)
+            {
+                AudioSource.PlayClipAtPoint(Bravo, Camera.main.transform.position);
+            }
             PreviousRand = Rand;
-            Victory();
+            timerActive = true;
         }
 
         if (RepVert == 1 && Bleu == 1 && SpotJaune == 1)
         {
+            if (timerActive == false)
+            {
+                AudioSource.PlayClipAtPoint(Bravo, Camera.main.transform.position);
+            }
             PreviousRand = Rand;
-            Victory();
+            timerActive = true;
         }
 
         if (RepMauve == 1 && SpotBleu == 1 && Rouge == 1)
         {
+            if (timerActive == false)
+            {
+                AudioSource.PlayClipAtPoint(Bravo, Camera.main.transform.position);
+            }
             PreviousRand = Rand;
-            Victory();
+            timerActive = true;
         }
 
         if (RepOrange == 1 && SpotJaune == 1 && Rouge == 1)
         {
+            if (timerActive == false)
+            {
+                AudioSource.PlayClipAtPoint(Bravo, Camera.main.transform.position);
+            }
             PreviousRand = Rand;
-            Victory();
+            timerActive = true;
         }
 
         if (RepVert == 1 && SpotBleu == 1 && Jaune == 1)
         {
+            if (timerActive == false)
+            {
+                AudioSource.PlayClipAtPoint(Bravo, Camera.main.transform.position);
+            }
             PreviousRand = Rand;
-            Victory();
+            timerActive = true;
         }
     }
 
@@ -317,14 +376,23 @@ public class GameManager : MonoBehaviour
 
     public void Recommencer()
     {
+        if(timerActiveTryAgain == false)
+        {
+            AudioSource.PlayClipAtPoint(TryAgain, Camera.main.transform.position);
+        }
+
+        timerActiveTryAgain = true;
+
+    }
+
+    public void Recommencer2()
+    {
         Jaune = 0;
         Rouge = 0;
         Bleu = 0;
         SpotJaune = 0;
         SpotRouge = 0;
         SpotBleu = 0;
-        AudioSource.PlayClipAtPoint(TryAgain, Camera.main.transform.position);
-
     }
 
     public void ButtonRecommencer()
@@ -348,9 +416,10 @@ public class GameManager : MonoBehaviour
         RepMauve = 0;
         RepOrange = 0;
         RepVert = 0;
-        Generate();
         Score += 1;
-        AudioSource.PlayClipAtPoint(Bravo, Camera.main.transform.position);
+
+
+        Generate();
     }
 
     public void Retry()
@@ -410,9 +479,4 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.UnloadSceneAsync("ColorTheory");
     }
-
-    //IEnumerator Fade()
-    // {
-
-    //}
 }
