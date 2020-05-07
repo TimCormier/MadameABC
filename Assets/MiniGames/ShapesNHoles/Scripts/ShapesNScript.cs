@@ -36,6 +36,9 @@ public class ShapesNScript : MonoBehaviour
     private Vector3 OGpos;
     private Vector3 CAROGpos;
 
+    public float carspeed;
+    public float slotspeed;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -70,8 +73,8 @@ public class ShapesNScript : MonoBehaviour
         {
             gameObject.transform.GetComponent<BoxCollider2D>().isTrigger = false;
             animtimer += 1;
-            transform.position += new Vector3(0f, 0.025f, 0f);
-            CAR.transform.position += new Vector3(-15f, 0, 0);
+            transform.position += new Vector3(0f, slotspeed, 0f);
+            CAR.transform.position += new Vector3(carspeed, 0, 0);
             if (animtimer >= 120)
             {
                 playanim = false;

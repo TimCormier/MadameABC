@@ -20,7 +20,12 @@ public class DragShape : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
+        if (transform.position.x >= 10.5f || transform.position.x <= -10.5f || transform.position.y >= 10.5f || transform.position.y <= -10.5f) {
+            RETURN();
+        }
+
+
     }
 
     void OnMouseDrag() {
