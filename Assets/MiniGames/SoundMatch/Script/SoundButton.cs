@@ -12,11 +12,14 @@ public class SoundButton : MonoBehaviour
     private AudioSource[] allAudioSources;
     private Button button { get { return GetComponent<Button>(); } }
     //stop all audio script
-    private AudioSource source { get { return GetComponent<AudioSource>(); } }
+    public AudioSource source { get { return GetComponent<AudioSource>(); } }
     public AudioSource playingSound;
     //access to the gamemanger script
     GameObject manager;
     GameManagerSoundMatch managerScript;
+
+    public AudioClip previousSound;
+    public AudioSource actualSound { get { return GetComponent<AudioSource>(); } }
 
     void Start()
     {
@@ -49,61 +52,60 @@ public class SoundButton : MonoBehaviour
                 source.PlayOneShot(tigre);
                 break;
         }
+        Debug.Log(source);
     }
 
     public void SetCat()
     {
-        StartCoroutine(CoroutineAudio(AudioSource));
-        source.PlayOneShot(chat);
+        actualSound.PlayOneShot(chat);
         managerScript.answer = 1;
-        Debug.Log("Cat Sound");
+        previousSound = chat;
+        stopPreviousSound();
     }
     public void SetDog()
     {
-        StartCoroutine(CoroutineAudio(AudioSource));
-        source.PlayOneShot(chien);
+
+        actualSound.PlayOneShot(chien);
         managerScript.answer = 2;
-        Debug.Log("Dog Sound");
+        previousSound = chien;
+        stopPreviousSound();
     }
     public void SetGuitare()
     {
-        StartCoroutine(CoroutineAudio(AudioSource));
-        source.PlayOneShot(guitare);
+        actualSound.PlayOneShot(guitare);
         managerScript.answer = 3;
-        Debug.Log("Guitar Sound");
+        previousSound = guitare;
+        stopPreviousSound();
     }
     public void SetFlute()
     {
-        StartCoroutine(CoroutineAudio(AudioSource));
-        source.PlayOneShot(flute);
+        actualSound.PlayOneShot(flute);
         managerScript.answer = 4;
-        Debug.Log("Flute Sound");
+        previousSound = flute;
+        stopPreviousSound();
     }
     public void SetPiano()
     {
-        StartCoroutine(CoroutineAudio(AudioSource));
-        source.PlayOneShot(piano);
+        actualSound.PlayOneShot(piano);
         managerScript.answer = 5;
-        Debug.Log("Piano Sound");
+        previousSound = piano;
+        stopPreviousSound();
     }
     public void SetTiger()
     {
-        StartCoroutine(CoroutineAudio(AudioSource));
-        source.PlayOneShot(tigre);
+        actualSound.PlayOneShot(tigre);
         managerScript.answer = 6;
-        Debug.Log("Tiger Sound");
+        previousSound = tigre;
+        stopPreviousSound();
     }
 
     //Stop all sounds
-    private IEnumerator CoroutineAudio(AudioSource playingSound)
+    public void stopPreviousSound()
     {
-        while ()
+        if(source != null)
         {
-            allAudioSources = FindObjectsOfType(typeof(AudioSource)) as AudioSource[];
-            foreach (AudioSource audioSource in allAudioSources)
-            {
-                audioSource.Stop();
-            }
+            Debug.Log(source);
+            source.Stop();
         }
     }
 }

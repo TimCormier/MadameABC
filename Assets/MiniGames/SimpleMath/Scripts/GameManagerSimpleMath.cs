@@ -15,7 +15,10 @@ public class GameManagerSimpleMath : MonoBehaviour
     public GameObject bonneReponse;
     public GameObject mauvaiseReponse;
     public GameObject goNext;
-   
+
+    public AudioClip Bravo;
+    public AudioClip TryAgain;
+
     void Start()
     {
         nouveauCalcul();
@@ -81,10 +84,12 @@ public class GameManagerSimpleMath : MonoBehaviour
         {
             bonneReponse.SetActive(true);
             mauvaiseReponse.SetActive(false);
+            AudioSource.PlayClipAtPoint(Bravo, Camera.main.transform.position);
             goNext.SetActive(true);
         }
         else
         {
+            AudioSource.PlayClipAtPoint(TryAgain, Camera.main.transform.position);
             mauvaiseReponse.SetActive(true);
             bonneReponse.SetActive(false);
         }

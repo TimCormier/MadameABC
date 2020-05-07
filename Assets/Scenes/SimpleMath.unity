@@ -3564,6 +3564,8 @@ MonoBehaviour:
   bonneReponse: {fileID: 453832647}
   mauvaiseReponse: {fileID: 95533360}
   goNext: {fileID: 392488222}
+  Bravo: {fileID: 8300000, guid: 280819944c6a19f49bece1004e02dcc6, type: 3}
+  TryAgain: {fileID: 8300000, guid: 821c81570a6a5fd4fbb79bf009a7ba76, type: 3}
 --- !u!4 &1286042183
 Transform:
   m_ObjectHideFlags: 0
