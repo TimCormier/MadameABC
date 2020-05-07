@@ -17,9 +17,11 @@ public class SoundButton : MonoBehaviour
     //access to the gamemanger script
     GameObject manager;
     GameManagerSoundMatch managerScript;
-
-    public AudioClip previousSound;
+    //previous and actual sound
+    public AudioSource previousSound;
     public AudioSource actualSound { get { return GetComponent<AudioSource>(); } }
+
+ 
 
     void Start()
     {
@@ -34,78 +36,180 @@ public class SoundButton : MonoBehaviour
         switch (managerScript.goodAnswer)
         {
             case 1:
-                source.PlayOneShot(chat);
+                if (previousSound != null)
+                {
+                    actualSound.PlayOneShot(chat);
+                    StopSound();
+                }
+                else
+                {
+                    actualSound.PlayOneShot(chat);
+                    previousSound = actualSound;
+                }
                 break;
             case 2:
-                source.PlayOneShot(chien);
+                if (previousSound != null)
+                {
+                    actualSound.PlayOneShot(chien);
+                    StopSound();
+                }
+                else
+                {
+                    actualSound.PlayOneShot(chien);
+                    previousSound = actualSound;
+                }
                 break;
             case 3:
-                source.PlayOneShot(guitare);
+                if (previousSound != null)
+                {
+                    StopSound();
+                    actualSound.PlayOneShot(guitare);
+                }
+                else
+                {
+                    actualSound.PlayOneShot(guitare);
+                    previousSound = actualSound;
+                }
                 break;
             case 4:
-                source.PlayOneShot(flute);
+                if (previousSound != null)
+                {
+                    StopSound();
+                    actualSound.PlayOneShot(flute);
+                }
+                else
+                {
+                    actualSound.PlayOneShot(flute);
+                    previousSound = actualSound;
+                }
                 break;
             case 5:
-                source.PlayOneShot(piano);
+                if (previousSound != null)
+                {
+                    StopSound();
+                    actualSound.PlayOneShot(piano);
+                }
+                else
+                {
+                    actualSound.PlayOneShot(piano);
+                    previousSound = actualSound;
+                }
                 break;
             case 6:
-                source.PlayOneShot(tigre);
+                if (previousSound != null)
+                {
+                    StopSound();
+                    actualSound.PlayOneShot(tigre);
+                }
+                else
+                {
+                    actualSound.PlayOneShot(tigre);
+                    previousSound = actualSound;
+                }
                 break;
         }
-        Debug.Log(source);
     }
 
     public void SetCat()
     {
-        actualSound.PlayOneShot(chat);
-        managerScript.answer = 1;
-        previousSound = chat;
-        stopPreviousSound();
+        if (previousSound != null)
+        {
+            StopSound();
+            actualSound.Play();
+            managerScript.answer = 1;
+        }
+        else
+        {
+            actualSound.Play();
+            previousSound = actualSound;
+        }
     }
     public void SetDog()
     {
-
-        actualSound.PlayOneShot(chien);
-        managerScript.answer = 2;
-        previousSound = chien;
-        stopPreviousSound();
+        if (previousSound != null)
+        {
+            StopSound();
+            actualSound.Play();
+            managerScript.answer = 1;
+        }
+        else
+        {
+            actualSound.Play();
+            previousSound = actualSound;
+        }
     }
     public void SetGuitare()
     {
-        actualSound.PlayOneShot(guitare);
-        managerScript.answer = 3;
-        previousSound = guitare;
-        stopPreviousSound();
+        if (previousSound != null)
+        {
+            StopSound();
+            actualSound.Play();
+            managerScript.answer = 1;
+        }
+        else
+        {
+            actualSound.Play();
+            previousSound = actualSound;
+        }
     }
     public void SetFlute()
     {
-        actualSound.PlayOneShot(flute);
-        managerScript.answer = 4;
-        previousSound = flute;
-        stopPreviousSound();
+        if (previousSound != null)
+        {
+            StopSound();
+            actualSound.Play();
+            managerScript.answer = 1;
+        }
+        else
+        {
+            actualSound.Play();
+            previousSound = actualSound;
+        }
     }
     public void SetPiano()
     {
-        actualSound.PlayOneShot(piano);
-        managerScript.answer = 5;
-        previousSound = piano;
-        stopPreviousSound();
+        if (previousSound != null)
+        {
+            StopSound();
+            actualSound.Play();
+            managerScript.answer = 1;
+        }
+        else
+        {
+            actualSound.Play();
+            previousSound = actualSound;
+        }
     }
     public void SetTiger()
     {
-        actualSound.PlayOneShot(tigre);
-        managerScript.answer = 6;
-        previousSound = tigre;
-        stopPreviousSound();
+        if (previousSound != null)
+        {
+            StopSound();
+            actualSound.Play();
+            managerScript.answer = 1;
+        }
+        else
+        {
+            actualSound.Play();
+            previousSound = actualSound;
+        }
+
     }
 
-    //Stop all sounds
-    public void stopPreviousSound()
+    public void StopSound()
     {
-        if(source != null)
+        if (previousSound != null)
         {
-            Debug.Log(source);
-            source.Stop();
+            previousSound.Stop();
+            previousSound = actualSound;
+
+            AudioSource[] audios = FindObjectsOfType(typeof(AudioSource)) as AudioSource[];
+            foreach (AudioSource aud in audios)
+                aud.volume = 0;
+
+            actualSound.volume = 1;
+            actualSound.Play();
         }
+
     }
 }

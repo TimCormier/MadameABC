@@ -82,13 +82,11 @@ public class GameManagerSoundMatch : MonoBehaviour
             bonneReponse.SetActive(true);
             mauvaiseReponse.SetActive(false);
             goNext.SetActive(true);
-            Debug.Log("Bonne Réponse");
         }
         else
         {
             mauvaiseReponse.SetActive(true);
             bonneReponse.SetActive(false);
-            Debug.Log("Mauvaise Réponse");
             answer = 0;
         }
     }
