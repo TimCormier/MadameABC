@@ -154,7 +154,10 @@ public class NavScript : MonoBehaviour
 
 
     //Yoga
-
+    public void WhackAMole()
+    {
+        SceneManager.LoadScene("WhackAMole", LoadSceneMode.Additive);
+    }
 
     //Craft
     public void ColorTheory()

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class WhackAScript : MonoBehaviour
 {
@@ -143,4 +144,9 @@ public class WhackAScript : MonoBehaviour
         SOUND.Play();
     }
 
+
+    public void GoToMenu()
+    {
+        SceneManager.UnloadSceneAsync("WhackAMole");
+    }
 }
