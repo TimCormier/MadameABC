@@ -85,6 +85,8 @@ public class GameManagerSimpleMath : MonoBehaviour
             bonneReponse.SetActive(true);
             mauvaiseReponse.SetActive(false);
             AudioSource.PlayClipAtPoint(Bravo, Camera.main.transform.position);
+            setReponseSous1.SetActive(false);
+            setReponseAdd1.SetActive(false);
             goNext.SetActive(true);
         }
         else
