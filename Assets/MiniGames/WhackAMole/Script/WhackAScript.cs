@@ -45,6 +45,11 @@ public class WhackAScript : MonoBehaviour
         TextObject = GameObject.Find("Score");
         text = TextObject.GetComponent<Text>();
         SOUND = gameObject.transform.GetComponent<AudioSource>();
+
+        if (GameObject.Find("HammerUp") != null || GameObject.Find("HammerDown") != null) {
+            HAMMERDEBUG();
+        }
+
         SPAWNMOLE();
 
     }
@@ -148,5 +153,14 @@ public class WhackAScript : MonoBehaviour
     public void GoToMenu()
     {
         SceneManager.UnloadSceneAsync("WhackAMole");
+    }
+
+    void HAMMERDEBUG() {
+        GameObject.Find("HammerUp").SetActive(false);
+        GameObject.Find("HammerDown").SetActive(false);
+        if (GameObject.Find("HammerUp") != null || GameObject.Find("HammerDown") != null)
+        {
+            HAMMERDEBUG();
+        }
     }
 }
