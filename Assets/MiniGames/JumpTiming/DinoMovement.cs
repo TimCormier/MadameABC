@@ -24,6 +24,9 @@ public class DinoMovement : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
+
+
+
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             rb.velocity = Vector2.up * jumpforce;
