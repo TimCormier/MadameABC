@@ -4,13 +4,20 @@ using UnityEngine;
 
 public class NoteScript : MonoBehaviour
 {
+    /*
+     NOTE: ABOUT THROWAWAY NOTEHOLDER
+     There's a bug where the last noteholder in hierarchy's colliders dont work and i have no fucking clue why
+     just keep it off-screen and everything works fine
+     If you plan on increasing the amounts of NoteHolders on-screen, make sure you have one additionnal NoteHolder off-screen to prevent this bug
+      */
+
 
     private AudioSource AUDIO;
     private Camera CAMERA;
     private GameObject NOTEHOLDER;
     private int NOTECOUNT;
-    private bool debugFreeze = false;
-    private int debugFreezeTimer = 0;
+    //private bool debugFreeze = false;
+    //private int debugFreezeTimer = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -62,6 +69,7 @@ public class NoteScript : MonoBehaviour
             Ray ray = CAMERA.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit)) {
+                Debug.Log(hit.transform.name);
                 // ON CLICK CODE GOES HERE
                 //NEXTNOTE();
                // if (debugFreezeTimer == 0) {
