@@ -1,19 +1,71 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class StoryQuiz : MonoBehaviour
 {
-    //public GameObject 
-    // Start is called before the first frame update
+    //éléments de scène assignable
+    public GameObject quizBad1, quizBad2;
+    public GameObject quizGood;
+    public GameObject activePart;
+    public GameObject nextPart;
+
+    //pour déclarer ce que font les boutons
+    private Button goodBtn;
+    private Button badBtn1;
+    private Button badBtn2;
+
+    //timer après réussite
+    private int timeMax = 750;
+    private int timerInt = 0;
+    private bool timerActive = false;
+    
     void Start()
     {
-        
+        minigameStart();
+
+        goodBtn = quizGood.transform.GetComponent<Button>();
+        goodBtn.onClick.AddListener(OnClickGood);
+
+        badBtn1 = quizBad1.transform.GetComponent<Button>();
+        badBtn1.onClick.AddListener(OnClickBad);
+
+        badBtn2 = quizBad2.transform.GetComponent<Button>();
+        badBtn2.onClick.AddListener(OnClickBad);
+
+        timerActive = false;
+        timerInt = 0;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void minigameStart()
     {
-        
+        activePart.SetActive(true);
+    }
+
+    private void OnClickGood()
+    {
+        timerActive = true;
+    }
+
+    private void Update()
+    {
+        if(timerActive == true)
+        {
+            timerInt++;
+            if(timerInt >= timeMax)
+            {
+                timerActive = false;
+                timerInt = 0;
+                activePart.SetActive(false);
+                nextPart.SetActive(true);
+                Debug.Log("timed correctly");
+            }
+        }
+    }
+
+    private void OnClickBad()
+    {
+        //nothing is happening here until sound integration
     }
 }
