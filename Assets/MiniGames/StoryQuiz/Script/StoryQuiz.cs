@@ -5,16 +5,21 @@ using UnityEngine.UI;
 
 public class StoryQuiz : MonoBehaviour
 {
+    //éléments de scène assignable
     public GameObject quizBad1, quizBad2;
     public GameObject quizGood;
     public GameObject activePart;
-    public GameObject nextButton;
     public GameObject nextPart;
 
+    //pour déclarer ce que font les boutons
     private Button goodBtn;
     private Button badBtn1;
     private Button badBtn2;
-    private Button nextBtn;
+
+    //timer après réussite
+    private int timeMax = 750;
+    private int timerInt = 0;
+    private bool timerActive = false;
     
     void Start()
     {
@@ -29,10 +34,8 @@ public class StoryQuiz : MonoBehaviour
         badBtn2 = quizBad2.transform.GetComponent<Button>();
         badBtn2.onClick.AddListener(OnClickBad);
 
-        nextBtn = nextButton.transform.GetComponent<Button>();
-        nextBtn.onClick.AddListener(OnClickNext);
-
-        nextButton.SetActive(false);
+        timerActive = false;
+        timerInt = 0;
     }
 
     private void minigameStart()
@@ -42,20 +45,27 @@ public class StoryQuiz : MonoBehaviour
 
     private void OnClickGood()
     {
-        quizGood.SetActive(true);
-        quizBad1.SetActive(false);
-        quizBad2.SetActive(false);
-        nextButton.SetActive(true);
+        timerActive = true;
+    }
+
+    private void Update()
+    {
+        if(timerActive == true)
+        {
+            timerInt++;
+            if(timerInt >= timeMax)
+            {
+                timerActive = false;
+                timerInt = 0;
+                activePart.SetActive(false);
+                nextPart.SetActive(true);
+                Debug.Log("timed correctly");
+            }
+        }
     }
 
     private void OnClickBad()
     {
-        nextButton.SetActive(false);
-    }
-
-    private void OnClickNext()
-    {
-        activePart.SetActive(false);
-        nextPart.SetActive(true);
+        //nothing is happening here until sound integration
     }
 }
