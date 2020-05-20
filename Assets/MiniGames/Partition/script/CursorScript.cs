@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class CursorScript : MonoBehaviour
 {
@@ -9,7 +10,13 @@ public class CursorScript : MonoBehaviour
 
     private GameObject CURSOR;
     private GameObject LINE;
+
+
     private Button PLAYBTN;
+    private Button STOPBTN;
+    private Button RESETBTN;
+    private Button SHEETBTN;
+
     private Vector3 ogpos;
     public float speed;
 
@@ -20,7 +27,13 @@ public class CursorScript : MonoBehaviour
         CURSOR = GameObject.Find("Cursor");
         LINE = GameObject.Find("Line");
         PLAYBTN = GameObject.Find("PlayButton").transform.GetComponent<Button>();
-        PLAYBTN.onClick.AddListener(OnClickRAPENIGGER);
+        PLAYBTN.onClick.AddListener(OnClick);
+        STOPBTN = GameObject.Find("StopButton").transform.GetComponent<Button>();
+        STOPBTN.onClick.AddListener(OnClickStop);
+        RESETBTN = GameObject.Find("ResetButton").transform.GetComponent<Button>();
+        RESETBTN.onClick.AddListener(OnClickReset);
+        SHEETBTN = GameObject.Find("SheetButton").transform.GetComponent<Button>();
+        SHEETBTN.onClick.AddListener(OnClickSheet);
         ogpos = CURSOR.transform.position;
     }
 
@@ -53,8 +66,27 @@ public class CursorScript : MonoBehaviour
         }
     }
 
-    void OnClickRAPENIGGER() {
+    void OnClick() {
         Debug.Log("You clicked the play button!");
         playing = true;
+    }
+    void OnClickStop()
+    {
+        Debug.Log("You clicked the Stop button!");
+        playing = false;
+        CURSOR.transform.position = ogpos;
+
+    }
+    void OnClickReset()
+    {
+        Debug.Log("You clicked the Reset button!");
+        SceneManager.LoadScene("Partition");
+       // playing = true;
+    }
+    void OnClickSheet()
+    {
+        Debug.Log("You clicked the Sheet button!");
+       // playing = true;
+       //add the sheet data here, we'll figure this out some other day lol
     }
 }
