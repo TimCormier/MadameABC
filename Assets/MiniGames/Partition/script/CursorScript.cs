@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class CursorScript : MonoBehaviour
 {
-
-
+    public float jumpValue;
+    public GameObject NOTEHOLDERPREFAB;
     private GameObject CURSOR;
     private GameObject LINE;
 
@@ -35,6 +35,8 @@ public class CursorScript : MonoBehaviour
         SHEETBTN = GameObject.Find("SheetButton").transform.GetComponent<Button>();
         SHEETBTN.onClick.AddListener(OnClickSheet);
         ogpos = CURSOR.transform.position;
+
+       // SPAWNFUNC();
     }
 
     // Update is called once per frame
@@ -88,5 +90,49 @@ public class CursorScript : MonoBehaviour
         Debug.Log("You clicked the Sheet button!");
        // playing = true;
        //add the sheet data here, we'll figure this out some other day lol
+    }
+
+
+    void SPAWNFUNC() {
+        // this may be temporary
+        bool SwitchMe = false;
+        float correction = 0f;
+        for (float i = 0; i <= 15; i++) {
+
+
+
+            if (SwitchMe == false)
+            {
+                if ((i * jumpValue) > ((0 * jumpValue) * -1))
+                {
+                    correction = i;
+                    SwitchMe = true;
+                }
+                else
+                {
+                    Instantiate(NOTEHOLDERPREFAB, new Vector3((-6f + (i * jumpValue)), 3f, 0), Quaternion.identity);
+                }
+
+
+            }
+            else {
+                Instantiate(NOTEHOLDERPREFAB, new Vector3((-6f + ((i - correction) * jumpValue)), -1.04f, 0), Quaternion.identity);
+            }
+
+
+
+            /*
+            if (i <= 8)
+            {
+                Instantiate(NOTEHOLDERPREFAB, new Vector3((-6f + (i * 1.5f)), 3f, 0), Quaternion.identity);
+            }
+            else {
+                Instantiate(NOTEHOLDERPREFAB, new Vector3((-6f + ((i - 9f) * 1.5f)), -1.04f, 0), Quaternion.identity);
+            }
+            */
+
+
+        }
+
     }
 }
