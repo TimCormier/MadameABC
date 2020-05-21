@@ -20,6 +20,10 @@ public class StoryQuiz : MonoBehaviour
     private int timeMax = 750;
     private int timerInt = 0;
     private bool timerActive = false;
+
+    //Audio Clip de bonne réponse
+    public AudioClip goodClip;
+    AudioSource goodClipSource;
     
     void Start()
     {
@@ -36,6 +40,8 @@ public class StoryQuiz : MonoBehaviour
 
         timerActive = false;
         timerInt = 0;
+
+        goodClipSource = GetComponent<AudioSource>();
     }
 
     private void minigameStart()
@@ -52,10 +58,13 @@ public class StoryQuiz : MonoBehaviour
     {
         if(timerActive == true)
         {
-            timerInt++;
-            if(timerInt >= timeMax)
+            goodClipSource.clip = goodClip;
+            goodClipSource.Play();
+            Debug.Log("Are you playing?");
+            //timerInt++;
+            if(/*timerInt >= timeMax*/!goodClipSource.isPlaying)
             {
-                timerActive = false;
+                //timerActive = false;
                 timerInt = 0;
                 activePart.SetActive(false);
                 nextPart.SetActive(true);
