@@ -287,7 +287,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 544, y: 250.00002}
+  m_AnchoredPosition: {x: 544, y: 167.9}
   m_SizeDelta: {x: 791.10223, y: 170.90558}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &42273609
@@ -406,7 +406,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 544, y: 167.9}
+  m_AnchoredPosition: {x: 544, y: 250.00002}
   m_SizeDelta: {x: 791.10223, y: 170.90558}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &42287008
@@ -633,7 +633,6 @@ MonoBehaviour:
   quizGood: {fileID: 1243456359}
   activePart: {fileID: 49317529}
   nextPart: {fileID: 424376950}
-  goodClip: {fileID: 8300000, guid: 819d748ab00924b49b4e0b39f69d1d4e, type: 3}
 --- !u!82 &49317532
 AudioSource:
   m_ObjectHideFlags: 0
@@ -644,7 +643,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 819d748ab00924b49b4e0b39f69d1d4e, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -1479,7 +1478,7 @@ MonoBehaviour:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 50
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 5
     m_MaxSize: 56
     m_Alignment: 0
@@ -1496,6 +1495,125 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 124430222}
+  m_CullTransparentMesh: 0
+--- !u!1 &125056790
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 125056791}
+  - component: {fileID: 125056794}
+  - component: {fileID: 125056793}
+  - component: {fileID: 125056792}
+  m_Layer: 5
+  m_Name: MainMenuBtn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &125056791
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 125056790}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.3833333, y: 0.3833333, z: 0.3833333}
+  m_Children:
+  - {fileID: 2137989841}
+  m_Father: {fileID: 424376951}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -344.4, y: 186.2}
+  m_SizeDelta: {x: 88.84798, y: 85.00661}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &125056792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 125056790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 125056793}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &125056793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 125056790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &125056794
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 125056790}
   m_CullTransparentMesh: 0
 --- !u!1 &128099778
 GameObject:
@@ -1566,7 +1684,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: b. Elle survole les environs.
+  m_Text: Elle vole dans le ciel
 --- !u!222 &128099781
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2045,7 +2163,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: b. De partager
+  m_Text: Le partage
 --- !u!222 &204063519
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2109,7 +2227,6 @@ MonoBehaviour:
   quizGood: {fileID: 2053736343}
   activePart: {fileID: 214199526}
   nextPart: {fileID: 2079687492}
-  goodClip: {fileID: 8300000, guid: 819d748ab00924b49b4e0b39f69d1d4e, type: 3}
 --- !u!82 &214199529
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2120,7 +2237,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 819d748ab00924b49b4e0b39f69d1d4e, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -2275,7 +2392,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: b. Les enfants ont une pomme en moins
+  m_Text: Les enfants ont une pomme en moins
 --- !u!222 &219359852
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2632,7 +2749,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 544.00006, y: 167.9}
+  m_AnchoredPosition: {x: 544.00006, y: 250.00002}
   m_SizeDelta: {x: 791.10223, y: 170.90558}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &268879962
@@ -2848,7 +2965,6 @@ MonoBehaviour:
   quizGood: {fileID: 2136032468}
   activePart: {fileID: 294596509}
   nextPart: {fileID: 1095536409}
-  goodClip: {fileID: 8300000, guid: 819d748ab00924b49b4e0b39f69d1d4e, type: 3}
 --- !u!82 &294596512
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2859,7 +2975,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 819d748ab00924b49b4e0b39f69d1d4e, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -3014,7 +3130,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: c. yeet but with apples
+  m_Text: Les enfants n'ont pas de pommes
 --- !u!222 &296670907
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3620,7 +3736,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 544.00006, y: 167.9}
+  m_AnchoredPosition: {x: 544.00006, y: 87}
   m_SizeDelta: {x: 791.10223, y: 170.90558}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &356598380
@@ -3739,7 +3855,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 544.00006, y: 87}
+  m_AnchoredPosition: {x: 544.00006, y: 167.9}
   m_SizeDelta: {x: 791.10223, y: 170.90558}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &366341234
@@ -3858,7 +3974,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 544.00006, y: 167.9}
+  m_AnchoredPosition: {x: 544.00006, y: 87}
   m_SizeDelta: {x: 791.10223, y: 170.90558}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &385402222
@@ -4209,7 +4325,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &411405969
 GameObject:
@@ -4492,6 +4608,7 @@ Transform:
   - {fileID: 1230328845}
   - {fileID: 2117739239}
   - {fileID: 1530053544}
+  - {fileID: 125056791}
   m_Father: {fileID: 1337070033}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4996,7 +5113,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 544, y: 250.00002}
+  m_AnchoredPosition: {x: 544, y: 167.9}
   m_SizeDelta: {x: 791.10223, y: 170.90558}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &467692830
@@ -5115,7 +5232,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 544, y: 167.9}
+  m_AnchoredPosition: {x: 544, y: 250.00002}
   m_SizeDelta: {x: 791.10223, y: 170.90558}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &468844973
@@ -6068,7 +6185,7 @@ MonoBehaviour:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 75
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 7
     m_MaxSize: 80
     m_Alignment: 0
@@ -6311,7 +6428,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: a. Yeet
+  m_Text: Elle marche dans le parc
 --- !u!222 &604034459
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6434,7 +6551,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 544, y: 87.00001}
+  m_AnchoredPosition: {x: 544, y: 167.9}
   m_SizeDelta: {x: 791.10223, y: 170.90558}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &664403281
@@ -6631,7 +6748,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 544, y: 87.00001}
+  m_AnchoredPosition: {x: 544, y: 167.9}
   m_SizeDelta: {x: 791.10223, y: 170.90558}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &666194405
@@ -6725,7 +6842,7 @@ GameObject:
   - component: {fileID: 667182978}
   - component: {fileID: 667182977}
   m_Layer: 0
-  m_Name: Book_minigame
+  m_Name: Mg_Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6789,11 +6906,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 667182976}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 367.5, y: 207.2, z: 0}
-  m_LocalScale: {x: 71.623055, y: 49.641777, z: 0}
+  m_LocalPosition: {x: -12.885905, y: -5.9275246, z: 0}
+  m_LocalScale: {x: 184.58559, y: 127.93585, z: 0}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_Father: {fileID: 1337070033}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &670072322
 GameObject:
@@ -7268,7 +7385,6 @@ MonoBehaviour:
   quizGood: {fileID: 1250935948}
   activePart: {fileID: 699897062}
   nextPart: {fileID: 49317529}
-  goodClip: {fileID: 8300000, guid: 819d748ab00924b49b4e0b39f69d1d4e, type: 3}
 --- !u!4 &699897064
 Transform:
   m_ObjectHideFlags: 0
@@ -7299,7 +7415,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 819d748ab00924b49b4e0b39f69d1d4e, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -7421,7 +7537,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 544, y: 87.00001}
+  m_AnchoredPosition: {x: 544, y: 167.9}
   m_SizeDelta: {x: 791.10223, y: 170.90558}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &704895013
@@ -7781,7 +7897,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 544, y: 250.00002}
+  m_AnchoredPosition: {x: 544, y: 167.9}
   m_SizeDelta: {x: 791.10223, y: 170.90558}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &722240708
@@ -8128,7 +8244,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: c. Elle Fait une ballade en voiture.
+  m_Text: Elle Fait une ballade en voiture.
 --- !u!222 &771974591
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8311,7 +8427,6 @@ MonoBehaviour:
   quizGood: {fileID: 385402220}
   activePart: {fileID: 801577426}
   nextPart: {fileID: 1742148569}
-  goodClip: {fileID: 8300000, guid: 819d748ab00924b49b4e0b39f69d1d4e, type: 3}
 --- !u!82 &801577429
 AudioSource:
   m_ObjectHideFlags: 0
@@ -8322,7 +8437,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 819d748ab00924b49b4e0b39f69d1d4e, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -8477,7 +8592,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: c. The philosophy of "Yeet"
+  m_Text: "Se mettre en col\xE8re"
 --- !u!222 &846356138
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8807,7 +8922,6 @@ MonoBehaviour:
   quizGood: {fileID: 786197291}
   activePart: {fileID: 869406404}
   nextPart: {fileID: 1309273988}
-  goodClip: {fileID: 8300000, guid: 819d748ab00924b49b4e0b39f69d1d4e, type: 3}
 --- !u!4 &869406406
 Transform:
   m_ObjectHideFlags: 0
@@ -8838,7 +8952,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 819d748ab00924b49b4e0b39f69d1d4e, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -9235,7 +9349,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 544, y: 167.9}
+  m_AnchoredPosition: {x: 544, y: 87.00001}
   m_SizeDelta: {x: 791.10223, y: 170.90558}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &903495555
@@ -9554,8 +9668,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Madame ABC survole les environs \xE0 la recherche d'un probl\xE8me \xE0
-    r\xE9soudre. "
+  m_Text: Madame ABC vole dans le ciel.
 --- !u!222 &911921875
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9697,7 +9810,6 @@ MonoBehaviour:
   quizGood: {fileID: 1796903516}
   activePart: {fileID: 929972140}
   nextPart: {fileID: 1038798856}
-  goodClip: {fileID: 8300000, guid: 819d748ab00924b49b4e0b39f69d1d4e, type: 3}
 --- !u!82 &929972143
 AudioSource:
   m_ObjectHideFlags: 0
@@ -9708,7 +9820,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 819d748ab00924b49b4e0b39f69d1d4e, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -9943,7 +10055,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "b. De jeter la troisi\xE8me pomme"
+  m_Text: "De jeter la troisi\xE8me pomme"
 --- !u!222 &968493961
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10255,9 +10367,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Les enfants ont r\xE9ussi \xE0 r\xE9soudre le probl\xE8me, tr\xE8s contente
-    d'eux, elle les f\xE9licites avant de partir. \r\n- F\xE9licitaiton les enfants
-    et n'oubliez pas de partager! "
+  m_Text: "- F\xE9licitaiton les enfants et n'oubliez pas de partager!"
 --- !u!222 &997074862
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10302,7 +10412,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 544, y: 250.00002}
+  m_AnchoredPosition: {x: 544, y: 167.9}
   m_SizeDelta: {x: 791.10223, y: 170.90558}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1006147600
@@ -10763,7 +10873,6 @@ MonoBehaviour:
   quizGood: {fileID: 1191118428}
   activePart: {fileID: 1028716450}
   nextPart: {fileID: 699897062}
-  goodClip: {fileID: 8300000, guid: 819d748ab00924b49b4e0b39f69d1d4e, type: 3}
 --- !u!82 &1028716453
 AudioSource:
   m_ObjectHideFlags: 0
@@ -10774,7 +10883,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 819d748ab00924b49b4e0b39f69d1d4e, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -11300,7 +11409,6 @@ MonoBehaviour:
   quizGood: {fileID: 1501764009}
   activePart: {fileID: 1038798856}
   nextPart: {fileID: 869406404}
-  goodClip: {fileID: 8300000, guid: 819d748ab00924b49b4e0b39f69d1d4e, type: 3}
 --- !u!4 &1038798858
 Transform:
   m_ObjectHideFlags: 0
@@ -11331,7 +11439,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 819d748ab00924b49b4e0b39f69d1d4e, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -11453,7 +11561,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 544.00006, y: 250.00002}
+  m_AnchoredPosition: {x: 544.00006, y: 167.9}
   m_SizeDelta: {x: 791.10223, y: 170.90558}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1039531830
@@ -11572,7 +11680,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 544, y: 250.00002}
+  m_AnchoredPosition: {x: 544, y: 167.9}
   m_SizeDelta: {x: 791.10223, y: 170.90558}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1040378227
@@ -11724,7 +11832,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: c. Yeet the 4th
+  m_Text: Que un des deux prenne la pomme
 --- !u!222 &1041001423
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11960,9 +12068,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Madame ABC arrive et demande la situation au enfants. Les enfants lui
-    r\xE9pondent: \n- Nous sommes 2 et avons 3 pommes! Qui devrait avoir la troisi\xE8me
-    pomme? "
+  m_Text: "- Nous sommes 2 et avons 3 pommes! Mais qui va avoir la troisi\xE8me pomme?"
 --- !u!222 &1062170750
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12275,7 +12381,6 @@ MonoBehaviour:
   quizGood: {fileID: 589750631}
   activePart: {fileID: 1095536409}
   nextPart: {fileID: 1429279232}
-  goodClip: {fileID: 8300000, guid: 819d748ab00924b49b4e0b39f69d1d4e, type: 3}
 --- !u!82 &1095536412
 AudioSource:
   m_ObjectHideFlags: 0
@@ -12286,7 +12391,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 819d748ab00924b49b4e0b39f69d1d4e, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -12595,7 +12700,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: a. d'abandonner
+  m_Text: D'abandonner
 --- !u!222 &1110732240
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -13193,7 +13298,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 544, y: 167.9}
+  m_AnchoredPosition: {x: 544, y: 87.00001}
   m_SizeDelta: {x: 791.10223, y: 170.90558}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1191118430
@@ -13345,7 +13450,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: c. Yeet the 2nd
+  m_Text: "Un train \xE0 la gare"
 --- !u!222 &1205286681
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -13902,7 +14007,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 544, y: 167.9}
+  m_AnchoredPosition: {x: 544, y: 250.00002}
   m_SizeDelta: {x: 791.10223, y: 170.90558}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1243456361
@@ -14292,12 +14397,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Madame ABC r\xE9fl\xE9chit et arrive rapidement avec une solution! \r\n-
-    J'ai une Solution mais je ne pourrai pas le faire seule! Je vais avoir besoin
-    de vous les enfants! Les enfant acceptent et \xE9coute le plan de la super-hero\xEFne
-    \r\n- Vous allez partager en coupant la pomme en deux! \r\n- Vous allez avoir
-    chacun une partie \xE9gale et une belle le\xE7on sur le partage. \r\nQuestion:
-    quel est la solution du probl\xE8me? "
+  m_Text: '- Vous allez partager en coupant la pomme en deux!'
 --- !u!222 &1252132106
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -14494,7 +14594,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 544, y: 167.9}
+  m_AnchoredPosition: {x: 544, y: 250.00002}
   m_SizeDelta: {x: 791.10223, y: 170.90558}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1288810824
@@ -14872,7 +14972,6 @@ MonoBehaviour:
   quizGood: {fileID: 1457756334}
   activePart: {fileID: 1309273988}
   nextPart: {fileID: 424376950}
-  goodClip: {fileID: 8300000, guid: 819d748ab00924b49b4e0b39f69d1d4e, type: 3}
 --- !u!4 &1309273990
 Transform:
   m_ObjectHideFlags: 0
@@ -14903,7 +15002,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 819d748ab00924b49b4e0b39f69d1d4e, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -15489,7 +15588,6 @@ MonoBehaviour:
   quizGood: {fileID: 1493592212}
   activePart: {fileID: 1332997764}
   nextPart: {fileID: 424376950}
-  goodClip: {fileID: 8300000, guid: 819d748ab00924b49b4e0b39f69d1d4e, type: 3}
 --- !u!82 &1332997767
 AudioSource:
   m_ObjectHideFlags: 0
@@ -15500,7 +15598,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 819d748ab00924b49b4e0b39f69d1d4e, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -15680,8 +15778,9 @@ RectTransform:
   - {fileID: 1561781168}
   - {fileID: 2131904281}
   - {fileID: 975444517}
+  - {fileID: 667182978}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -15999,7 +16098,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 544, y: 167.9}
+  m_AnchoredPosition: {x: 544, y: 87.00001}
   m_SizeDelta: {x: 791.10223, y: 170.90558}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1363873119
@@ -16441,7 +16540,6 @@ MonoBehaviour:
   quizGood: {fileID: 1363873117}
   activePart: {fileID: 1429279232}
   nextPart: {fileID: 929972140}
-  goodClip: {fileID: 8300000, guid: 819d748ab00924b49b4e0b39f69d1d4e, type: 3}
 --- !u!82 &1429279235
 AudioSource:
   m_ObjectHideFlags: 0
@@ -16452,7 +16550,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 819d748ab00924b49b4e0b39f69d1d4e, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -17434,7 +17532,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 544, y: 167.9}
+  m_AnchoredPosition: {x: 544, y: 250.00002}
   m_SizeDelta: {x: 791.10223, y: 170.90558}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1530053543
@@ -17799,7 +17897,6 @@ MonoBehaviour:
   quizGood: {fileID: 355182453}
   activePart: {fileID: 1574329431}
   nextPart: {fileID: 2089089888}
-  goodClip: {fileID: 8300000, guid: 819d748ab00924b49b4e0b39f69d1d4e, type: 3}
 --- !u!82 &1574329434
 AudioSource:
   m_ObjectHideFlags: 0
@@ -18199,7 +18296,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'a. Les enfants ont une pomme en trop '
+  m_Text: 'Les enfants ont une pomme en trop '
 --- !u!222 &1637055913
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -18476,7 +18573,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 544, y: 87.00001}
+  m_AnchoredPosition: {x: 544, y: 167.9}
   m_SizeDelta: {x: 791.10223, y: 170.90558}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1668738313
@@ -18899,7 +18996,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "a. Un probl\xE8me math\xE9matique "
+  m_Text: "Des enfants qui ont un probl\xE8me"
 --- !u!222 &1685697907
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -19100,7 +19197,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 544.00006, y: 87}
+  m_AnchoredPosition: {x: 544.00006, y: 167.9}
   m_SizeDelta: {x: 791.10223, y: 170.90558}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1726979242
@@ -19238,7 +19335,6 @@ MonoBehaviour:
   quizGood: {fileID: 268879960}
   activePart: {fileID: 1742148569}
   nextPart: {fileID: 1332997764}
-  goodClip: {fileID: 8300000, guid: 819d748ab00924b49b4e0b39f69d1d4e, type: 3}
 --- !u!82 &1742148572
 AudioSource:
   m_ObjectHideFlags: 0
@@ -19249,7 +19345,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 819d748ab00924b49b4e0b39f69d1d4e, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -19390,7 +19486,6 @@ MonoBehaviour:
   quizGood: {fileID: 468844971}
   activePart: {fileID: 1750509445}
   nextPart: {fileID: 214199526}
-  goodClip: {fileID: 8300000, guid: 819d748ab00924b49b4e0b39f69d1d4e, type: 3}
 --- !u!82 &1750509448
 AudioSource:
   m_ObjectHideFlags: 0
@@ -19401,7 +19496,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 819d748ab00924b49b4e0b39f69d1d4e, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -19542,7 +19637,6 @@ MonoBehaviour:
   quizGood: {fileID: 903495553}
   activePart: {fileID: 1793570065}
   nextPart: {fileID: 1750509445}
-  goodClip: {fileID: 8300000, guid: 819d748ab00924b49b4e0b39f69d1d4e, type: 3}
 --- !u!82 &1793570068
 AudioSource:
   m_ObjectHideFlags: 0
@@ -19553,7 +19647,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 819d748ab00924b49b4e0b39f69d1d4e, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -19675,7 +19769,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 544, y: 167.9}
+  m_AnchoredPosition: {x: 544, y: 87.00001}
   m_SizeDelta: {x: 791.10223, y: 170.90558}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1796903518
@@ -19794,7 +19888,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 544, y: 250.00002}
+  m_AnchoredPosition: {x: 544, y: 167.9}
   m_SizeDelta: {x: 791.10223, y: 170.90558}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1799089457
@@ -20678,7 +20772,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: a. De couper la pomme en deux et de la partager
+  m_Text: Couper la pomme en deux pour la partager
 --- !u!222 &1889935764
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -21212,7 +21306,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: b. un avion dans le ciel
+  m_Text: Un avion dans le ciel
 --- !u!222 &1987968054
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -21718,7 +21812,6 @@ MonoBehaviour:
   quizGood: {fileID: 42287006}
   activePart: {fileID: 2035470312}
   nextPart: {fileID: 294596509}
-  goodClip: {fileID: 8300000, guid: 819d748ab00924b49b4e0b39f69d1d4e, type: 3}
 --- !u!82 &2035470315
 AudioSource:
   m_ObjectHideFlags: 0
@@ -21729,7 +21822,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 819d748ab00924b49b4e0b39f69d1d4e, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -22141,7 +22234,6 @@ MonoBehaviour:
   quizGood: {fileID: 1288810822}
   activePart: {fileID: 2079687492}
   nextPart: {fileID: 1028716450}
-  goodClip: {fileID: 8300000, guid: 819d748ab00924b49b4e0b39f69d1d4e, type: 3}
 --- !u!82 &2079687495
 AudioSource:
   m_ObjectHideFlags: 0
@@ -22152,7 +22244,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 819d748ab00924b49b4e0b39f69d1d4e, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -22449,7 +22541,6 @@ MonoBehaviour:
   quizGood: {fileID: 356598378}
   activePart: {fileID: 2089089888}
   nextPart: {fileID: 801577426}
-  goodClip: {fileID: 8300000, guid: 819d748ab00924b49b4e0b39f69d1d4e, type: 3}
 --- !u!82 &2089089891
 AudioSource:
   m_ObjectHideFlags: 0
@@ -22460,7 +22551,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 819d748ab00924b49b4e0b39f69d1d4e, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -22894,7 +22985,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 544, y: 167.9}
+  m_AnchoredPosition: {x: 544, y: 250.00002}
   m_SizeDelta: {x: 791.10223, y: 170.90558}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2136032470
@@ -22976,6 +23067,84 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2136032468}
+  m_CullTransparentMesh: 0
+--- !u!1 &2137989840
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2137989841}
+  - component: {fileID: 2137989843}
+  - component: {fileID: 2137989842}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2137989841
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2137989840}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 125056791}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2137989842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2137989840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 1
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: X
+--- !u!222 &2137989843
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2137989840}
   m_CullTransparentMesh: 0
 --- !u!1 &2142645626
 GameObject:
@@ -23124,8 +23293,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Elle apperco\xEEt un probl\xE8me math\xE9matique qui pose probl\xE8me
-    au enfants et se dirige rapidement vers les enfants. "
+  m_Text: "Madame ABC voit des enfants qui ont un probl\xE8me."
 --- !u!222 &2145571000
 CanvasRenderer:
   m_ObjectHideFlags: 0
