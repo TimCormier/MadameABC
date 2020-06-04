@@ -9,7 +9,16 @@ public class ClickableScript : MonoBehaviour
     private string name;
     private GameObject MANAGER;
 
-    // Start is called before the first frame update
+    public Texture2D cursor;
+    public Texture2D cursorOnEnter;
+
+    public GameObject musique;
+    public GameObject classe;
+    public GameObject librairie;
+    public GameObject yoga;
+    public GameObject craft;
+
+
     void Start()
     {
         btn = gameObject.transform.GetComponent<Button>();
@@ -18,14 +27,6 @@ public class ClickableScript : MonoBehaviour
         MANAGER = GameObject.Find("background and GameManager");
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-
-
-
-    }
 
     void OnMouseDown() {
         Debug.Log("You Clicked" + gameObject.transform.name);//
@@ -33,47 +34,39 @@ public class ClickableScript : MonoBehaviour
 
     void OnClick() {
         Debug.Log("You have clicked " + gameObject.transform.name);
-
-        /*
-         about switch
-            switch(variable to compare for case){
-            case //variable value goes here//:
-                code instrucitons;
-                break;
-
-            default: //this is for when the variable doesnt apply to any case
-                code instructions;
-                break;
-    
-        } 
-
-          */
-
+        classe.SetActive(false);
+        musique.SetActive(false);
+        librairie.SetActive(false);
+        yoga.SetActive(false);
+        craft.SetActive(false);
         switch (name) {
             case "DoorMusic":
-                Debug.Log("Going to music room");
                 MANAGER.GetComponent<NavScript>().MUSIC();
+                Cursor.SetCursor(cursor, Vector2.zero, CursorMode.ForceSoftware);
                 break;
 
             case "BackButton":
-                Debug.Log("clicked on backbutton");
                 MANAGER.GetComponent<NavScript>().MAIN();
                 break;
 
             case "DoorClass":
                 MANAGER.GetComponent<NavScript>().CLASS();
+                Cursor.SetCursor(cursor, Vector2.zero, CursorMode.ForceSoftware);
                 break;
 
             case "DoorLibrary":
                 MANAGER.GetComponent<NavScript>().LIBRARY();
+                Cursor.SetCursor(cursor, Vector2.zero, CursorMode.ForceSoftware);
                 break;
 
             case "DoorYoga":
                 MANAGER.GetComponent<NavScript>().YOGA();
+                Cursor.SetCursor(cursor, Vector2.zero, CursorMode.ForceSoftware);
                 break;
 
             case "DoorCraft":
                 MANAGER.GetComponent<NavScript>().CRAFT();
+                Cursor.SetCursor(cursor, Vector2.zero, CursorMode.ForceSoftware);
                 break;
 
             default:
@@ -81,5 +74,84 @@ public class ClickableScript : MonoBehaviour
                 break;
         }
     }
-    
+
+    private void OnMouseEnter()
+    {
+        switch (name)
+        {
+            case "DoorMusic":
+                musique.SetActive(true);
+                break;
+
+            case "BackButton":
+                classe.SetActive(false);
+                musique.SetActive(false);
+                librairie.SetActive(false);
+                yoga.SetActive(false);
+                craft.SetActive(false);
+                break;
+
+            case "DoorClass":
+                classe.SetActive(true);
+
+                break;
+
+            case "DoorLibrary":
+                librairie.SetActive(true);
+                break;
+
+            case "DoorYoga":
+                yoga.SetActive(true);
+                break;
+
+            case "DoorCraft":
+                craft.SetActive(true);
+                break;
+
+            default:
+                Debug.Log("idk what that is chief");
+                break;
+        }
+
+        Cursor.SetCursor(cursorOnEnter, Vector2.zero, CursorMode.ForceSoftware);
+    }
+
+    private void OnMouseExit()
+    {
+        switch (name)
+        {
+            case "DoorMusic":
+                musique.SetActive(false);
+                break;
+
+            case "BackButton":
+
+                break;
+
+            case "DoorClass":
+                classe.SetActive(false);
+
+                break;
+
+            case "DoorLibrary":
+                librairie.SetActive(false);
+                break;
+
+            case "DoorYoga":
+                yoga.SetActive(false);
+                break;
+
+            case "DoorCraft":
+                craft.SetActive(false);
+                break;
+
+            default:
+                Debug.Log("idk what that is chief");
+                break;
+        }
+
+        Cursor.SetCursor(cursor, Vector2.zero, CursorMode.ForceSoftware);
+    }
+
+
 }

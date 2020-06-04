@@ -25,6 +25,10 @@ public class CursorScript : MonoBehaviour
     public string[] SongData;
     private GameObject NoteList;
 
+
+    private string SongReset;
+    private bool SongResetTrue;
+
     //public GameObject[] testlist;
     
     // Start is called before the first frame update
@@ -42,6 +46,11 @@ public class CursorScript : MonoBehaviour
         SHEETBTN.onClick.AddListener(OnClickSheet);
         ogpos = CURSOR.transform.position;
         NoteList = GameObject.Find("NoteList");
+        SongReset = "cccccccccccccccc";
+        SongResetTrue = true;
+
+
+        SHEETFUNC();
 
       //  DEBUGFUNC();
 
@@ -101,7 +110,9 @@ public class CursorScript : MonoBehaviour
     void OnClickReset()
     {
         Debug.Log("You clicked the Reset button!");
-        SceneManager.LoadScene("Partition");
+        // SceneManager.LoadScene("Partition");
+        SongResetTrue = true;
+        SHEETFUNC();
        // playing = true;
     }
     void OnClickSheet()
@@ -121,6 +132,9 @@ public class CursorScript : MonoBehaviour
         fix = Mathf.RoundToInt(songRoll);
 
         current = SongData[fix];
+        if (SongResetTrue == true) {
+            current = SongReset;
+        }
 
         for (int i = 0; i < current.Length; i++) {
            // Debug.Log("index is at " + i);
@@ -215,7 +229,7 @@ public class CursorScript : MonoBehaviour
          
 
         }
-
+        SongResetTrue = false;
     }
 
     void SPAWNFUNC()
