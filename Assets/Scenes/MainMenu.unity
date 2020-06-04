@@ -2143,13 +2143,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0119a80077818644aa89103dd12a5c64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cursor: {fileID: 0}
-  cursorOnEnter: {fileID: 0}
-  musique: {fileID: 0}
-  classe: {fileID: 0}
-  librairie: {fileID: 0}
-  yoga: {fileID: 0}
-  craft: {fileID: 0}
+  cursor: {fileID: 2800000, guid: 2e71a8202d3b4a3448ec85ced5a40265, type: 3}
+  cursorOnEnter: {fileID: 2800000, guid: 44a99ee545fd8ba46a452b12c1f9378b, type: 3}
+  musique: {fileID: 2069722193}
+  classe: {fileID: 721060938}
+  librairie: {fileID: 1489758921}
+  yoga: {fileID: 1238711668}
+  craft: {fileID: 1396752547}
 --- !u!1 &721060938
 GameObject:
   m_ObjectHideFlags: 0

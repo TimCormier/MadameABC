@@ -34,32 +34,39 @@ public class ClickableScript : MonoBehaviour
 
     void OnClick() {
         Debug.Log("You have clicked " + gameObject.transform.name);
-
+        classe.SetActive(false);
+        musique.SetActive(false);
+        librairie.SetActive(false);
+        yoga.SetActive(false);
+        craft.SetActive(false);
         switch (name) {
             case "DoorMusic":
-                Debug.Log("Going to music room");
                 MANAGER.GetComponent<NavScript>().MUSIC();
+                Cursor.SetCursor(cursor, Vector2.zero, CursorMode.ForceSoftware);
                 break;
 
             case "BackButton":
-                Debug.Log("clicked on backbutton");
                 MANAGER.GetComponent<NavScript>().MAIN();
                 break;
 
             case "DoorClass":
                 MANAGER.GetComponent<NavScript>().CLASS();
+                Cursor.SetCursor(cursor, Vector2.zero, CursorMode.ForceSoftware);
                 break;
 
             case "DoorLibrary":
                 MANAGER.GetComponent<NavScript>().LIBRARY();
+                Cursor.SetCursor(cursor, Vector2.zero, CursorMode.ForceSoftware);
                 break;
 
             case "DoorYoga":
                 MANAGER.GetComponent<NavScript>().YOGA();
+                Cursor.SetCursor(cursor, Vector2.zero, CursorMode.ForceSoftware);
                 break;
 
             case "DoorCraft":
                 MANAGER.GetComponent<NavScript>().CRAFT();
+                Cursor.SetCursor(cursor, Vector2.zero, CursorMode.ForceSoftware);
                 break;
 
             default:
@@ -77,7 +84,11 @@ public class ClickableScript : MonoBehaviour
                 break;
 
             case "BackButton":
-
+                classe.SetActive(false);
+                musique.SetActive(false);
+                librairie.SetActive(false);
+                yoga.SetActive(false);
+                craft.SetActive(false);
                 break;
 
             case "DoorClass":
