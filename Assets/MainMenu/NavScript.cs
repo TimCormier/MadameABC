@@ -24,6 +24,9 @@ public class NavScript : MonoBehaviour
     public Texture YogaRoom;
     public Texture CraftRoom;
 
+    public Texture2D cursor;
+    public Texture2D cursorOnEnter;
+
 
    /* private void Awake()
     {
@@ -42,7 +45,7 @@ public class NavScript : MonoBehaviour
         DOORCRAFT = GameObject.Find("DoorCraft");
         BACKBUTTON = GameObject.Find("BackButton");
         BACKBUTTON.SetActive(false);
-
+        Cursor.SetCursor(cursor, Vector2.zero, CursorMode.ForceSoftware);
 
     }
 
@@ -137,6 +140,7 @@ public class NavScript : MonoBehaviour
         SHOW();
 
     }
+
 
     //Music
     public void SoundMatch()
