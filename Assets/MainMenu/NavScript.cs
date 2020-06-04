@@ -144,6 +144,11 @@ public class NavScript : MonoBehaviour
         SceneManager.LoadScene("MG_SoundMatch", LoadSceneMode.Additive);
     }
 
+    public void Partition()
+    {
+        SceneManager.LoadScene("Partition", LoadSceneMode.Additive);
+    }
+
     //Class
     public void SimpleMath()
     {
@@ -151,7 +156,10 @@ public class NavScript : MonoBehaviour
     }
 
     //Library
-
+    public void StoryQuizz()
+    {
+        SceneManager.LoadScene("StoryQuiz", LoadSceneMode.Additive);
+    }
 
     //Yoga
     public void WhackAMole()

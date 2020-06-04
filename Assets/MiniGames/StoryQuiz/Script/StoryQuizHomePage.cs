@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class StoryQuizHomePage : MonoBehaviour
 {
@@ -41,5 +42,10 @@ public class StoryQuizHomePage : MonoBehaviour
     {
         homePage.SetActive(false);
         story3.SetActive(true);
+    }
+
+    public void GoToMenu()
+    {
+        SceneManager.UnloadSceneAsync("StoryQuiz");
     }
 }

@@ -285,4 +285,8 @@ public class CursorScript : MonoBehaviour
     }
     */
 
+    public void GoToMenu()
+    {
+        SceneManager.UnloadSceneAsync("Partition");
+    }
 }

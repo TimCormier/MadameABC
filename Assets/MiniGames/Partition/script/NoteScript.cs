@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class NoteScript : MonoBehaviour
 {
     /*
@@ -142,6 +143,7 @@ public class NoteScript : MonoBehaviour
         AUDIO.Play();
     }
 
+   
 }
 /*
  switch()
@@ -149,3 +151,5 @@ public class NoteScript : MonoBehaviour
 
 
   */
+
+

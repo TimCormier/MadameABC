@@ -1524,16 +1524,16 @@ RectTransform:
   m_GameObject: {fileID: 125056790}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.3833333, y: 0.3833333, z: 0.3833333}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2137989841}
-  m_Father: {fileID: 424376951}
+  m_Father: {fileID: 1337070033}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -344.4, y: 186.2}
-  m_SizeDelta: {x: 88.84798, y: 85.00661}
+  m_AnchoredPosition: {x: -813, y: 495}
+  m_SizeDelta: {x: 299.34784, y: 85.00661}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &125056792
 MonoBehaviour:
@@ -1577,7 +1577,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 125056793}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 424376952}
+        m_MethodName: GoToMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &125056793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4608,7 +4619,6 @@ Transform:
   - {fileID: 1230328845}
   - {fileID: 2117739239}
   - {fileID: 1530053544}
-  - {fileID: 125056791}
   m_Father: {fileID: 1337070033}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6910,7 +6920,7 @@ Transform:
   m_LocalScale: {x: 184.58559, y: 127.93585, z: 0}
   m_Children: []
   m_Father: {fileID: 1337070033}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &670072322
 GameObject:
@@ -15778,6 +15788,7 @@ RectTransform:
   - {fileID: 1561781168}
   - {fileID: 2131904281}
   - {fileID: 975444517}
+  - {fileID: 125056791}
   - {fileID: 667182978}
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -23137,7 +23148,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: X
+  m_Text: Retour au menu
 --- !u!222 &2137989843
 CanvasRenderer:
   m_ObjectHideFlags: 0
