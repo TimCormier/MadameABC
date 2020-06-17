@@ -141,7 +141,7 @@ public class NavScript : MonoBehaviour
 
     }
 
-
+    /* Additive scenes 
     //Music
     public void SoundMatch()
     {
@@ -180,6 +180,46 @@ public class NavScript : MonoBehaviour
     public void ShapesNHoles()
     {
         SceneManager.LoadScene("ShapesNHoles", LoadSceneMode.Additive);
+    }*/
+
+    //Music
+    public void SoundMatch()
+    {
+        SceneManager.LoadScene("MG_SoundMatch");
+    }
+
+    public void Partition()
+    {
+        SceneManager.LoadScene("Partition");
+    }
+
+    //Class
+    public void SimpleMath()
+    {
+        SceneManager.LoadScene("SimpleMath");
+    }
+
+    //Library
+    public void StoryQuizz()
+    {
+        SceneManager.LoadScene("StoryQuiz");
+    }
+
+    //Yoga
+    public void WhackAMole()
+    {
+        SceneManager.LoadScene("WhackAMole");
+    }
+
+    //Craft
+    public void ColorTheory()
+    {
+        SceneManager.LoadScene("ColorTheory");
+    }
+
+    public void ShapesNHoles()
+    {
+        SceneManager.LoadScene("ShapesNHoles");
     }
 
 }
