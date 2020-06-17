@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: b63685a0de1497a479da340a668d4b91
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - HAMMERUP: {fileID: 5534976267064097415, guid: 3a491f67759b8f04ca4525cbd18e46d7,
+      type: 3}
+  - HAMMERDOWN: {fileID: 4235424278082417106, guid: f14bf0b556b98f642b86b3394c1169a1,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
