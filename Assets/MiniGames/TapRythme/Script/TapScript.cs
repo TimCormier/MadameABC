@@ -12,9 +12,13 @@ public class TapScript : MonoBehaviour
             noteOnCollider.SetActive(false);
     }
 
-    public void OnCollisionEnter2D(Collision2D collision)
+    public void OnCollisionEnter2D(Collision2D collision )
     {
-        noteOnCollider = collision.gameObject;
+        if(collision.gameObject.tag != "Pattern")
+        {
+            noteOnCollider = collision.gameObject;
+        }
+  
     }
     public void OnCollisionExit2D(Collision2D collision)
     {

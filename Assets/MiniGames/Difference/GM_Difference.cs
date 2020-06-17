@@ -128,7 +128,7 @@ public class GM_Difference : MonoBehaviour
     //To use, put function on the button (The button need to be covering the error)
     public void Error10B()
     {
-        if(Error10A == 1)
+        if (Error10A == 1)
         {
             Error10 = 1;
 
