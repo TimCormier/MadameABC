@@ -36,7 +36,17 @@ public class CastleScript : MonoBehaviour
     {
         //test key
         if (Input.GetKey("space")) {
-            TURNBLUE();
+            //TURNBLUE();
+            // =======> THIS IS IMPORTANT Debug.Log(MAINCAM.transform.eulerAngles.y);
+            // EulerAngles dont really work with negatives, a -10 value is like 360 - 10, which results in a eulerAngle value of 350f
+            // Debug.Log(20f * -1f);
+            if (MAINCAM.transform.eulerAngles.y > 0)
+            {
+                Debug.Log("SUPERIOR");
+            }
+            else {
+                Debug.Log("INFERIOR");
+            }
         }
         //end test key
 
@@ -85,13 +95,27 @@ public class CastleScript : MonoBehaviour
 
         //SHOOTING END
 
+        //test
+        /*if (Input.GetKey("space")) {
+            MAINCAM.transform.Rotate(2f, 2f, 0);
 
+        
+       */
+       /*
+        if (MAINCAM.transform.rotation.y > 50) {
+            Debug.Log("Camera out of bounds from RIGHT boundary");
+            MAINCAM.transform.eulerAngles = new Vector3(MAINCAM.transform.rotation.x, 50, MAINCAM.transform.rotation.z);
+        }*/
     }
 
-
-    void TURNBLUE() {
+void TURNBLUE() {
         //Called when it's blue player(Player2)'s turn
         MAINCAM.transform.position = KingSquareBlue.transform.position + new Vector3(0f, 20f, 0f);
         MAINCAM.transform.Rotate(0, 0, 0);
     }
-}
+
+    }
+
+
+    
+
