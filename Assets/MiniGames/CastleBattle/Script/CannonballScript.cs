@@ -28,4 +28,24 @@ public class CannonballScript : MonoBehaviour
        
        
     }
+
+    void OnTriggerEnter(Collider other) {
+        switch (other.transform.name) {
+            case "RedCinematicCamTrigger":
+                if (GameObject.Find("BlueTurnDetector") != null) {
+                    GameObject.Find("GameManager").GetComponent<CastleScript>().CYCLECAM("REDCINEMATICCAM");
+                }
+                break;
+
+            case "BlueCinematicCamTrigger":
+                if (GameObject.Find("RedTurnDetector") != null) {
+                    GameObject.Find("GameManager").GetComponent<CastleScript>().CYCLECAM("BLUECINEMATICCAM");
+                }
+                break;
+
+            default:
+
+                break;
+        }
+    }
 }

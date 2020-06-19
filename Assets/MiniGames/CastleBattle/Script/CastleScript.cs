@@ -8,13 +8,19 @@ public class CastleScript : MonoBehaviour
 
     public Camera MAINCAM;
     public Camera PROFILECAM;
+    public Camera REDCINEMATICCAM;
+    public Camera BLUECINEMATICCAM;
 
+    private GameObject BLUETURNSWITCH;
+    private GameObject REDTURNSWITCH;
 
     public GameObject CANNONBALL;
     private GameObject MANAGER;
 
     private GameObject KingSquareRed;
     private GameObject KingSquareBlue;
+    private GameObject KingTriggerRed;
+    private GameObject KingTriggerBlue;
 
     float cannonforce = 0;
     float cannoninput = 0;
@@ -26,6 +32,12 @@ public class CastleScript : MonoBehaviour
     public Sprite BtnUp;
     public Sprite BtnDown;
 
+    private bool win = false;
+    private bool camlock = false;
+    // win is used to activate camlock after CYCLECAM() is called where camlock prevents CYCLECAM() from executing its code
+    private Text wintext;
+    private GameObject wintextobject;
+
     private bool turn = true;
     // false for blue, true for red
     // this stores who's turn it was *last*, since blue always starts, this is set to true so blue doesnt play twice at the beginning
@@ -36,13 +48,22 @@ public class CastleScript : MonoBehaviour
     {
 
         //MAINCAM = GameObject.Find("MainCamera");
+        wintextobject = GameObject.Find("WinText");
+        wintext = GameObject.Find("WinText").GetComponent<Text>();
         MANAGER = GameObject.Find("GameManager");
         KingSquareBlue = GameObject.Find("KingSquareBlue");
         KingSquareRed = GameObject.Find("KingSquareRed");
+        KingTriggerRed = GameObject.Find("KingTriggerRed");
+        KingTriggerBlue = GameObject.Find("KingTriggerBlue");
         POWERBAR = GameObject.Find("PowerBar");
         FireButton = GameObject.Find("FireButton");
         FireButtonVisual = GameObject.Find("FireButton_visual");
         PROFILECAM.enabled = false;
+        REDCINEMATICCAM.enabled = false;
+        BLUECINEMATICCAM.enabled = false;
+        BLUETURNSWITCH = GameObject.Find("BlueTurnDetector");
+        REDTURNSWITCH = GameObject.Find("RedTurnDetector");
+        
         //this TURNBLUE() is for testing purposes;
 
         TURNBLUE();
@@ -176,6 +197,8 @@ public class CastleScript : MonoBehaviour
 
  void TURNBLUE() {
         //Called when it's blue player(Player2)'s turn
+        REDTURNSWITCH.SetActive(false);
+        BLUETURNSWITCH.SetActive(true);
         MAINCAM.transform.position = KingSquareBlue.transform.position + new Vector3(0f, 20f, 0f);
         // MAINCAM.transform.Rotate(0, 0, 0);
         MAINCAM.transform.eulerAngles = new Vector3(0, 0, 0);
@@ -183,6 +206,8 @@ public class CastleScript : MonoBehaviour
     }
 
    void TURNRED() {
+        REDTURNSWITCH.SetActive(true);
+        BLUETURNSWITCH.SetActive(false);
         MAINCAM.transform.position = KingSquareRed.transform.position + new Vector3(0f, 20f, 0f);
         // MAINCAM.transform.Rotate(0, 0, 0);
         MAINCAM.transform.eulerAngles = new Vector3(0, 180f, 0);
@@ -191,18 +216,23 @@ public class CastleScript : MonoBehaviour
 
     //Camera Methods
     public void CYCLECAM(string TargetCam) {
-        for (int i = 0; i <= Camera.allCameras.Length; i++)
+        if (camlock == false) {
+
+        
+        for (int i = 1; i < GameObject.Find("Camera Container").transform.childCount; i++)
         {
+            // i = Camera.allCameras.Length
+           // Debug.Log("disabled camera " + GameObject.Find("Camera Container").transform.GetChild(i).transform.name);
             GameObject.Find("Camera Container").transform.GetChild(i).GetComponent<Camera>().enabled = false;
 
         }
         GameObject VCANVAS = GameObject.Find("Canvas (Visual)");
         GameObject CCANVAS = GameObject.Find("Canvas (Clickable)");
-        for (int i = 1; i < VCANVAS.transform.childCount; i++) {
-          //  Debug.Log(VCANVAS.transform.GetChild(i).name);
+        for (int i = 0; i < VCANVAS.transform.childCount; i++) {
+            Debug.Log(VCANVAS.transform.GetChild(i).name);
             VCANVAS.transform.GetChild(i).gameObject.SetActive(false);
         }
-        for (int i = 1; i < CCANVAS.transform.childCount; i++)
+        for (int i = 0; i < CCANVAS.transform.childCount; i++)
         {
             CCANVAS.transform.GetChild(i).gameObject.SetActive(false);
         }
@@ -211,11 +241,11 @@ public class CastleScript : MonoBehaviour
         switch (TargetCam) {
             case "MAINCAM":
                 MAINCAM.enabled = true;
-                for (int i = 1; i < VCANVAS.transform.childCount; i++)
+                for (int i = 0; i < VCANVAS.transform.childCount; i++)
                 {
                     VCANVAS.transform.GetChild(i).gameObject.SetActive(true);
                 }
-                for (int i = 1; i < CCANVAS.transform.childCount; i++)
+                for (int i = 0; i < CCANVAS.transform.childCount; i++)
                 {
                     CCANVAS.transform.GetChild(i).gameObject.SetActive(true);
                 }
@@ -226,6 +256,14 @@ public class CastleScript : MonoBehaviour
                 PROFILECAM.enabled = true;
                 break;
 
+            case "REDCINEMATICCAM":
+                REDCINEMATICCAM.enabled = true;
+                break;
+
+            case "BLUECINEMATICCAM":
+                BLUECINEMATICCAM.enabled = true;
+                break;
+
 
             default:
                 Debug.Log("Could not find target camera, check your references");
@@ -234,7 +272,27 @@ public class CastleScript : MonoBehaviour
 
         }
 
+        }
 
+        if (win == true) {
+            wintextobject.SetActive(true);
+            camlock = true;
+        }
+
+    }
+
+    // Victory Methods
+
+    public void WINBLUE() {
+        win = true;
+        CYCLECAM("REDCINEMATICCAM");
+        wintext.text = "Le joueur bleu a gagné!";
+    }
+
+    public void WINRED() {
+        win = true;
+        CYCLECAM("BLUECINEMATICCAM");
+        wintext.text = "Le joueur rouge a gagné!";
     }
 
     /*

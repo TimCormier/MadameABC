@@ -120,6 +120,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9159288096230720756}
   - component: {fileID: 5280200247327143654}
+  - component: {fileID: 6552702253069143351}
   m_Layer: 0
   m_Name: King
   m_TagString: Untagged
@@ -160,6 +161,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &6552702253069143351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5280200247327143655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bd3b8d9aac238e4094fec591cd9b520, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6111401710407188594
 GameObject:
   m_ObjectHideFlags: 0
