@@ -17,7 +17,7 @@ public class GM_Difference : MonoBehaviour
     public float Error13 = 0f;
     //Group being turned ON or OFF for quick puzzle shift
     public GameObject Case1;
-    // aénexidrine
+    //
     public Text text1;
     public float ER1 = 4f;
     public float Error10A = 0f;
@@ -128,7 +128,7 @@ public class GM_Difference : MonoBehaviour
     //To use, put function on the button (The button need to be covering the error)
     public void Error10B()
     {
-        if (Error10A == 1)
+        if (Error10A == 0)
         {
             Error10 = 1;
 
@@ -145,7 +145,7 @@ public class GM_Difference : MonoBehaviour
     //To use, put function on the button (The button need to be covering the error)
     public void Error11B()
     {
-        if (Error11A == 1)
+        if (Error11A == 0)
         {
             Error11 = 1;
 
@@ -162,7 +162,7 @@ public class GM_Difference : MonoBehaviour
     //To use, put function on the button (The button need to be covering the error)
     public void Error12B()
     {
-        if (Error12A == 1)
+        if (Error12A == 0)
         {
             Error12 = 1;
 
@@ -179,7 +179,7 @@ public class GM_Difference : MonoBehaviour
     //To use, put function on the button (The button need to be covering the error)
     public void Error13B()
     {
-        if (Error13A == 1)
+        if (Error13A == 0)
         {
             Error13 = 1;
 
@@ -196,7 +196,7 @@ public class GM_Difference : MonoBehaviour
     //To use, put function on the button (The button need to be covering the error)
     public void Error20B()
     {
-        if (Error20A == 1)
+        if (Error20A == 0)
         {
             Error20 = 1;
 
@@ -213,7 +213,7 @@ public class GM_Difference : MonoBehaviour
     //To use, put function on the button (The button need to be covering the error)
     public void Error21B()
     {
-        if (Error21A == 1)
+        if (Error21A == 0)
         {
             Error21 = 1;
 
@@ -230,7 +230,7 @@ public class GM_Difference : MonoBehaviour
     //To use, put function on the button (The button need to be covering the error)
     public void Error22B()
     {
-        if (Error22A == 1)
+        if (Error22A == 0)
         {
             Error22 = 1;
 
@@ -247,7 +247,7 @@ public class GM_Difference : MonoBehaviour
     //To use, put function on the button (The button need to be covering the error)
     public void Error23B()
     {
-        if (Error23A == 1)
+        if (Error23A == 0)
         {
             Error23 = 1;
 
@@ -264,7 +264,7 @@ public class GM_Difference : MonoBehaviour
     //To use, put function on the button (The button need to be covering the error)
     public void Error30B()
     {
-        if (Error30A == 1)
+        if (Error30A == 0)
         {
             Error30 = 1;
 
@@ -281,7 +281,7 @@ public class GM_Difference : MonoBehaviour
     //To use, put function on the button (The button need to be covering the error)
     public void Error31B()
     {
-        if (Error31A == 1)
+        if (Error31A == 0)
         {
             Error31 = 1;
 
@@ -298,7 +298,7 @@ public class GM_Difference : MonoBehaviour
     //To use, put function on the button (The button need to be covering the error)
     public void Error32B()
     {
-        if (Error32A == 1)
+        if (Error32A == 0)
         {
             Error32 = 1;
 
@@ -315,7 +315,7 @@ public class GM_Difference : MonoBehaviour
     //To use, put function on the button (The button need to be covering the error)
     public void Error33B()
     {
-        if (Error33A == 1)
+        if (Error33A == 0)
         {
             Error33 = 1;
 
