@@ -152,7 +152,7 @@ public class WhackAScript : MonoBehaviour
 
     public void GoToMenu()
     {
-        SceneManager.UnloadSceneAsync("WhackAMole");
+        SceneManager.LoadScene("MainMenu");
     }
 
     void HAMMERDEBUG() {

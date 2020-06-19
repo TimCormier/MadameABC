@@ -115,6 +115,6 @@ public class GameManagerSimpleMath : MonoBehaviour
     }
     public void GoToMenu()
     {
-        SceneManager.UnloadSceneAsync("SimpleMath");
+        SceneManager.LoadScene("MainMenu");
     }
 }

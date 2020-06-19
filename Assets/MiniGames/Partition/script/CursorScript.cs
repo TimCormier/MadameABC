@@ -301,6 +301,6 @@ public class CursorScript : MonoBehaviour
 
     public void GoToMenu()
     {
-        SceneManager.UnloadSceneAsync("Partition");
+        SceneManager.LoadScene("MainMenu");
     }
 }

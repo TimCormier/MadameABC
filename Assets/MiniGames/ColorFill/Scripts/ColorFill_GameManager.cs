@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ColorFill_GameManager : MonoBehaviour
 {
@@ -28,7 +29,10 @@ public class ColorFill_GameManager : MonoBehaviour
     public int isColored = 0;
     public int currentFilled = 0;
 
-
+    public void GoToMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
 
     private void Start()
     {

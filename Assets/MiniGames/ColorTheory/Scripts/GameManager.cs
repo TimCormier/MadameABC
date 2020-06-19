@@ -477,6 +477,6 @@ public class GameManager : MonoBehaviour
 
     public void GoToMenu()
     {
-        SceneManager.UnloadSceneAsync("ColorTheory");
+        SceneManager.LoadScene("MainMenu");
     }
 }

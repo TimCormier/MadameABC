@@ -46,6 +46,6 @@ public class StoryQuizHomePage : MonoBehaviour
 
     public void GoToMenu()
     {
-        SceneManager.UnloadSceneAsync("StoryQuiz");
+        SceneManager.LoadScene("MainMenu");
     }
 }

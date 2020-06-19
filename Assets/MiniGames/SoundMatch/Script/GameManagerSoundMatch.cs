@@ -103,6 +103,6 @@ public class GameManagerSoundMatch : MonoBehaviour
 
     public void GoToMenu()
     {
-        SceneManager.UnloadSceneAsync("MG_SoundMatch");
+        SceneManager.LoadScene("MainMenu");
     }
 }

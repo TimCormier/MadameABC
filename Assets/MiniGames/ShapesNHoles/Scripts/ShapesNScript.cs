@@ -245,6 +245,6 @@ public class ShapesNScript : MonoBehaviour
 
     public void GoToMenu()
     {
-        SceneManager.UnloadSceneAsync("ShapesNHoles");
+        SceneManager.LoadScene("MainMenu");
     }
 }
