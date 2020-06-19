@@ -193,6 +193,11 @@ public class NavScript : MonoBehaviour
         SceneManager.LoadScene("Partition");
     }
 
+    public void TapRythme()
+    {
+        SceneManager.LoadScene("TapRythme");
+    }
+
     //Class
     public void SimpleMath()
     {
