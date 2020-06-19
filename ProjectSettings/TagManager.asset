@@ -4,12 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Obstacle
-<<<<<<< HEAD
   - Pattern
-=======
-  - CANNONBALL
->>>>>>> 987469154a17ecb0f7feff557aa527d3bf1613bc
+  - NoteTapRythme
   layers:
   - Default
   - TransparentFX
@@ -46,7 +42,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: Background
-    uniqueID: 620717765
     locked: 0
