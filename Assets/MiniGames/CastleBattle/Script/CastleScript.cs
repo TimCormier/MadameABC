@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class CastleScript : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class CastleScript : MonoBehaviour
     public Camera PROFILECAM;
     public Camera REDCINEMATICCAM;
     public Camera BLUECINEMATICCAM;
+    public Camera SELECTIONCAM;
 
     private GameObject BLUETURNSWITCH;
     private GameObject REDTURNSWITCH;
@@ -43,11 +45,17 @@ public class CastleScript : MonoBehaviour
     // this stores who's turn it was *last*, since blue always starts, this is set to true so blue doesnt play twice at the beginning
 
 
+    private Button btnMenu;
+    private Button btnReplay;
+
     // Start is called before the first frame update
     void Start()
     {
 
         //MAINCAM = GameObject.Find("MainCamera");
+        //Selection Ui
+        
+
         wintextobject = GameObject.Find("WinText");
         wintext = GameObject.Find("WinText").GetComponent<Text>();
         MANAGER = GameObject.Find("GameManager");
@@ -63,11 +71,25 @@ public class CastleScript : MonoBehaviour
         BLUECINEMATICCAM.enabled = false;
         BLUETURNSWITCH = GameObject.Find("BlueTurnDetector");
         REDTURNSWITCH = GameObject.Find("RedTurnDetector");
-        
+        btnMenu = GameObject.Find("MenuButton").GetComponent<Button>();
+        btnReplay = GameObject.Find("ReplayButton").GetComponent<Button>();
+
+        btnMenu.onClick.AddListener(MenuClick);
+        btnReplay.onClick.AddListener(ReplayClick);
+
         //this TURNBLUE() is for testing purposes;
 
         TURNBLUE();
 
+    }
+
+    void MenuClick()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    void ReplayClick() {
+        SceneManager.LoadScene("CastleBattle");
     }
 
     // Update is called once per frame
@@ -79,13 +101,7 @@ public class CastleScript : MonoBehaviour
             // =======> THIS IS IMPORTANT Debug.Log(MAINCAM.transform.eulerAngles.y);
             // EulerAngles dont really work with negatives, a -10 value is like 360 - 10, which results in a eulerAngle value of 350f
             // Debug.Log(20f * -1f);
-            if (MAINCAM.transform.eulerAngles.y > 0)
-            {
-                Debug.Log("SUPERIOR");
-            }
-            else {
-                Debug.Log("INFERIOR");
-            }
+            CYCLECAM("SELECTIONCAM");
         }
         //end test key
 
@@ -229,7 +245,7 @@ public class CastleScript : MonoBehaviour
         GameObject VCANVAS = GameObject.Find("Canvas (Visual)");
         GameObject CCANVAS = GameObject.Find("Canvas (Clickable)");
         for (int i = 0; i < VCANVAS.transform.childCount; i++) {
-            Debug.Log(VCANVAS.transform.GetChild(i).name);
+            //Debug.Log(VCANVAS.transform.GetChild(i).name);
             VCANVAS.transform.GetChild(i).gameObject.SetActive(false);
         }
         for (int i = 0; i < CCANVAS.transform.childCount; i++)
@@ -241,11 +257,11 @@ public class CastleScript : MonoBehaviour
         switch (TargetCam) {
             case "MAINCAM":
                 MAINCAM.enabled = true;
-                for (int i = 0; i < VCANVAS.transform.childCount; i++)
+                for (int i = 0; i < VCANVAS.transform.childCount - 4; i++)
                 {
                     VCANVAS.transform.GetChild(i).gameObject.SetActive(true);
                 }
-                for (int i = 0; i < CCANVAS.transform.childCount; i++)
+                for (int i = 0; i < CCANVAS.transform.childCount - 4; i++)
                 {
                     CCANVAS.transform.GetChild(i).gameObject.SetActive(true);
                 }
@@ -263,6 +279,20 @@ public class CastleScript : MonoBehaviour
             case "BLUECINEMATICCAM":
                 BLUECINEMATICCAM.enabled = true;
                 break;
+
+                case "SELECTIONCAM":
+                    SELECTIONCAM.enabled = true;
+                    for (int i = VCANVAS.transform.childCount; i > VCANVAS.transform.childCount - 4; i--)
+                    {
+                      //  Debug.Log("i is " + i);
+                        VCANVAS.transform.GetChild(i - 1).gameObject.SetActive(true);
+                    }
+                    for (int i = CCANVAS.transform.childCount; i > CCANVAS.transform.childCount - 4; i--)
+                    {
+                      //  Debug.Log("i is " + i);
+                        CCANVAS.transform.GetChild(i - 1).gameObject.SetActive(true);
+                    }
+                    break;
 
 
             default:
