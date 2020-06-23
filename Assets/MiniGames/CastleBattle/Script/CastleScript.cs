@@ -48,14 +48,17 @@ public class CastleScript : MonoBehaviour
     private Button btnMenu;
     private Button btnReplay;
 
+    private GameObject SELECTIONARROW;
+
     // Start is called before the first frame update
     void Start()
     {
 
         //MAINCAM = GameObject.Find("MainCamera");
         //Selection Ui
-        
 
+        SELECTIONARROW = GameObject.Find("SelectionUp_blue");
+        SELECTIONARROW.transform.GetComponent<SelectionScript>().INITIATE();
         wintextobject = GameObject.Find("WinText");
         wintext = GameObject.Find("WinText").GetComponent<Text>();
         MANAGER = GameObject.Find("GameManager");
@@ -77,9 +80,11 @@ public class CastleScript : MonoBehaviour
         btnMenu.onClick.AddListener(MenuClick);
         btnReplay.onClick.AddListener(ReplayClick);
 
+        //TURNBLUE();
+        CYCLECAM("SELECTIONCAM");
         //this TURNBLUE() is for testing purposes;
 
-        TURNBLUE();
+        
 
     }
 
@@ -211,7 +216,10 @@ public class CastleScript : MonoBehaviour
         }
     }
 
- void TURNBLUE() {
+ public void TURNBLUE() {
+        if (GameObject.Find("SelectionCam") != null) {
+            Destroy(GameObject.Find("SelectionCam"));
+        }
         //Called when it's blue player(Player2)'s turn
         REDTURNSWITCH.SetActive(false);
         BLUETURNSWITCH.SetActive(true);
@@ -221,7 +229,7 @@ public class CastleScript : MonoBehaviour
         CYCLECAM("MAINCAM");
     }
 
-   void TURNRED() {
+   public void TURNRED() {
         REDTURNSWITCH.SetActive(true);
         BLUETURNSWITCH.SetActive(false);
         MAINCAM.transform.position = KingSquareRed.transform.position + new Vector3(0f, 20f, 0f);
@@ -257,11 +265,11 @@ public class CastleScript : MonoBehaviour
         switch (TargetCam) {
             case "MAINCAM":
                 MAINCAM.enabled = true;
-                for (int i = 0; i < VCANVAS.transform.childCount - 4; i++)
+                for (int i = 0; i < VCANVAS.transform.childCount - 5; i++)
                 {
                     VCANVAS.transform.GetChild(i).gameObject.SetActive(true);
                 }
-                for (int i = 0; i < CCANVAS.transform.childCount - 4; i++)
+                for (int i = 0; i < CCANVAS.transform.childCount; i++)
                 {
                     CCANVAS.transform.GetChild(i).gameObject.SetActive(true);
                 }
@@ -282,16 +290,18 @@ public class CastleScript : MonoBehaviour
 
                 case "SELECTIONCAM":
                     SELECTIONCAM.enabled = true;
-                    for (int i = VCANVAS.transform.childCount; i > VCANVAS.transform.childCount - 4; i--)
+
+                    for (int i = VCANVAS.transform.childCount; i > VCANVAS.transform.childCount - 5; i--)
                     {
                       //  Debug.Log("i is " + i);
                         VCANVAS.transform.GetChild(i - 1).gameObject.SetActive(true);
                     }
-                    for (int i = CCANVAS.transform.childCount; i > CCANVAS.transform.childCount - 4; i--)
+
+                    /*for (int i = CCANVAS.transform.childCount; i > CCANVAS.transform.childCount - 4; i--)
                     {
                       //  Debug.Log("i is " + i);
                         CCANVAS.transform.GetChild(i - 1).gameObject.SetActive(true);
-                    }
+                    }*/
                     break;
 
 

@@ -32,6 +32,7 @@ public class NewButtonScript : MonoBehaviour
     
 
     void OnMouseDrag() {
+        Debug.Log("Clicked NewButton named " + gameObject.transform.name);
         switch (gameObject.transform.name) {
             case "lookRight":
                 if (GameObject.Find("BlueTurnDetector") != null)
