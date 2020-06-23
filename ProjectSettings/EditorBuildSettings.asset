@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/StoryQuiz.unity
     guid: 790e778af06167e4d90d6d43695c2f83
+  - enabled: 1
+    path: Assets/Scenes/TapRythme.unity
+    guid: bd0dd103f32d77a4d873e7450d3b6b68
   m_configObjects: {}
