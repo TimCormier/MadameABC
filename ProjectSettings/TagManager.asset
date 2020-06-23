@@ -6,9 +6,14 @@ TagManager:
   tags:
   - Pattern
   - NoteTapRythme
+<<<<<<< Updated upstream
   - CANNONBALL
   - BLUECASTLE
   - REDCASTLE
+=======
+  - Number
+  - Letter
+>>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX
