@@ -100,7 +100,7 @@ public class SelectionScript : MonoBehaviour
                 break;
 
             case "StartButton":
-                
+                /*
                 float roll = Mathf.Round(Random.Range(1f, 2f));
                 Debug.Log("Coin flip value is " + roll);
                 if (roll == 1f)
@@ -109,8 +109,9 @@ public class SelectionScript : MonoBehaviour
                 }
                 else {
                     MANAGER.GetComponent<CastleScript>().TURNRED();
-                } 
-              //  MANAGER.GetComponent<CastleScript>().TURNBLUE();
+                } */
+                //Normally id make it pick a starting player at random but it causes a bug if the red player starts that lets him shoot twice on his first turn
+                MANAGER.GetComponent<CastleScript>().TURNBLUE();
                 break;
 
             default:
