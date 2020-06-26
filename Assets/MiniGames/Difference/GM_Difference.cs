@@ -61,6 +61,8 @@ public class GM_Difference : MonoBehaviour
         text1.text = "Érreur restante " + ER1;
         text2.text = "Érreur restante " + ER2;
         text3.text = "Érreur restante " + ER3;
+
+        
     }
 
     //Generate the randomness. Call this function when generating another puzzle.
@@ -137,6 +139,13 @@ public class GM_Difference : MonoBehaviour
             {
                 ER1 -= 1;
                 Error10A -= 1;
+
+                if (ER1 == 0)
+                {
+                    ResetError();
+                    //Play "Félicitation sound, wait 5
+                    Generate();
+                }
             }
         } 
     }
@@ -154,6 +163,13 @@ public class GM_Difference : MonoBehaviour
             {
                 ER1 -= 1;
                 Error11A -= 1;
+
+                if (ER1 == 0)
+                {
+                    ResetError();
+                    //Play "Félicitation sound, wait 5
+                    Generate();
+                }
             }
         }
     }
@@ -171,6 +187,13 @@ public class GM_Difference : MonoBehaviour
             {
                 ER1 -= 1;
                 Error12A -= 1;
+
+                if (ER1 == 0)
+                {
+                    ResetError();
+                    //Play "Félicitation sound, wait 5
+                    Generate();
+                }
             }
         }
     }
@@ -188,6 +211,13 @@ public class GM_Difference : MonoBehaviour
             {
                 ER1 -= 1;
                 Error13A -= 1;
+
+                if (ER1 == 0)
+                {
+                    ResetError();
+                    //Play "Félicitation sound, wait 5
+                    Generate();
+                }
             }
         }
     }
@@ -205,6 +235,13 @@ public class GM_Difference : MonoBehaviour
             {
                 ER2 -= 1;
                 Error20A -= 1;
+
+                if (ER2 == 0)
+                {
+                    ResetError();
+                    //Play "Félicitation sound, wait 5
+                    Generate();
+                }
             }
         }
     }
@@ -222,6 +259,13 @@ public class GM_Difference : MonoBehaviour
             {
                 ER2 -= 1;
                 Error21A -= 1;
+
+                if (ER2 == 0)
+                {
+                    ResetError();
+                    //Play "Félicitation sound, wait 5
+                    Generate();
+                }
             }
         }
     }
@@ -239,6 +283,13 @@ public class GM_Difference : MonoBehaviour
             {
                 ER2 -= 1;
                 Error22A -= 1;
+
+                if (ER2 == 0)
+                {
+                    ResetError();
+                    //Play "Félicitation sound, wait 5
+                    Generate();
+                }
             }
         }
     }
@@ -256,6 +307,13 @@ public class GM_Difference : MonoBehaviour
             {
                 ER2 -= 1;
                 Error23A -= 1;
+
+                if (ER2 == 0)
+                {
+                    ResetError();
+                    //Play "Félicitation sound, wait 5
+                    Generate();
+                }
             }
         }
     }
@@ -273,6 +331,13 @@ public class GM_Difference : MonoBehaviour
             {
                 ER3 -= 1;
                 Error30A -= 1;
+
+                if (ER3 == 0)
+                {
+                    ResetError();
+                    //Play "Félicitation sound, wait 5
+                    Generate();
+                }
             }
         }
     }
@@ -290,6 +355,13 @@ public class GM_Difference : MonoBehaviour
             {
                 ER3 -= 1;
                 Error31A -= 1;
+
+                if (ER3 == 0)
+                {
+                    ResetError();
+                    //Play "Félicitation sound, wait 5
+                    Generate();
+                }
             }
         }
     }
@@ -307,6 +379,13 @@ public class GM_Difference : MonoBehaviour
             {
                 ER3 -= 1;
                 Error32A -= 1;
+
+                if (ER3 == 0)
+                {
+                    ResetError();
+                    //Play "Félicitation sound, wait 5
+                    Generate();
+                }
             }
         }
     }
@@ -324,7 +403,48 @@ public class GM_Difference : MonoBehaviour
             {
                 ER3 -= 1;
                 Error33A -= 1;
+
+                if (ER3 == 0)
+                {
+                    ResetError();
+                    //Play "Félicitation sound, wait 5
+                    Generate();
+                }
             }
         }
+    }
+
+    public void ResetError()
+    {
+        ER1 = 4;
+        Error10 = 0;
+        Error10A = 0;
+        Error11 = 0;
+        Error11A = 0;
+        Error12 = 0;
+        Error12A = 0;
+        Error13 = 0;
+        Error13A = 0;
+
+        ER2 = 4;
+        Error20 = 0;
+        Error20A = 0;
+        Error21 = 0;
+        Error21A = 0;
+        Error22 = 0;
+        Error22A = 0;
+        Error23 = 0;
+        Error23A = 0;
+
+        ER3 = 4;
+        Error30 = 0;
+        Error30A = 0;
+        Error31 = 0;
+        Error31A = 0;
+        Error32 = 0;
+        Error32A = 0;
+        Error33 = 0;
+        Error33A = 0;
+
     }
 }
