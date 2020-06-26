@@ -12,6 +12,9 @@ public class MixAndMatchGameManager : MonoBehaviour
     private int seedMaM;
     public int previousSeed = 8;
 
+    public int goodAnswersN = 0;
+    public int goodAnswersL = 0;
+
     void Start()
     {
         mixAndMatchCalcul();
