@@ -17,7 +17,7 @@ public class StoryQuiz : MonoBehaviour
     private Button badBtn2;
 
     //timer après réussite
-    private int timeMax = 150;
+    private int timeMax = 0;
     private int timerInt = 0;
     private bool timerActive = false;
 
