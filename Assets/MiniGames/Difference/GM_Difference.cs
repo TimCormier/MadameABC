@@ -6,6 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class GM_Difference : MonoBehaviour
 {
+    //To Add another error on an image.
+    //Add float while keeping this method EX: Line 16 - 59
+    //Add a Button function, keeping the nomenclature. EX: Line 138-158
+    //Add the new floats to the ButtonReset function, Line 447-4xx
+
+
     private float Rand = 0f;
     public float PreviousRand;
 
@@ -43,16 +49,24 @@ public class GM_Difference : MonoBehaviour
     public float Error31 = 0f;
     public float Error32 = 0f;
     public float Error33 = 0f;
+    public float Error34 = 0f;
     public GameObject Case3;
     public Text text3;
-    public float ER3 = 4f;
+    public float ER3 = 5f;
     public float Error30A = 0f;
     public float Error31A = 0f;
     public float Error32A = 0f;
     public float Error33A = 0f;
+    public float Error34A = 0f;
+
+    public AudioClip Bravo;
+    public bool timerActive;
+    public int timer;
 
     public void Start()
     {
+        timer = 0;
+        timerActive = false;
         Generate();
     }
 
@@ -62,7 +76,17 @@ public class GM_Difference : MonoBehaviour
         text2.text = "Érreur restante " + ER2;
         text3.text = "Érreur restante " + ER3;
 
-        
+        if (timerActive == true)
+        {
+            timer += 1;
+
+            if (timer >= 60)
+            {
+                timerActive = false;
+                timer = 0;
+
+            }
+        }
     }
 
     //Generate the randomness. Call this function when generating another puzzle.
@@ -142,8 +166,13 @@ public class GM_Difference : MonoBehaviour
 
                 if (ER1 == 0)
                 {
+                    
+                    if (timerActive == false)
+                    {
+                        AudioSource.PlayClipAtPoint(Bravo, Camera.main.transform.position);
+                    }
+                    timerActive = true;
                     ResetError();
-                    //Play "Félicitation sound, wait 5
                     Generate();
                 }
             }
@@ -166,8 +195,12 @@ public class GM_Difference : MonoBehaviour
 
                 if (ER1 == 0)
                 {
+                    if (timerActive == false)
+                    {
+                        AudioSource.PlayClipAtPoint(Bravo, Camera.main.transform.position);
+                    }
+                    timerActive = true;
                     ResetError();
-                    //Play "Félicitation sound, wait 5
                     Generate();
                 }
             }
@@ -190,8 +223,12 @@ public class GM_Difference : MonoBehaviour
 
                 if (ER1 == 0)
                 {
+                    if (timerActive == false)
+                    {
+                        AudioSource.PlayClipAtPoint(Bravo, Camera.main.transform.position);
+                    }
+                    timerActive = true;
                     ResetError();
-                    //Play "Félicitation sound, wait 5
                     Generate();
                 }
             }
@@ -214,8 +251,12 @@ public class GM_Difference : MonoBehaviour
 
                 if (ER1 == 0)
                 {
+                    if (timerActive == false)
+                    {
+                        AudioSource.PlayClipAtPoint(Bravo, Camera.main.transform.position);
+                    }
+                    timerActive = true;
                     ResetError();
-                    //Play "Félicitation sound, wait 5
                     Generate();
                 }
             }
@@ -238,8 +279,12 @@ public class GM_Difference : MonoBehaviour
 
                 if (ER2 == 0)
                 {
+                    if (timerActive == false)
+                    {
+                        AudioSource.PlayClipAtPoint(Bravo, Camera.main.transform.position);
+                    }
+                    timerActive = true;
                     ResetError();
-                    //Play "Félicitation sound, wait 5
                     Generate();
                 }
             }
@@ -262,8 +307,12 @@ public class GM_Difference : MonoBehaviour
 
                 if (ER2 == 0)
                 {
+                    if (timerActive == false)
+                    {
+                        AudioSource.PlayClipAtPoint(Bravo, Camera.main.transform.position);
+                    }
+                    timerActive = true;
                     ResetError();
-                    //Play "Félicitation sound, wait 5
                     Generate();
                 }
             }
@@ -286,8 +335,12 @@ public class GM_Difference : MonoBehaviour
 
                 if (ER2 == 0)
                 {
+                    if (timerActive == false)
+                    {
+                        AudioSource.PlayClipAtPoint(Bravo, Camera.main.transform.position);
+                    }
+                    timerActive = true;
                     ResetError();
-                    //Play "Félicitation sound, wait 5
                     Generate();
                 }
             }
@@ -310,8 +363,12 @@ public class GM_Difference : MonoBehaviour
 
                 if (ER2 == 0)
                 {
+                    if (timerActive == false)
+                    {
+                        AudioSource.PlayClipAtPoint(Bravo, Camera.main.transform.position);
+                    }
+                    timerActive = true;
                     ResetError();
-                    //Play "Félicitation sound, wait 5
                     Generate();
                 }
             }
@@ -334,8 +391,12 @@ public class GM_Difference : MonoBehaviour
 
                 if (ER3 == 0)
                 {
+                    if (timerActive == false)
+                    {
+                        AudioSource.PlayClipAtPoint(Bravo, Camera.main.transform.position);
+                    }
+                    timerActive = true;
                     ResetError();
-                    //Play "Félicitation sound, wait 5
                     Generate();
                 }
             }
@@ -358,8 +419,12 @@ public class GM_Difference : MonoBehaviour
 
                 if (ER3 == 0)
                 {
+                    if (timerActive == false)
+                    {
+                        AudioSource.PlayClipAtPoint(Bravo, Camera.main.transform.position);
+                    }
+                    timerActive = true;
                     ResetError();
-                    //Play "Félicitation sound, wait 5
                     Generate();
                 }
             }
@@ -382,8 +447,12 @@ public class GM_Difference : MonoBehaviour
 
                 if (ER3 == 0)
                 {
+                    if (timerActive == false)
+                    {
+                        AudioSource.PlayClipAtPoint(Bravo, Camera.main.transform.position);
+                    }
+                    timerActive = true;
                     ResetError();
-                    //Play "Félicitation sound, wait 5
                     Generate();
                 }
             }
@@ -406,8 +475,38 @@ public class GM_Difference : MonoBehaviour
 
                 if (ER3 == 0)
                 {
+                    if (timerActive == false)
+                    {
+                        AudioSource.PlayClipAtPoint(Bravo, Camera.main.transform.position);
+                    }
+                    timerActive = true;
                     ResetError();
-                    //Play "Félicitation sound, wait 5
+                    Generate();
+                }
+            }
+        }
+    }
+
+    public void Error34B()
+    {
+        if (Error34A == 0)
+        {
+            Error34 = 1;
+
+            //This handle the score
+            if (Error34 == 1)
+            {
+                ER3 -= 1;
+                Error34A -= 1;
+
+                if (ER3 == 0)
+                {
+                    if (timerActive == false)
+                    {
+                        AudioSource.PlayClipAtPoint(Bravo, Camera.main.transform.position);
+                    }
+                    timerActive = true;
+                    ResetError();
                     Generate();
                 }
             }
@@ -416,6 +515,8 @@ public class GM_Difference : MonoBehaviour
 
     public void ResetError()
     {
+        
+
         ER1 = 4;
         Error10 = 0;
         Error10A = 0;
@@ -436,7 +537,7 @@ public class GM_Difference : MonoBehaviour
         Error23 = 0;
         Error23A = 0;
 
-        ER3 = 4;
+        ER3 = 5;
         Error30 = 0;
         Error30A = 0;
         Error31 = 0;
@@ -445,6 +546,10 @@ public class GM_Difference : MonoBehaviour
         Error32A = 0;
         Error33 = 0;
         Error33A = 0;
+        Error34 = 0;
+        Error34A = 0;
+
+        timerActive = true;
 
     }
 }
