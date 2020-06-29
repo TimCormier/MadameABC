@@ -47,6 +47,8 @@ public class CastleScript : MonoBehaviour
 
     private Button btnMenu;
     private Button btnReplay;
+    private GameObject menuObject;
+    private GameObject replayObject;
 
     private GameObject SELECTIONARROW;
 
@@ -76,6 +78,8 @@ public class CastleScript : MonoBehaviour
         REDTURNSWITCH = GameObject.Find("RedTurnDetector");
         btnMenu = GameObject.Find("MenuButton").GetComponent<Button>();
         btnReplay = GameObject.Find("ReplayButton").GetComponent<Button>();
+        menuObject = GameObject.Find("MenuButton");
+        replayObject = GameObject.Find("ReplayButton");
 
         btnMenu.onClick.AddListener(MenuClick);
         btnReplay.onClick.AddListener(ReplayClick);
@@ -317,6 +321,9 @@ public class CastleScript : MonoBehaviour
         if (win == true) {
             wintextobject.SetActive(true);
             camlock = true;
+            replayObject.SetActive(true);
+            menuObject.SetActive(true);
+            
         }
 
     }
@@ -327,12 +334,14 @@ public class CastleScript : MonoBehaviour
         win = true;
         CYCLECAM("REDCINEMATICCAM");
         wintext.text = "Le joueur bleu a gagné!";
+        
     }
 
     public void WINRED() {
         win = true;
         CYCLECAM("BLUECINEMATICCAM");
         wintext.text = "Le joueur rouge a gagné!";
+      
     }
 
     /*
