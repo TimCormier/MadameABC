@@ -204,6 +204,16 @@ public class NavScript : MonoBehaviour
         SceneManager.LoadScene("SimpleMath");
     }
 
+    public void UpperAndCapital()
+    {
+        SceneManager.LoadScene("UpperAndCapital");
+    }
+
+    public void MixAndMatch()
+    {
+        SceneManager.LoadScene("MixAndMatch");
+    }
+
     //Library
     public void StoryQuizz()
     {
@@ -214,6 +224,11 @@ public class NavScript : MonoBehaviour
     public void WhackAMole()
     {
         SceneManager.LoadScene("WhackAMole");
+    }
+
+    public void CastleBattle()
+    {
+        SceneManager.LoadScene("CastleBattle");
     }
 
     //Craft

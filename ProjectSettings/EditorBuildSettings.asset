@@ -35,4 +35,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TapRythme.unity
     guid: bd0dd103f32d77a4d873e7450d3b6b68
+  - enabled: 1
+    path: Assets/Scenes/CastleBattle.unity
+    guid: 44b298c8f14138345b407c006814b317
+  - enabled: 1
+    path: Assets/Scenes/JumpTiming.unity
+    guid: f7d7cc593d4997e449af813bceb21e2b
+  - enabled: 1
+    path: Assets/Scenes/MixAndMatch.unity
+    guid: 32cf1d6bead287842bbba3d926288ddd
+  - enabled: 1
+    path: Assets/Scenes/UpperAndCapital.unity
+    guid: 2722fff581887004389adf4886f2b442
   m_configObjects: {}
