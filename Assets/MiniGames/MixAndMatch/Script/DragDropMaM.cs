@@ -9,18 +9,21 @@ public class DragDropMaM : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
 
     private RectTransform rectTransform;
     private CanvasGroup canvasGroup;
+    public RectTransform startPosition;
 
     private void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
+        startPosition = GameObject.Find("StartPosition").GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
     }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
        // Debug.Log("OnBeginDrag");
-        canvasGroup.alpha = .6f;
+        //canvasGroup.alpha = .6f;
         canvasGroup.blocksRaycasts = false;
+        startPosition.anchoredPosition = rectTransform.anchoredPosition;
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -32,8 +35,9 @@ public class DragDropMaM : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
     public void OnEndDrag(PointerEventData eventData)
     {
         //Debug.Log("OnEndDrag");
-        canvasGroup.alpha = 1f;
+       // canvasGroup.alpha = 1f;
         canvasGroup.blocksRaycasts = true;
+        rectTransform.anchoredPosition = startPosition.anchoredPosition;
     }
 
     public void OnPointerDown(PointerEventData eventData)

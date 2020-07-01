@@ -43,6 +43,7 @@ public class QuizSlotMaM : MonoBehaviour, IDropHandler
             {
                 //eventData.pointerDrag.SetActive(false);
                 managerScript.goodAnswersN = managerScript.goodAnswersN + 1;
+                eventData.pointerDrag.GetComponent<DragDropMaM>().enabled = false;
                 testVictoire();
             }
         }
@@ -52,6 +53,7 @@ public class QuizSlotMaM : MonoBehaviour, IDropHandler
             if (eventData.pointerDrag.tag == "Letter")
             {
                 // eventData.pointerDrag.SetActive(false);
+                eventData.pointerDrag.GetComponent<DragDropMaM>().enabled = false;
                 managerScript.goodAnswersL = managerScript.goodAnswersL + 1;
                 testVictoire();
             }

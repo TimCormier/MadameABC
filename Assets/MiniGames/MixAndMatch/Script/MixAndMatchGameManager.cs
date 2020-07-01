@@ -7,7 +7,7 @@ public class MixAndMatchGameManager : MonoBehaviour
     public GameObject c1, c2, c3, c4, c5, c6;
     public GameObject letterZone, numberZone;
 
-    public GameObject lastClickedObject;
+   // public GameObject lastClickedObject;
 
     private int seedMaM;
     public int previousSeed = 8;

@@ -223,6 +223,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 548618212}
+  startPosition: {fileID: 0}
 --- !u!1 &22479657
 GameObject:
   m_ObjectHideFlags: 0
@@ -325,6 +326,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 548618212}
+  startPosition: {fileID: 0}
 --- !u!1 &101741864
 GameObject:
   m_ObjectHideFlags: 0
@@ -571,6 +573,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 548618212}
+  startPosition: {fileID: 0}
 --- !u!1 &165615291
 GameObject:
   m_ObjectHideFlags: 0
@@ -709,6 +712,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 548618212}
+  startPosition: {fileID: 0}
 --- !u!1 &253189950
 GameObject:
   m_ObjectHideFlags: 0
@@ -967,6 +971,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 548618212}
+  startPosition: {fileID: 0}
 --- !u!1 &350877706
 GameObject:
   m_ObjectHideFlags: 0
@@ -1147,6 +1152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 548618212}
+  startPosition: {fileID: 0}
 --- !u!1 &385472551
 GameObject:
   m_ObjectHideFlags: 0
@@ -1327,6 +1333,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 548618212}
+  startPosition: {fileID: 0}
 --- !u!1 &421244138
 GameObject:
   m_ObjectHideFlags: 0
@@ -1507,6 +1514,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 548618212}
+  startPosition: {fileID: 0}
 --- !u!1 &525358922
 GameObject:
   m_ObjectHideFlags: 0
@@ -1853,6 +1861,7 @@ RectTransform:
   - {fileID: 165615292}
   - {fileID: 1743826995}
   - {fileID: 1053103882}
+  - {fileID: 1843339927}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2133,6 +2142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 548618212}
+  startPosition: {fileID: 0}
 --- !u!1 &597549193
 GameObject:
   m_ObjectHideFlags: 0
@@ -2235,6 +2245,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 548618212}
+  startPosition: {fileID: 0}
 --- !u!1 &610432963
 GameObject:
   m_ObjectHideFlags: 0
@@ -2337,6 +2348,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 548618212}
+  startPosition: {fileID: 0}
 --- !u!1 &617509514
 GameObject:
   m_ObjectHideFlags: 0
@@ -2595,6 +2607,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 548618212}
+  startPosition: {fileID: 0}
 --- !u!1 &702439394
 GameObject:
   m_ObjectHideFlags: 0
@@ -2697,6 +2710,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 548618212}
+  startPosition: {fileID: 0}
 --- !u!1 &727980616
 GameObject:
   m_ObjectHideFlags: 0
@@ -3069,6 +3083,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 548618212}
+  startPosition: {fileID: 0}
 --- !u!1 &849271568
 GameObject:
   m_ObjectHideFlags: 0
@@ -3106,7 +3121,6 @@ MonoBehaviour:
   c6: {fileID: 1743826994}
   letterZone: {fileID: 542025154}
   numberZone: {fileID: 2057091071}
-  lastClickedObject: {fileID: 0}
   previousSeed: 8
   goodAnswersN: 0
   goodAnswersL: 0
@@ -3382,6 +3396,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 548618212}
+  startPosition: {fileID: 0}
 --- !u!1 &906894750
 GameObject:
   m_ObjectHideFlags: 0
@@ -3640,6 +3655,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 548618212}
+  startPosition: {fileID: 0}
 --- !u!1 &984601937
 GameObject:
   m_ObjectHideFlags: 0
@@ -3742,6 +3758,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 548618212}
+  startPosition: {fileID: 0}
 --- !u!1 &989244214
 GameObject:
   m_ObjectHideFlags: 0
@@ -3958,6 +3975,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 548618212}
+  startPosition: {fileID: 0}
 --- !u!1 &1023666880
 GameObject:
   m_ObjectHideFlags: 0
@@ -4060,6 +4078,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 548618212}
+  startPosition: {fileID: 0}
 --- !u!1 &1026005514
 GameObject:
   m_ObjectHideFlags: 0
@@ -4392,6 +4411,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 548618212}
+  startPosition: {fileID: 0}
 --- !u!1 &1172304306
 GameObject:
   m_ObjectHideFlags: 0
@@ -4644,6 +4664,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 548618212}
+  startPosition: {fileID: 0}
 --- !u!1 &1221294571
 GameObject:
   m_ObjectHideFlags: 0
@@ -4746,6 +4767,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 548618212}
+  startPosition: {fileID: 0}
 --- !u!1 &1268346094
 GameObject:
   m_ObjectHideFlags: 0
@@ -5004,6 +5026,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 548618212}
+  startPosition: {fileID: 0}
 --- !u!1 &1329751077
 GameObject:
   m_ObjectHideFlags: 0
@@ -5106,6 +5129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 548618212}
+  startPosition: {fileID: 0}
 --- !u!1 &1358407187
 GameObject:
   m_ObjectHideFlags: 0
@@ -5208,6 +5232,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 548618212}
+  startPosition: {fileID: 0}
 --- !u!1 &1360752681
 GameObject:
   m_ObjectHideFlags: 0
@@ -5388,6 +5413,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 548618212}
+  startPosition: {fileID: 0}
 --- !u!1 &1388042817
 GameObject:
   m_ObjectHideFlags: 0
@@ -5490,6 +5516,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 548618212}
+  startPosition: {fileID: 0}
 --- !u!1 &1433931743
 GameObject:
   m_ObjectHideFlags: 0
@@ -5592,6 +5619,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 548618212}
+  startPosition: {fileID: 0}
 --- !u!1 &1452739725
 GameObject:
   m_ObjectHideFlags: 0
@@ -5694,6 +5722,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 548618212}
+  startPosition: {fileID: 0}
 --- !u!1 &1480693364
 GameObject:
   m_ObjectHideFlags: 0
@@ -6191,6 +6220,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 548618212}
+  startPosition: {fileID: 0}
 --- !u!1 &1653054752
 GameObject:
   m_ObjectHideFlags: 0
@@ -6293,6 +6323,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 548618212}
+  startPosition: {fileID: 0}
 --- !u!1 &1743826994
 GameObject:
   m_ObjectHideFlags: 0
@@ -6563,6 +6594,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1839613372}
   m_CullTransparentMesh: 0
+--- !u!1 &1843339926
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1843339927}
+  - component: {fileID: 1843339928}
+  m_Layer: 5
+  m_Name: StartPosition
+  m_TagString: Number
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1843339927
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1843339926}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 548618213}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -80.9, y: 138}
+  m_SizeDelta: {x: 120, y: 120}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &1843339928
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1843339926}
+  m_CullTransparentMesh: 0
 --- !u!1 &1876423688
 GameObject:
   m_ObjectHideFlags: 0
@@ -6665,6 +6740,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 548618212}
+  startPosition: {fileID: 0}
 --- !u!1 &1889742413
 GameObject:
   m_ObjectHideFlags: 0
@@ -6767,6 +6843,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 548618212}
+  startPosition: {fileID: 0}
 --- !u!1 &1922598160
 GameObject:
   m_ObjectHideFlags: 0
@@ -7021,6 +7098,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 548618212}
+  startPosition: {fileID: 0}
 --- !u!1 &1938888897
 GameObject:
   m_ObjectHideFlags: 0
@@ -7123,6 +7201,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 548618212}
+  startPosition: {fileID: 0}
 --- !u!1 &1944786259
 GameObject:
   m_ObjectHideFlags: 0
@@ -7225,6 +7304,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 548618212}
+  startPosition: {fileID: 0}
 --- !u!1 &1981672022
 GameObject:
   m_ObjectHideFlags: 0
