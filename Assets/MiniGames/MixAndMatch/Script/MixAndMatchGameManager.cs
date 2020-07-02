@@ -54,10 +54,4 @@ public class MixAndMatchGameManager : MonoBehaviour
             mixAndMatchCalcul();
         }
     }
-
-
-    void Update()
-    {
-        
-    }
 }

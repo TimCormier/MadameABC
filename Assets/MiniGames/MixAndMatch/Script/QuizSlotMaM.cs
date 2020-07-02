@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class QuizSlotMaM : MonoBehaviour, IDropHandler
 {
@@ -65,6 +66,8 @@ public class QuizSlotMaM : MonoBehaviour, IDropHandler
         if(managerScript.goodAnswersN == 3 && managerScript.goodAnswersL == 3)
         {
             yeah.SetActive(true);
+            Debug.Log("Win Line");
+            SceneManager.LoadScene("MixAndMatch");
         }
     }
 }
