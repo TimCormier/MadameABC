@@ -242,4 +242,8 @@ public class NavScript : MonoBehaviour
         SceneManager.LoadScene("ShapesNHoles");
     }
 
+    public void JumpTiming()
+    {
+        SceneManager.LoadScene("JumpTiming");
+    }
 }
