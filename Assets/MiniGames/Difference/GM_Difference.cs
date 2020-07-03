@@ -30,6 +30,11 @@ public class GM_Difference : MonoBehaviour
     public float Error11A = 0f;
     public float Error12A = 0f;
     public float Error13A = 0f;
+    //Case 1 Feedbacks
+    public GameObject Error10F;
+    public GameObject Error11F;
+    public GameObject Error12F;
+    public GameObject Error13F;
 
     //Case 2 
     public float Error20 = 0f;
@@ -43,6 +48,11 @@ public class GM_Difference : MonoBehaviour
     public float Error21A = 0f;
     public float Error22A = 0f;
     public float Error23A = 0f;
+    //Case 2 Feedbacks
+    public GameObject Error20F;
+    public GameObject Error21F;
+    public GameObject Error22F;
+    public GameObject Error23F;
 
     //Case 3 
     public float Error30 = 0f;
@@ -58,6 +68,12 @@ public class GM_Difference : MonoBehaviour
     public float Error32A = 0f;
     public float Error33A = 0f;
     public float Error34A = 0f;
+    //Case 3 Feedbacks
+    public GameObject Error30F;
+    public GameObject Error31F;
+    public GameObject Error32F;
+    public GameObject Error33F;
+    public GameObject Error34F;
 
     public AudioClip Bravo;
     public bool timerActive;
@@ -104,16 +120,19 @@ public class GM_Difference : MonoBehaviour
                 //To make another case, keep this nomenclature
                 case 1f:
                     ImageOne();
+                    ResetError();
                     PreviousRand = Rand;
                     break;
 
                 case 2f:
                     ImageTwo();
+                    ResetError();
                     PreviousRand = Rand;
                     break;
 
                 case 3f:
                     ImageThree();
+                    ResetError();
                     PreviousRand = Rand;
                     break;
             }
@@ -163,6 +182,7 @@ public class GM_Difference : MonoBehaviour
             {
                 ER1 -= 1;
                 Error10A -= 1;
+                Error10F.SetActive(true);
 
                 if (ER1 == 0)
                 {
@@ -192,6 +212,7 @@ public class GM_Difference : MonoBehaviour
             {
                 ER1 -= 1;
                 Error11A -= 1;
+                Error11F.SetActive(true);
 
                 if (ER1 == 0)
                 {
@@ -220,6 +241,7 @@ public class GM_Difference : MonoBehaviour
             {
                 ER1 -= 1;
                 Error12A -= 1;
+                Error12F.SetActive(true);
 
                 if (ER1 == 0)
                 {
@@ -248,6 +270,7 @@ public class GM_Difference : MonoBehaviour
             {
                 ER1 -= 1;
                 Error13A -= 1;
+                Error13F.SetActive(true);
 
                 if (ER1 == 0)
                 {
@@ -276,6 +299,7 @@ public class GM_Difference : MonoBehaviour
             {
                 ER2 -= 1;
                 Error20A -= 1;
+                Error20F.SetActive(true);
 
                 if (ER2 == 0)
                 {
@@ -304,6 +328,7 @@ public class GM_Difference : MonoBehaviour
             {
                 ER2 -= 1;
                 Error21A -= 1;
+                Error21F.SetActive(true);
 
                 if (ER2 == 0)
                 {
@@ -332,6 +357,7 @@ public class GM_Difference : MonoBehaviour
             {
                 ER2 -= 1;
                 Error22A -= 1;
+                Error22F.SetActive(true);
 
                 if (ER2 == 0)
                 {
@@ -360,6 +386,7 @@ public class GM_Difference : MonoBehaviour
             {
                 ER2 -= 1;
                 Error23A -= 1;
+                Error23F.SetActive(true);
 
                 if (ER2 == 0)
                 {
@@ -388,6 +415,7 @@ public class GM_Difference : MonoBehaviour
             {
                 ER3 -= 1;
                 Error30A -= 1;
+                Error30F.SetActive(true);
 
                 if (ER3 == 0)
                 {
@@ -416,6 +444,7 @@ public class GM_Difference : MonoBehaviour
             {
                 ER3 -= 1;
                 Error31A -= 1;
+                Error31F.SetActive(true);
 
                 if (ER3 == 0)
                 {
@@ -444,6 +473,7 @@ public class GM_Difference : MonoBehaviour
             {
                 ER3 -= 1;
                 Error32A -= 1;
+                Error32F.SetActive(true);
 
                 if (ER3 == 0)
                 {
@@ -472,6 +502,7 @@ public class GM_Difference : MonoBehaviour
             {
                 ER3 -= 1;
                 Error33A -= 1;
+                Error33F.SetActive(true);
 
                 if (ER3 == 0)
                 {
@@ -498,6 +529,7 @@ public class GM_Difference : MonoBehaviour
             {
                 ER3 -= 1;
                 Error34A -= 1;
+                Error34F.SetActive(true);
 
                 if (ER3 == 0)
                 {
@@ -526,6 +558,10 @@ public class GM_Difference : MonoBehaviour
         Error12A = 0;
         Error13 = 0;
         Error13A = 0;
+        Error10F.SetActive(false);
+        Error11F.SetActive(false);
+        Error12F.SetActive(false);
+        Error13F.SetActive(false);
 
         ER2 = 4;
         Error20 = 0;
@@ -536,6 +572,11 @@ public class GM_Difference : MonoBehaviour
         Error22A = 0;
         Error23 = 0;
         Error23A = 0;
+        Error20F.SetActive(false);
+        Error21F.SetActive(false);
+        Error22F.SetActive(false);
+        Error23F.SetActive(false);
+
 
         ER3 = 5;
         Error30 = 0;
@@ -548,6 +589,11 @@ public class GM_Difference : MonoBehaviour
         Error33A = 0;
         Error34 = 0;
         Error34A = 0;
+        Error30F.SetActive(false);
+        Error31F.SetActive(false);
+        Error32F.SetActive(false);
+        Error33F.SetActive(false);
+        Error34F.SetActive(false);
 
         timerActive = true;
 
