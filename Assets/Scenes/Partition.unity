@@ -675,7 +675,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 722b9f0b1c13a9248870f9cf101a41bc, type: 3}
+  m_Texture: {fileID: 2800000, guid: 269d41b9d2ffa52489525d5c13331d0b, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -1735,7 +1735,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 979960772}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.1, y: 40.2, z: 0}
+  m_LocalPosition: {x: -2, y: 40.2, z: 0}
   m_LocalScale: {x: 17.53, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 1366234991}
@@ -2315,7 +2315,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: e7c799b2222c5e44180fe4d418d08937, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1a5c815ae7295c142a097de2471499ad, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
