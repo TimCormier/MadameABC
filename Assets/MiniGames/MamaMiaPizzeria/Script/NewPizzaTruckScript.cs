@@ -24,9 +24,14 @@ public class NewPizzaTruckScript : MonoBehaviour
     private int score;
 
     private Text scoretext;
+
+    private GameObject ARROW;
+    private float ArrowAnimTimer = 0;
+    public float ArrowAnimSpeed;
     // Start is called before the first frame update
     void Start()
     {
+        ARROW = GameObject.Find("Arrow");
         score = 0;
         scoretext = GameObject.Find("Text").GetComponent<Text>();
         PizzaSpawner = GameObject.Find("PizzaSpawner");
@@ -35,16 +40,24 @@ public class NewPizzaTruckScript : MonoBehaviour
         velocity = 0;
         controller = gameObject.transform.GetComponent<CharacterController>();
         GameObject[] Pizzalist = GameObject.FindGameObjectsWithTag("Pizza");
-      /*
-        foreach (GameObject pizza in Pizzalist) {
-            Physics.IgnoreCollision(pizza.transform.GetComponent<Collider>(), gameObject.transform.GetComponent<CharacterController>());
-        }*/
-       
+
+        CLEARNOTEPAD();
+        ARROW.SetActive(true);
+        /*
+          foreach (GameObject pizza in Pizzalist) {
+              Physics.IgnoreCollision(pizza.transform.GetComponent<Collider>(), gameObject.transform.GetComponent<CharacterController>());
+          }*/
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        //arrow movement
+        ArrowAnimTimer += ArrowAnimSpeed;
+        ARROW.transform.position = new Vector3(ARROW.transform.position.x, (Mathf.Sin(ArrowAnimTimer) * 3f) + 112f, ARROW.transform.position.z);
+
+
         if (Input.GetKeyDown("space")) {
             order = "Blue";
         }
@@ -120,6 +133,7 @@ public class NewPizzaTruckScript : MonoBehaviour
                     Destroy(GameObject.FindWithTag("Pizza"));
                     HasPizza = false;
                     score++;
+                    CLEARNOTEPAD();
                 }
 
                 break;
@@ -131,6 +145,7 @@ public class NewPizzaTruckScript : MonoBehaviour
                     Destroy(GameObject.FindWithTag("Pizza"));
                     HasPizza = false;
                     score++;
+                    CLEARNOTEPAD();
                 }
 
                 break;
@@ -142,6 +157,7 @@ public class NewPizzaTruckScript : MonoBehaviour
                     Destroy(GameObject.FindWithTag("Pizza"));
                     HasPizza = false;
                     score++;
+                    CLEARNOTEPAD();
                 }
 
                 break;
@@ -153,6 +169,7 @@ public class NewPizzaTruckScript : MonoBehaviour
                     Destroy(GameObject.FindWithTag("Pizza"));
                     HasPizza = false;
                     score++;
+                    CLEARNOTEPAD();
                 }
 
                 break;
@@ -164,6 +181,7 @@ public class NewPizzaTruckScript : MonoBehaviour
                     Destroy(GameObject.FindWithTag("Pizza"));
                     HasPizza = false;
                     score++;
+                    CLEARNOTEPAD();
                 }
 
                 break;
@@ -190,25 +208,32 @@ public class NewPizzaTruckScript : MonoBehaviour
         HasPizza = true;
         float id = Mathf.Round(Random.Range(1f, 5f));
 
+        CLEARNOTEPAD();
+
         switch (id) {
             case 1f:
                 order = "Blue";
+                GameObject.Find("Notepad").transform.GetChild(0).gameObject.SetActive(true);
                 break;
 
             case 2f:
                 order = "Red";
+                GameObject.Find("Notepad").transform.GetChild(3).gameObject.SetActive(true);
                 break;
 
             case 3f:
                 order = "Yellow";
+                GameObject.Find("Notepad").transform.GetChild(1).gameObject.SetActive(true);
                 break;
 
             case 4f:
                 order = "Purple";
+                GameObject.Find("Notepad").transform.GetChild(4).gameObject.SetActive(true);
                 break;
 
             case 5f:
                 order = "Green";
+                GameObject.Find("Notepad").transform.GetChild(2).gameObject.SetActive(true);
                 break;
 
             default:
@@ -216,7 +241,18 @@ public class NewPizzaTruckScript : MonoBehaviour
                 break;
         }
 
+        ARROW.SetActive(false);
         Debug.Log("Order is " + order);
     }
+
+    void CLEARNOTEPAD() {
+        for (int i = 0; i < GameObject.Find("Notepad").transform.childCount; i++)
+        {
+            GameObject.Find("Notepad").transform.GetChild(i).gameObject.SetActive(false);
+        }
+        ARROW.SetActive(true);
+    }
+
+    
 
 }
