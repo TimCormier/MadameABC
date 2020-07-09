@@ -28,6 +28,11 @@ public class NewPizzaTruckScript : MonoBehaviour
     private GameObject ARROW;
     private float ArrowAnimTimer = 0;
     public float ArrowAnimSpeed;
+
+
+    private bool GasDown = false;
+    private bool LeftDown = false;
+    private bool RightDown = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -62,6 +67,24 @@ public class NewPizzaTruckScript : MonoBehaviour
             order = "Blue";
         }
 
+        //Public method input references for button scripts
+        //use bools to detect input
+
+        //forward
+        if (GasDown == true) {
+            velocity += acceleration;
+            stopTimer = 0;
+        }
+
+        //left
+        if (LeftDown == true) {
+            gameObject.transform.Rotate(0f, 0f, turnrate * -1f);
+        }
+
+        //right
+        if (RightDown == true) {
+            gameObject.transform.Rotate(0f, 0f, turnrate);
+        }
 
         //Input
         if (Input.GetKey("up")) {
@@ -251,6 +274,32 @@ public class NewPizzaTruckScript : MonoBehaviour
             GameObject.Find("Notepad").transform.GetChild(i).gameObject.SetActive(false);
         }
         ARROW.SetActive(true);
+    }
+
+
+    //public methods for ui button input references
+    //forward
+    public void GASDOWN() {
+        GasDown = true;
+    }
+    public void GASUP() {
+        GasDown = false;
+    }
+
+    //Left
+    public void LEFTDOWN() {
+        LeftDown = true;
+    }
+    public void LEFTUP() {
+        LeftDown = false;
+    }
+
+    //right
+    public void RIGHTDOWN() {
+        RightDown = true;
+    }
+    public void RIGHTUP() {
+        RightDown = false;
     }
 
     
