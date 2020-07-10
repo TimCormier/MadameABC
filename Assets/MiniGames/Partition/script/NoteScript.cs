@@ -29,8 +29,9 @@ public class NoteScript : MonoBehaviour
         NOTECOUNT = NOTEHOLDER.transform.childCount;
 
         if (transform.GetSiblingIndex() != 0) {
-            gameObject.SetActive(false);
             gameObject.transform.GetComponent<CapsuleCollider>().enabled = false;
+            gameObject.SetActive(false);
+            
         }
     }
 
@@ -112,9 +113,10 @@ public class NoteScript : MonoBehaviour
         {
             // debugFreeze = true;
             transform.GetComponent<CapsuleCollider>().enabled = false;
-            gameObject.SetActive(false);
             NOTEHOLDER.transform.GetChild(INDEX + 1).gameObject.SetActive(true);
             NOTEHOLDER.transform.GetChild(INDEX + 1).GetComponent<NoteScript>().DING();
+            gameObject.SetActive(false);
+           
           //  NOTEHOLDER.transform.GetChild(INDEX + 1).transform.GetComponent<CapsuleCollider>().enabled = true;
 
 
@@ -122,9 +124,10 @@ public class NoteScript : MonoBehaviour
         else {
             // debugFreeze = true;
             transform.GetComponent<CapsuleCollider>().enabled = false;
-            gameObject.SetActive(false);
             NOTEHOLDER.transform.GetChild(0).gameObject.SetActive(true);
             NOTEHOLDER.transform.GetChild(0).GetComponent<NoteScript>().DING();
+            gameObject.SetActive(false);
+           
            // NOTEHOLDER.transform.GetChild(0).transform.GetComponent<CapsuleCollider>().enabled = true;
 
         }
