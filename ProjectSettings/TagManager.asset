@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Fire
   - Pizza
+  - Obstacle
+  - FENCE
   layers:
   - Default
   - TransparentFX
