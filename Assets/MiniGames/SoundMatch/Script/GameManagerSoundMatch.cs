@@ -61,7 +61,7 @@ public class GameManagerSoundMatch : MonoBehaviour
         {
             nouveauCalcul();
         }
-
+        Debug.Log("good answer is " + goodAnswer);
     }
 
     private void Update()
