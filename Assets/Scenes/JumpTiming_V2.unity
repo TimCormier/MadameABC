@@ -489,6 +489,8 @@ MonoBehaviour:
   JumpStrength: 0.7
   jumpTimerLimit: 0.01
   Fence: {fileID: 2805149196066184062, guid: 17a24f3068b2d2b45b599c058d3973cc, type: 3}
+  difficulty: 0.25
+  difficultyIncrease: 0.05
 --- !u!54 &611162678
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -5,14 +5,15 @@ using UnityEngine;
 public class FenceScript : MonoBehaviour
 {
 
-    public float speed;
+    private float speed;
+    // base speed value set previously is 0.25f
     private GameObject PLAYER;
 
     // Start is called before the first frame update
     void Start()
     {
         PLAYER = GameObject.Find("Player");
-
+        speed = PLAYER.GetComponent<SheepScript>().difficulty;
     }
 
     // Update is called once per frame

@@ -21,6 +21,9 @@ public class SheepScript : MonoBehaviour
     public GameObject Fence;
     private GameObject canvas;
 
+    public float difficulty;
+    public float difficultyIncrease;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -75,6 +78,7 @@ public class SheepScript : MonoBehaviour
     }
 
     public void SPAWNFENCE() {
+        difficulty += difficultyIncrease;
         Instantiate(Fence, FenceSpawner.transform.position, FenceSpawner.transform.rotation, canvas.transform);
     }
 
