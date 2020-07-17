@@ -24,6 +24,9 @@ public class SheepScript : MonoBehaviour
     public float difficulty;
     public float difficultyIncrease;
 
+    private int score = -1;
+    private Text ScoreText;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +34,7 @@ public class SheepScript : MonoBehaviour
         FenceSpawner = GameObject.Find("FenceSpawner");
         PLAYER = GameObject.Find("Player");
         velocity = 0f;
+        ScoreText = GameObject.Find("Score").GetComponent<Text>();
 
         SPAWNFENCE();
     }
@@ -78,6 +82,8 @@ public class SheepScript : MonoBehaviour
     }
 
     public void SPAWNFENCE() {
+        score++;
+        ScoreText.text = score.ToString();
         difficulty += difficultyIncrease;
         Instantiate(Fence, FenceSpawner.transform.position, FenceSpawner.transform.rotation, canvas.transform);
     }
