@@ -185,7 +185,7 @@ public class NavScript : MonoBehaviour
     //Music
     public void SoundMatch()
     {
-        SceneManager.LoadScene("MG_SoundMatch");
+        SceneManager.LoadScene("SoundMatch_V2");
     }
 
     public void Partition()
@@ -215,9 +215,19 @@ public class NavScript : MonoBehaviour
     }
 
     //Library
-    public void StoryQuizz()
+    public void StoryQuizz1()
     {
         SceneManager.LoadScene("StoryQuiz");
+    }
+
+    public void StoryQuizz2()
+    {
+        SceneManager.LoadScene("StoryQuiz 1");
+    }
+
+    public void StoryQuizz3()
+    {
+        SceneManager.LoadScene("StoryQuiz 2");
     }
 
     //Yoga
@@ -229,6 +239,11 @@ public class NavScript : MonoBehaviour
     public void CastleBattle()
     {
         SceneManager.LoadScene("CastleBattle");
+    }
+
+    public void PizzaGame()
+    {
+        SceneManager.LoadScene("MamaMiaPizzeria");
     }
 
     //Craft
@@ -244,6 +259,6 @@ public class NavScript : MonoBehaviour
 
     public void JumpTiming()
     {
-        SceneManager.LoadScene("JumpTiming");
+        SceneManager.LoadScene("JumpTiming_V2");
     }
 }

@@ -21,9 +21,6 @@ EditorBuildSettings:
     path: Assets/Scenes/ColorTheory.unity
     guid: 4ac59448357d57144a700e1fcb8da5bf
   - enabled: 1
-    path: Assets/Scenes/MG_SoundMatch.unity
-    guid: bdf518258a857234f9e26b0561e7996b
-  - enabled: 1
     path: Assets/Scenes/WhackAMole.unity
     guid: 25fec65446dce5741a6c0816daf60d12
   - enabled: 1
@@ -39,12 +36,24 @@ EditorBuildSettings:
     path: Assets/Scenes/CastleBattle.unity
     guid: 44b298c8f14138345b407c006814b317
   - enabled: 1
-    path: Assets/Scenes/JumpTiming.unity
-    guid: f7d7cc593d4997e449af813bceb21e2b
-  - enabled: 1
     path: Assets/Scenes/MixAndMatch.unity
     guid: 32cf1d6bead287842bbba3d926288ddd
   - enabled: 1
     path: Assets/Scenes/UpperAndCapital.unity
     guid: 2722fff581887004389adf4886f2b442
+  - enabled: 1
+    path: Assets/Scenes/MamaMiaPizzeria.unity
+    guid: 9c143a700650d2e499e828083ec604ec
+  - enabled: 1
+    path: Assets/Scenes/SoundMatch_V2.unity
+    guid: c85937d404cd10347a7689651ac053b4
+  - enabled: 1
+    path: Assets/Scenes/JumpTiming_V2.unity
+    guid: 750a3685a3c0e944eb56a91bc02c6dc8
+  - enabled: 1
+    path: Assets/Scenes/StoryQuiz 1.unity
+    guid: ef2b0e8490b7a794aaa851d40c80da4c
+  - enabled: 1
+    path: Assets/Scenes/StoryQuiz 2.unity
+    guid: 4e5c0d57e38ff0b409777aaf8f59cd42
   m_configObjects: {}

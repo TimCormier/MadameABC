@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FrameLock : MonoBehaviour
 {
-    private int targetFrameRate = 30;
+    public int targetFrameRate = 30;
 
     private void Start()
     {
