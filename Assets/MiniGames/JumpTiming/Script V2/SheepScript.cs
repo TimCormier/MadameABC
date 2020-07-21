@@ -24,8 +24,15 @@ public class SheepScript : MonoBehaviour
     public float difficulty;
     public float difficultyIncrease;
 
-    private int score = -1;
+    private int score = 0;
     private Text ScoreText;
+
+    public GameObject[] FenceList;
+    private int FenceIndex = -1;
+
+    private bool freeze = false;
+
+    private GameObject ResetButton;
 
     // Start is called before the first frame update
     void Start()
@@ -35,6 +42,9 @@ public class SheepScript : MonoBehaviour
         PLAYER = GameObject.Find("Player");
         velocity = 0f;
         ScoreText = GameObject.Find("Score").GetComponent<Text>();
+        ResetButton = GameObject.Find("ResetButton");
+        ResetButton.GetComponent<Button>().onClick.AddListener(RESETCLICK);
+        ResetButton.SetActive(false);
 
         SPAWNFENCE();
     }
@@ -42,28 +52,33 @@ public class SheepScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0)) {
-            //Debug.Log("Click");
-            if (grounded == true) {
-                jumping = true;
-                grounded = false;
-                velocity += JumpStrength;
-                
+        if (!freeze) {
+            if (Input.GetMouseButtonDown(0))
+            {
+                //Debug.Log("Click");
+                if (grounded == true)
+                {
+                    jumping = true;
+                    grounded = false;
+                    velocity += JumpStrength;
+
+                }
+
             }
-           
         }
+
 
         RaycastHit hit;
         if (Physics.Raycast(transform.position, Vector3.down, out hit, 8f)) {
             if (hit.transform.name == "Ground") {
-               // Debug.Log("Raycast hit ground");
+                // Debug.Log("Raycast hit ground");
                 if (jumping == false) {
                     velocity = 0;
                     grounded = true;
                 }
-                
+
             }
-           
+
         }
 
         if (jumping == true) {
@@ -78,21 +93,44 @@ public class SheepScript : MonoBehaviour
             velocity -= gravity;
             PLAYER.transform.position += new Vector3(0f, velocity, 0f);
         }
-       // Debug.Log("velocity is " + velocity);
+        // Debug.Log("velocity is " + velocity);
     }
 
     public void SPAWNFENCE() {
+
+        difficulty += difficultyIncrease;
+        FenceIndex++;
+        if (FenceIndex > FenceList.Length - 1) {
+            FenceIndex = 0;
+        }
+        Instantiate(FenceList[FenceIndex], FenceSpawner.transform.position, FenceSpawner.transform.rotation, canvas.transform);
+    }
+
+    public void SCOREPOINT() {
         score++;
         ScoreText.text = score.ToString();
-        difficulty += difficultyIncrease;
-        Instantiate(Fence, FenceSpawner.transform.position, FenceSpawner.transform.rotation, canvas.transform);
     }
+
+    private void RESETCLICK() {
+        string temp = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene(temp);
+    }
+
+   
 
     void OnTriggerEnter(Collider col) {
         if (col.transform.tag == "FENCE") {
             Debug.Log("touched fence");
-            string temp = SceneManager.GetActiveScene().name;
-            SceneManager.LoadScene(temp);
+            freeze = true;
+           // GameObject.FindGameObjectsWithTag("FENCE").transform.GetComponent<FenceScript>().FREEZE();
+            GameObject[] tempfence = GameObject.FindGameObjectsWithTag("FENCE");
+            for (int i = 0; i < tempfence.Length; i++) {
+                tempfence[i].transform.GetComponent<FenceScript>().FREEZE();
+            }
+            ResetButton.SetActive(true);
+
+           // string temp = SceneManager.GetActiveScene().name;
+           // SceneManager.LoadScene(temp);
         }
     }
 }
