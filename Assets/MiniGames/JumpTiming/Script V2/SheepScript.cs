@@ -7,15 +7,16 @@ using UnityEngine.SceneManagement;
 public class SheepScript : MonoBehaviour
 {
     private GameObject PLAYER;
+    private Rigidbody rb;
     private float velocity;
-    public float gravity;
-    public float JumpStrength;
+   // public float gravity;
+   
 
     private bool jumping = false;
     private float jumpTimer = 0f;
     public float jumpTimerLimit;
 
-    private bool grounded = false;
+    private bool grounded;
 
     private GameObject FenceSpawner;
     public GameObject Fence;
@@ -34,12 +35,17 @@ public class SheepScript : MonoBehaviour
 
     private GameObject ResetButton;
 
+    public float yThreshold;
+    public float JumpStrength;
+    public float acceleration;
+
     // Start is called before the first frame update
     void Start()
     {
         canvas = GameObject.Find("Canvas");
         FenceSpawner = GameObject.Find("FenceSpawner");
         PLAYER = GameObject.Find("Player");
+        rb = PLAYER.GetComponent<Rigidbody>();
         velocity = 0f;
         ScoreText = GameObject.Find("Score").GetComponent<Text>();
         ResetButton = GameObject.Find("ResetButton");
@@ -52,7 +58,57 @@ public class SheepScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!freeze) {
+        //Debug.Log("velocity is " + rb.velocity);
+       // rb.velocity = new Vector3(rb.velocity.x * acceleration, rb.velocity.y * acceleration, rb.velocity.z * acceleration);
+
+        if (PLAYER.transform.position.y <= yThreshold)
+        {
+            if (jumping == false)
+            {
+                grounded = true;
+                //Debug.Log("PLAYER is lower than treshold");
+            }
+
+        }
+        else
+        {
+            grounded = false;
+        }
+
+
+
+
+        /*
+                RaycastHit hit;
+                if (Physics.Raycast(transform.position, Vector3.down, out hit, 8f)) {
+                    if (hit.transform.name == "Ground") {
+                        // Debug.Log("Raycast hit ground");
+                        if (jumping == false) {
+                            velocity = 0;
+                            grounded = true;
+                        }
+
+                    }
+
+                }*/
+
+        if (jumping == true) {
+           // rb.velocity = new Vector3(rb.velocity.x * acceleration, rb.velocity.y * acceleration, rb.velocity.z * acceleration);
+            jumpTimer += Time.deltaTime;
+            if (jumpTimer >= jumpTimerLimit) {
+                jumping = false;
+            }
+        }
+
+        /*
+        if (grounded == false) {
+            velocity -= gravity;
+            PLAYER.transform.position += new Vector3(0f, velocity, 0f);
+        }*/
+        // Debug.Log("velocity is " + velocity);
+
+        if (!freeze)
+        {
             if (Input.GetMouseButtonDown(0))
             {
                 //Debug.Log("Click");
@@ -60,40 +116,12 @@ public class SheepScript : MonoBehaviour
                 {
                     jumping = true;
                     grounded = false;
-                    velocity += JumpStrength;
+                    rb.AddForce(transform.up * JumpStrength);
 
                 }
 
             }
         }
-
-
-        RaycastHit hit;
-        if (Physics.Raycast(transform.position, Vector3.down, out hit, 8f)) {
-            if (hit.transform.name == "Ground") {
-                // Debug.Log("Raycast hit ground");
-                if (jumping == false) {
-                    velocity = 0;
-                    grounded = true;
-                }
-
-            }
-
-        }
-
-        if (jumping == true) {
-            jumpTimer += Time.deltaTime;
-            if (jumpTimer >= jumpTimerLimit) {
-                jumping = false;
-            }
-        }
-
-
-        if (grounded == false) {
-            velocity -= gravity;
-            PLAYER.transform.position += new Vector3(0f, velocity, 0f);
-        }
-        // Debug.Log("velocity is " + velocity);
     }
 
     public void SPAWNFENCE() {
