@@ -9,8 +9,9 @@ public class SheepScript : MonoBehaviour
     private GameObject PLAYER;
     private Rigidbody rb;
     private float velocity;
-   // public float gravity;
-   
+    // public float gravity;
+
+    public Vector3 GravityValue;
 
     private bool jumping = false;
     private float jumpTimer = 0f;
@@ -42,6 +43,8 @@ public class SheepScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Physics.gravity = GravityValue;
+
         canvas = GameObject.Find("Canvas");
         FenceSpawner = GameObject.Find("FenceSpawner");
         PLAYER = GameObject.Find("Player");

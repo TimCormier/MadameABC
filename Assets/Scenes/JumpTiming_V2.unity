@@ -634,6 +634,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62888e43ff6869d468096160ce63cf06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GravityValue: {x: 0, y: -100, z: 0}
   jumpTimerLimit: 0.5
   Fence: {fileID: 2805149196066184062, guid: 717525cb0550b574b83fb54a250847e7, type: 3}
   difficulty: 0.29
@@ -644,7 +645,7 @@ MonoBehaviour:
   - {fileID: 2805149196066184062, guid: cc3e2c7d8996587489a6d315eb0f06c0, type: 3}
   - {fileID: 2805149196066184062, guid: 5203729f512e7c24ab0cdcc3905d8f56, type: 3}
   yThreshold: -38
-  JumpStrength: 1500
+  JumpStrength: 4500
   acceleration: 1.1
 --- !u!54 &611162678
 Rigidbody:
