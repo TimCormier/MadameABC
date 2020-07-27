@@ -7,38 +7,96 @@ public class SizeAlterning : MonoBehaviour
 {
     public Component rt;
 
-    public float Height;
-    public float Width;
+    public float baseHeight = 0;
+    public float baseWidth = 0;
 
-    public float timer = 0;
-    public float timeout = 10;
+    public float maxHeight = 0;
+    public float maxWidth = 0;
+
+    public float currentHeight = 0;
+    public float currentWidth = 0;
+
+    public bool widthIncrease;
+    //public bool widthDecrease;
+
+    public bool heightIncrease;
+    //public bool heightDecrease;
 
     private void Start()
     {
         rt = GetComponent<RectTransform>();
-        rt.GetComponent<RectTransform>().sizeDelta = new Vector2(500, 500);
+        
+
+        maxHeight = baseHeight * 3;
+        maxWidth = baseWidth * 3;
+
+        widthIncrease = true;
+        heightIncrease = true;
+
+        currentWidth = baseWidth -1;
+        currentHeight = baseHeight -1;
 
     }
 
     private void Update()
     {
-        timer += Time.deltaTime;
+        rt.GetComponent<RectTransform>().sizeDelta = new Vector2(currentWidth, currentHeight);
 
-        if (timer > timeout)
+        if (heightIncrease == false && heightIncrease == true)
         {
-            timer -= timeout;
-            rt.GetComponent<RectTransform>().sizeDelta = new Vector2(100, 100);
-            timerReset();
+            Debug.Log("Increase");
 
+            HeightDrop();
+            if (currentHeight < baseHeight)
+            {
+                heightIncrease = true;
+                
+            }
+        }
+
+        if (heightIncrease == true && heightIncrease == false)
+        {
+            Debug.Log("Drop");
+            HeightBoost();
+            if (currentHeight < maxHeight)
+            {
+                heightIncrease = false;
+            }
+        }
+
+        if (currentWidth < maxWidth && widthIncrease == false)
+        {
+            
+            WidthBoost();
+            widthIncrease = true;
+        }
+
+        if (currentWidth > maxWidth && widthIncrease == true)
+        {
+            
+            WidthDrop();
+            widthIncrease = false;
         }
     }
 
-    public void timerReset()
+    public void WidthDrop()
     {
-        
-        timer = 0;
-        timeout = 10;
-        rt.GetComponent<RectTransform>().sizeDelta = new Vector2(50, 50);
-        Debug.Log("A");
+        currentWidth -= 5;
+    }
+
+    public void WidthBoost()
+    {
+        currentWidth += 5;
+    }
+
+    public void HeightDrop()
+    {
+        currentHeight -= 5;
+    }
+
+    public void HeightBoost()
+    {
+        currentHeight += 5;
     }
 }
+

@@ -21,38 +21,57 @@ public class GM_Difference : MonoBehaviour
     public float Error11 = 0f;
     public float Error12 = 0f;
     public float Error13 = 0f;
+    public float Error14 = 0f;
+    public float Error15 = 0f;
+    public float Error16 = 0f;
     //Group being turned ON or OFF for quick puzzle shift
     public GameObject Case1;
     //
-    public Text text1;
-    public float ER1 = 4f;
+    //public Text text1;
+    public float ER1 = 7f;
     public float Error10A = 0f;
     public float Error11A = 0f;
     public float Error12A = 0f;
     public float Error13A = 0f;
+    public float Error14A = 0f;
+    public float Error15A = 0f;
+    public float Error16A = 0f;
     //Case 1 Feedbacks
     public GameObject Error10F;
     public GameObject Error11F;
     public GameObject Error12F;
     public GameObject Error13F;
+    public GameObject Error14F;
+    public GameObject Error15F;
+    public GameObject Error16F;
 
     //Case 2 
     public float Error20 = 0f;
     public float Error21 = 0f;
     public float Error22 = 0f;
     public float Error23 = 0f;
+    public float Error24 = 0f;
+    public float Error25 = 0f;
+    public float Error26 = 0f;
     public GameObject Case2;
-    public Text text2;
-    public float ER2 = 4f;
+   // public Text text2;
+    public float ER2 = 7f;
     public float Error20A = 0f;
     public float Error21A = 0f;
     public float Error22A = 0f;
     public float Error23A = 0f;
+    public float Error24A = 0f;
+    public float Error25A = 0f;
+    public float Error26A = 0f;
     //Case 2 Feedbacks
     public GameObject Error20F;
     public GameObject Error21F;
     public GameObject Error22F;
     public GameObject Error23F;
+    public GameObject Error24F;
+    public GameObject Error25F;
+    public GameObject Error26F;
+
 
     //Case 3 
     public float Error30 = 0f;
@@ -60,24 +79,39 @@ public class GM_Difference : MonoBehaviour
     public float Error32 = 0f;
     public float Error33 = 0f;
     public float Error34 = 0f;
+    public float Error35 = 0f;
+    public float Error36 = 0f;
     public GameObject Case3;
-    public Text text3;
-    public float ER3 = 5f;
+    //public Text text3;
+    public float ER3 = 7f;
     public float Error30A = 0f;
     public float Error31A = 0f;
     public float Error32A = 0f;
     public float Error33A = 0f;
     public float Error34A = 0f;
+    public float Error35A = 0f;
+    public float Error36A = 0f;
+
     //Case 3 Feedbacks
     public GameObject Error30F;
     public GameObject Error31F;
     public GameObject Error32F;
     public GameObject Error33F;
     public GameObject Error34F;
+    public GameObject Error35F;
+    public GameObject Error36F;
 
     public AudioClip Bravo;
     public bool timerActive;
     public int timer;
+
+    public GameObject Error7;
+    public GameObject Error6;
+    public GameObject Error5;
+    public GameObject Error4;
+    public GameObject Error3;
+    public GameObject Error2;
+    public GameObject Error1;
 
     public void Start()
     {
@@ -88,9 +122,9 @@ public class GM_Difference : MonoBehaviour
 
     public void Update()
     {
-        text1.text = "Érreur restante " + ER1;
-        text2.text = "Érreur restante " + ER2;
-        text3.text = "Érreur restante " + ER3;
+        //text1.text = "Érreur restante " + ER1;
+        //text2.text = "Érreur restante " + ER2;
+        //text3.text = "Érreur restante " + ER3;
 
         if (timerActive == true)
         {
@@ -102,6 +136,237 @@ public class GM_Difference : MonoBehaviour
                 timer = 0;
 
             }
+        }
+
+        if(ER1 == 7)
+        {
+            Error7.SetActive(true);
+            Error6.SetActive(false);
+            Error5.SetActive(false);
+            Error4.SetActive(false);
+            Error3.SetActive(false);
+            Error2.SetActive(false);
+            Error1.SetActive(false);
+        }
+
+        if (ER1 == 6)
+        {
+            Error7.SetActive(false);
+            Error6.SetActive(true);
+            Error5.SetActive(false);
+            Error4.SetActive(false);
+            Error3.SetActive(false);
+            Error2.SetActive(false);
+            Error1.SetActive(false);
+        }
+
+        if (ER1 == 5)
+        {
+            Error7.SetActive(false);
+            Error6.SetActive(false);
+            Error5.SetActive(true);
+            Error4.SetActive(false);
+            Error3.SetActive(false);
+            Error2.SetActive(false);
+            Error1.SetActive(false);
+        }
+
+        if (ER1 == 4)
+        {
+            Error7.SetActive(false);
+            Error6.SetActive(false);
+            Error5.SetActive(false);
+            Error4.SetActive(true);
+            Error3.SetActive(false);
+            Error2.SetActive(false);
+            Error1.SetActive(false);
+        }
+
+        if (ER1 == 3)
+        {
+            Error7.SetActive(false);
+            Error6.SetActive(false);
+            Error5.SetActive(false);
+            Error4.SetActive(false);
+            Error3.SetActive(true);
+            Error2.SetActive(false);
+            Error1.SetActive(false);
+        }
+
+        if (ER1 == 2)
+        {
+            Error7.SetActive(false);
+            Error6.SetActive(false);
+            Error5.SetActive(false);
+            Error4.SetActive(false);
+            Error3.SetActive(false);
+            Error2.SetActive(true);
+            Error1.SetActive(false);
+        }
+
+        if (ER1 == 1)
+        {
+            Error7.SetActive(false);
+            Error6.SetActive(false);
+            Error5.SetActive(false);
+            Error4.SetActive(false);
+            Error3.SetActive(false);
+            Error2.SetActive(false);
+            Error1.SetActive(true);
+        }
+
+        if (ER2 == 7)
+        {
+            Error7.SetActive(true);
+            Error6.SetActive(false);
+            Error5.SetActive(false);
+            Error4.SetActive(false);
+            Error3.SetActive(false);
+            Error2.SetActive(false);
+            Error1.SetActive(false);
+        }
+
+        if (ER2 == 6)
+        {
+            Error7.SetActive(false);
+            Error6.SetActive(true);
+            Error5.SetActive(false);
+            Error4.SetActive(false);
+            Error3.SetActive(false);
+            Error2.SetActive(false);
+            Error1.SetActive(false);
+        }
+
+        if (ER2 == 5)
+        {
+            Error7.SetActive(false);
+            Error6.SetActive(false);
+            Error5.SetActive(true);
+            Error4.SetActive(false);
+            Error3.SetActive(false);
+            Error2.SetActive(false);
+            Error1.SetActive(false);
+        }
+
+        if (ER2 == 4)
+        {
+            Error7.SetActive(false);
+            Error6.SetActive(false);
+            Error5.SetActive(false);
+            Error4.SetActive(true);
+            Error3.SetActive(false);
+            Error2.SetActive(false);
+            Error1.SetActive(false);
+        }
+
+        if (ER2 == 3)
+        {
+            Error7.SetActive(false);
+            Error6.SetActive(false);
+            Error5.SetActive(false);
+            Error4.SetActive(false);
+            Error3.SetActive(true);
+            Error2.SetActive(false);
+            Error1.SetActive(false);
+        }
+
+        if (ER2 == 2)
+        {
+            Error7.SetActive(false);
+            Error6.SetActive(false);
+            Error5.SetActive(false);
+            Error4.SetActive(false);
+            Error3.SetActive(false);
+            Error2.SetActive(true);
+            Error1.SetActive(false);
+        }
+
+        if (ER2 == 1)
+        {
+            Error7.SetActive(false);
+            Error6.SetActive(false);
+            Error5.SetActive(false);
+            Error4.SetActive(false);
+            Error3.SetActive(false);
+            Error2.SetActive(false);
+            Error1.SetActive(true);
+        }
+
+        if (ER3 == 7)
+        {
+            Error7.SetActive(true);
+            Error6.SetActive(false);
+            Error5.SetActive(false);
+            Error4.SetActive(false);
+            Error3.SetActive(false);
+            Error2.SetActive(false);
+            Error1.SetActive(false);
+        }
+
+        if (ER3 == 6)
+        {
+            Error7.SetActive(false);
+            Error6.SetActive(true);
+            Error5.SetActive(false);
+            Error4.SetActive(false);
+            Error3.SetActive(false);
+            Error2.SetActive(false);
+            Error1.SetActive(false);
+        }
+
+        if (ER3 == 5)
+        {
+            Error7.SetActive(false);
+            Error6.SetActive(false);
+            Error5.SetActive(true);
+            Error4.SetActive(false);
+            Error3.SetActive(false);
+            Error2.SetActive(false);
+            Error1.SetActive(false);
+        }
+
+        if (ER3 == 4)
+        {
+            Error7.SetActive(false);
+            Error6.SetActive(false);
+            Error5.SetActive(false);
+            Error4.SetActive(true);
+            Error3.SetActive(false);
+            Error2.SetActive(false);
+            Error1.SetActive(false);
+        }
+
+        if (ER3 == 3)
+        {
+            Error7.SetActive(false);
+            Error6.SetActive(false);
+            Error5.SetActive(false);
+            Error4.SetActive(false);
+            Error3.SetActive(true);
+            Error2.SetActive(false);
+            Error1.SetActive(false);
+        }
+
+        if (ER3 == 2)
+        {
+            Error7.SetActive(false);
+            Error6.SetActive(false);
+            Error5.SetActive(false);
+            Error4.SetActive(false);
+            Error3.SetActive(false);
+            Error2.SetActive(true);
+            Error1.SetActive(false);
+        }
+
+        if (ER3 == 1)
+        {
+            Error7.SetActive(false);
+            Error6.SetActive(false);
+            Error5.SetActive(false);
+            Error4.SetActive(false);
+            Error3.SetActive(false);
+            Error2.SetActive(false);
+            Error1.SetActive(true);
         }
     }
 
@@ -286,6 +551,90 @@ public class GM_Difference : MonoBehaviour
         }
     }
 
+    public void Error14B()
+    {
+        if (Error14A == 0)
+        {
+            Error14 = 1;
+
+            //This handle the score
+            if (Error14 == 1)
+            {
+                ER1 -= 1;
+                Error14A -= 1;
+                Error14F.SetActive(true);
+
+                if (ER1 == 0)
+                {
+
+                    if (timerActive == false)
+                    {
+                        AudioSource.PlayClipAtPoint(Bravo, Camera.main.transform.position);
+                    }
+                    timerActive = true;
+                    ResetError();
+                    Generate();
+                }
+            }
+        }
+    }
+
+    public void Error15B()
+    {
+        if (Error15A == 0)
+        {
+            Error15 = 1;
+
+            //This handle the score
+            if (Error15 == 1)
+            {
+                ER1 -= 1;
+                Error15A -= 1;
+                Error15F.SetActive(true);
+
+                if (ER1 == 0)
+                {
+
+                    if (timerActive == false)
+                    {
+                        AudioSource.PlayClipAtPoint(Bravo, Camera.main.transform.position);
+                    }
+                    timerActive = true;
+                    ResetError();
+                    Generate();
+                }
+            }
+        }
+    }
+
+    public void Error16B()
+    {
+        if (Error16A == 0)
+        {
+            Error16 = 1;
+
+            //This handle the score
+            if (Error16 == 1)
+            {
+                ER1 -= 1;
+                Error16A -= 1;
+                Error10F.SetActive(true);
+
+                if (ER1 == 0)
+                {
+
+                    if (timerActive == false)
+                    {
+                        AudioSource.PlayClipAtPoint(Bravo, Camera.main.transform.position);
+                    }
+                    timerActive = true;
+                    ResetError();
+                    Generate();
+                }
+            }
+        }
+    }
+
     //Keep the value if the player pressed the error and handle the Érreur restante Text.
     //To use, put function on the button (The button need to be covering the error)
     public void Error20B()
@@ -387,6 +736,93 @@ public class GM_Difference : MonoBehaviour
                 ER2 -= 1;
                 Error23A -= 1;
                 Error23F.SetActive(true);
+
+                if (ER2 == 0)
+                {
+                    if (timerActive == false)
+                    {
+                        AudioSource.PlayClipAtPoint(Bravo, Camera.main.transform.position);
+                    }
+                    timerActive = true;
+                    ResetError();
+                    Generate();
+                }
+            }
+        }
+    }
+
+    //Keep the value if the player pressed the error and handle the Érreur restante Text.
+    //To use, put function on the button (The button need to be covering the error)
+    public void Error24B()
+    {
+        if (Error24A == 0)
+        {
+            Error24 = 1;
+
+            //This handle the score
+            if (Error24 == 1)
+            {
+                ER2 -= 1;
+                Error24A -= 1;
+                Error24F.SetActive(true);
+
+                if (ER2 == 0)
+                {
+                    if (timerActive == false)
+                    {
+                        AudioSource.PlayClipAtPoint(Bravo, Camera.main.transform.position);
+                    }
+                    timerActive = true;
+                    ResetError();
+                    Generate();
+                }
+            }
+        }
+    }
+
+    //Keep the value if the player pressed the error and handle the Érreur restante Text.
+    //To use, put function on the button (The button need to be covering the error)
+    public void Error25B()
+    {
+        if (Error25A == 0)
+        {
+            Error25 = 1;
+
+            //This handle the score
+            if (Error25 == 1)
+            {
+                ER2 -= 1;
+                Error25A -= 1;
+                Error25F.SetActive(true);
+
+                if (ER2 == 0)
+                {
+                    if (timerActive == false)
+                    {
+                        AudioSource.PlayClipAtPoint(Bravo, Camera.main.transform.position);
+                    }
+                    timerActive = true;
+                    ResetError();
+                    Generate();
+                }
+            }
+        }
+    }
+
+    //Keep the value if the player pressed the error and handle the Érreur restante Text.
+    //To use, put function on the button (The button need to be covering the error)
+    public void Error26B()
+    {
+        if (Error26A == 0)
+        {
+            Error26 = 1;
+
+            //This handle the score
+            if (Error26 == 1)
+            {
+                ER2 -= 1;
+                Error26A -= 1;
+                Error26F.SetActive(true);
 
                 if (ER2 == 0)
                 {
@@ -545,11 +981,65 @@ public class GM_Difference : MonoBehaviour
         }
     }
 
+    public void Error35B()
+    {
+        if (Error35A == 0)
+        {
+            Error35 = 1;
+
+            //This handle the score
+            if (Error35 == 1)
+            {
+                ER3 -= 1;
+                Error35A -= 1;
+                Error35F.SetActive(true);
+
+                if (ER3 == 0)
+                {
+                    if (timerActive == false)
+                    {
+                        AudioSource.PlayClipAtPoint(Bravo, Camera.main.transform.position);
+                    }
+                    timerActive = true;
+                    ResetError();
+                    Generate();
+                }
+            }
+        }
+    }
+
+    public void Error36B()
+    {
+        if (Error36A == 0)
+        {
+            Error36 = 1;
+
+            //This handle the score
+            if (Error36 == 1)
+            {
+                ER3 -= 1;
+                Error36A -= 1;
+                Error36F.SetActive(true);
+
+                if (ER3 == 0)
+                {
+                    if (timerActive == false)
+                    {
+                        AudioSource.PlayClipAtPoint(Bravo, Camera.main.transform.position);
+                    }
+                    timerActive = true;
+                    ResetError();
+                    Generate();
+                }
+            }
+        }
+    }
+
     public void ResetError()
     {
         
 
-        ER1 = 4;
+        ER1 = 7;
         Error10 = 0;
         Error10A = 0;
         Error11 = 0;
@@ -562,8 +1052,11 @@ public class GM_Difference : MonoBehaviour
         Error11F.SetActive(false);
         Error12F.SetActive(false);
         Error13F.SetActive(false);
+        Error14F.SetActive(false);
+        Error15F.SetActive(false);
+        Error16F.SetActive(false);
 
-        ER2 = 4;
+        ER2 = 7;
         Error20 = 0;
         Error20A = 0;
         Error21 = 0;
@@ -576,9 +1069,12 @@ public class GM_Difference : MonoBehaviour
         Error21F.SetActive(false);
         Error22F.SetActive(false);
         Error23F.SetActive(false);
+        Error24F.SetActive(false);
+        Error25F.SetActive(false);
+        Error26F.SetActive(false);
 
 
-        ER3 = 5;
+        ER3 = 7;
         Error30 = 0;
         Error30A = 0;
         Error31 = 0;
@@ -594,6 +1090,8 @@ public class GM_Difference : MonoBehaviour
         Error32F.SetActive(false);
         Error33F.SetActive(false);
         Error34F.SetActive(false);
+        Error35F.SetActive(false);
+        Error36F.SetActive(false);
 
         timerActive = true;
 

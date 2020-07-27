@@ -321,7 +321,7 @@ MonoBehaviour:
   jumpValue: 1.5
   NOTEHOLDERPREFAB: {fileID: 8845839861886210959, guid: 313f541523051b74181be567b7716163,
     type: 3}
-  speed: 0.01
+  speed: 0.09
   SongData:
   - abdfegxaABAGgBxa
   - bbxaDAFGbGxfdaax
@@ -2471,6 +2471,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FrameLock
+      objectReference: {fileID: 0}
+    - target: {fileID: 6887270912785008780, guid: 2b8173f8e6fd11b4fae694861c241848,
+        type: 3}
+      propertyPath: targetFrameRate
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 6887270912785008781, guid: 2b8173f8e6fd11b4fae694861c241848,
         type: 3}
