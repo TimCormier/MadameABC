@@ -202,6 +202,9 @@ public class CastleScript : MonoBehaviour
 
         cannonforce = 0f;
         cannoninput = 0f;
+
+        GameObject.Find("SoundEffectKeeper").transform.GetComponent<AudioSource>().Stop();
+        GameObject.Find("SoundEffectKeeper").transform.GetComponent<AudioSource>().Play();
     }
 
 

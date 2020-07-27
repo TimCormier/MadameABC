@@ -33,12 +33,18 @@ public class CannonballScript : MonoBehaviour
         switch (other.transform.name) {
             case "RedCinematicCamTrigger":
                 if (GameObject.Find("BlueTurnDetector") != null) {
+                    gameObject.transform.GetComponent<AudioSource>().Stop();
+                  //  GameObject.Find("SoundEffectKeeper").transform.GetComponent<AudioSource>().Stop();
+                    GameObject.Find("RedCinematicCamera").transform.GetComponent<AudioSource>().Play();
                     GameObject.Find("GameManager").GetComponent<CastleScript>().CYCLECAM("REDCINEMATICCAM");
                 }
                 break;
 
             case "BlueCinematicCamTrigger":
                 if (GameObject.Find("RedTurnDetector") != null) {
+                    gameObject.transform.GetComponent<AudioSource>().Stop();
+                 //   GameObject.Find("SoundEffectKeeper").transform.GetComponent<AudioSource>().Stop();
+                    GameObject.Find("BlueCinematicCamera").transform.GetComponent<AudioSource>().Play();
                     GameObject.Find("GameManager").GetComponent<CastleScript>().CYCLECAM("BLUECINEMATICCAM");
                 }
                 break;
