@@ -10,6 +10,8 @@ public class NewButtonScript : MonoBehaviour
     public float boundaryH;
     public float boundaryV;
 
+    private AudioSource AUDIO;
+
    // private GameObject REDTURNSWITCH;
    // private GameObject BLUETURNSWITCH;
     
@@ -17,9 +19,9 @@ public class NewButtonScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       // REDTURNSWITCH = GameObject.Find("RedTurnSwitch");
+        // REDTURNSWITCH = GameObject.Find("RedTurnSwitch");
         //BLUETURNSWITCH = GameObject.Find("BlueTurnSwitch");
-
+        AUDIO = GameObject.Find("PivotSfx").transform.GetComponent<AudioSource>();
 
     }
 
@@ -27,6 +29,10 @@ public class NewButtonScript : MonoBehaviour
     void Update()
     {
         MAINCAM.transform.eulerAngles = new Vector3(MAINCAM.transform.eulerAngles.x, MAINCAM.transform.eulerAngles.y, 0f);
+
+        if (Input.GetMouseButtonUp(0)) {
+            AUDIO.Stop();
+        }
     }
 
     
@@ -43,10 +49,13 @@ public class NewButtonScript : MonoBehaviour
                         {
                             Debug.Log("Hit Boundary right");
                             MAINCAM.transform.eulerAngles = new Vector3(MAINCAM.transform.eulerAngles.x, boundaryH, MAINCAM.transform.eulerAngles.z);
+                            AUDIO.Stop();
                         }
                         else
                         {
                             MAINCAM.transform.Rotate(0, turnrate, 0);
+                            PLAYAUDIO();
+
                         }
 
                     }
@@ -54,6 +63,7 @@ public class NewButtonScript : MonoBehaviour
                     {
                         // Debug.Log(MAINCAM.transform.rotation.y * 100f);
                         MAINCAM.transform.Rotate(0, turnrate, 0);
+                        PLAYAUDIO();
                         // Debug.Log(MAINCAM.transform.eulerAngles.y);
                     }
                 }
@@ -63,10 +73,12 @@ public class NewButtonScript : MonoBehaviour
                         if (MAINCAM.transform.eulerAngles.y <= 180f - boundaryH)
                         {
                             MAINCAM.transform.Rotate(0, turnrate, 0);
+                            PLAYAUDIO();
                         }
                         else {
                             Debug.Log("Hit Boundary right");
                             MAINCAM.transform.eulerAngles = new Vector3(MAINCAM.transform.eulerAngles.x, 180f + boundaryH, MAINCAM.transform.eulerAngles.z);
+                            AUDIO.Stop();
                         }
 
                         
@@ -85,6 +97,7 @@ public class NewButtonScript : MonoBehaviour
                     {
                         // Debug.Log(MAINCAM.transform.rotation.y * 100f);
                         MAINCAM.transform.Rotate(0, turnrate, 0);
+                        PLAYAUDIO();
                         // Debug.Log(MAINCAM.transform.eulerAngles.y);
                     }
                 }
@@ -100,11 +113,13 @@ public class NewButtonScript : MonoBehaviour
                         if (MAINCAM.transform.eulerAngles.y > 200f)
                         {
                             Debug.Log("Hit Boundary left");
+                            AUDIO.Stop();
                             MAINCAM.transform.eulerAngles = new Vector3(MAINCAM.transform.eulerAngles.x, 360f - boundaryH, MAINCAM.transform.eulerAngles.z);
                         }
                         else
                         {
                             MAINCAM.transform.Rotate(0, turnrate * -1, 0);
+                            PLAYAUDIO();
                         }
 
                     }
@@ -113,6 +128,7 @@ public class NewButtonScript : MonoBehaviour
                         // Debug.Log(MAINCAM.transform.rotation.y * 100f);
                         // Debug.Log(MAINCAM.transform.eulerAngles.y);
                         MAINCAM.transform.Rotate(0, turnrate * -1, 0);
+                        PLAYAUDIO();
                     }
                 }
                 else {
@@ -123,9 +139,11 @@ public class NewButtonScript : MonoBehaviour
                         if (MAINCAM.transform.eulerAngles.y >= 180f + boundaryH)
                         {
                             MAINCAM.transform.Rotate(0, turnrate * -1, 0);
+                            PLAYAUDIO();
                         }
                         else {
                             Debug.Log("Hit Boundary left");
+                            AUDIO.Stop();
                             MAINCAM.transform.eulerAngles = new Vector3(MAINCAM.transform.eulerAngles.x, 180f - boundaryH, MAINCAM.transform.eulerAngles.z);
                         }
                        
@@ -145,6 +163,7 @@ public class NewButtonScript : MonoBehaviour
                             // Debug.Log(MAINCAM.transform.rotation.y * 100f);
                             // Debug.Log(MAINCAM.transform.eulerAngles.y);
                             MAINCAM.transform.Rotate(0, turnrate * -1, 0);
+                            PLAYAUDIO();
                         }
                     
                 }
@@ -158,10 +177,12 @@ public class NewButtonScript : MonoBehaviour
                     {
                         Debug.Log("Hit Boundary Down");
                         MAINCAM.transform.eulerAngles = new Vector3(360f - boundaryV, MAINCAM.transform.eulerAngles.y, MAINCAM.transform.eulerAngles.z);
+                        AUDIO.Stop();
                     }
                     else
                     {
                         MAINCAM.transform.Rotate(turnrate * -1f, 0, 0);
+                        PLAYAUDIO();
                     }
 
                 }
@@ -170,6 +191,7 @@ public class NewButtonScript : MonoBehaviour
                     // Debug.Log(MAINCAM.transform.rotation.y * 100f);
                     // Debug.Log(MAINCAM.transform.eulerAngles.y);
                     MAINCAM.transform.Rotate(turnrate * -1f, 0, 0);
+                    PLAYAUDIO();
                 }
                 break;
             case "lookDown":
@@ -179,10 +201,12 @@ public class NewButtonScript : MonoBehaviour
                     {
                         Debug.Log("Hit Boundary Up");
                         MAINCAM.transform.eulerAngles = new Vector3(boundaryV, MAINCAM.transform.eulerAngles.y, MAINCAM.transform.eulerAngles.z);
+                        AUDIO.Stop();
                     }
                     else
                     {
                         MAINCAM.transform.Rotate(turnrate, 0, 0);
+                        PLAYAUDIO();
                     }
 
                 }
@@ -191,6 +215,7 @@ public class NewButtonScript : MonoBehaviour
                     // Debug.Log(MAINCAM.transform.rotation.y * 100f);
                     // Debug.Log(MAINCAM.transform.eulerAngles.y);
                     MAINCAM.transform.Rotate(turnrate, 0, 0);
+                    PLAYAUDIO();
                 }
                 break;
 
@@ -203,7 +228,11 @@ public class NewButtonScript : MonoBehaviour
             Debug.Log("MouseOver " + gameObject.transform.name);
         }
 
-
+        void PLAYAUDIO() {
+            if (AUDIO.isPlaying != true) {
+                AUDIO.Play();
+            }
+        }
        
     }
 }

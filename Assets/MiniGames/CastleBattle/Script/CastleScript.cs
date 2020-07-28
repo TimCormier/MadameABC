@@ -118,16 +118,10 @@ public class CastleScript : MonoBehaviour
         // Using the "a" key was mainly for developpment purposes, this should be disabled later
 
         if (GameObject.Find("Cannonball(Clone)") == null) {
-            if (Input.GetKey("a"))
+          /*  if (Input.GetKey("a"))
             {
 
-                /*
-                cannonforce += 1f;
-                if (cannonforce > 100f) {
-                    cannonforce = 100f;
-                }
-
-        */
+              
 
                 cannoninput += strength;
                 cannonforce = Mathf.Sin(cannoninput);
@@ -155,7 +149,7 @@ public class CastleScript : MonoBehaviour
 
                 cannonforce = 0f;
                 cannoninput = 0f;
-            }
+            }*/
         }
 
         //SHOOTING END
@@ -337,6 +331,7 @@ public class CastleScript : MonoBehaviour
         win = true;
         CYCLECAM("REDCINEMATICCAM");
         wintext.text = "Le joueur bleu a gagné!";
+        GameObject.Find("BlueCinematicSfx").transform.GetComponent<AudioSource>().Play();
         
     }
 
@@ -344,7 +339,8 @@ public class CastleScript : MonoBehaviour
         win = true;
         CYCLECAM("BLUECINEMATICCAM");
         wintext.text = "Le joueur rouge a gagné!";
-      
+        GameObject.Find("RedCinematicSfx").transform.GetComponent<AudioSource>().Play();
+
     }
 
     /*
