@@ -17,15 +17,15 @@ public class ParticleUpLaunch : MonoBehaviour
 
     void Update()
     {
-        if(particleRelauncher >= 1)
+        if(particleRelauncher >= 1f)
         {
             particleLauncher.Emit(5);
-            particleRelauncher -= 1;
+            particleRelauncher -= 1f;
         }
     }
 
     public void LaunchParticle()
     {
-        particleRelauncher += 1;
+        particleRelauncher += 1f;
     }
 }

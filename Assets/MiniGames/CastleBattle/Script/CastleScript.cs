@@ -52,6 +52,8 @@ public class CastleScript : MonoBehaviour
 
     private GameObject SELECTIONARROW;
 
+    private GameObject ParticleSystem;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -80,6 +82,7 @@ public class CastleScript : MonoBehaviour
         btnReplay = GameObject.Find("ReplayButton").GetComponent<Button>();
         menuObject = GameObject.Find("MenuButton");
         replayObject = GameObject.Find("ReplayButton");
+        ParticleSystem = GameObject.Find("Particle System");
 
         btnMenu.onClick.AddListener(MenuClick);
         btnReplay.onClick.AddListener(ReplayClick);
@@ -266,7 +269,7 @@ public class CastleScript : MonoBehaviour
         switch (TargetCam) {
             case "MAINCAM":
                 MAINCAM.enabled = true;
-                for (int i = 0; i < VCANVAS.transform.childCount - 5; i++)
+                for (int i = 0; i < VCANVAS.transform.childCount - 6; i++)
                 {
                     VCANVAS.transform.GetChild(i).gameObject.SetActive(true);
                 }
@@ -292,7 +295,7 @@ public class CastleScript : MonoBehaviour
                 case "SELECTIONCAM":
                     SELECTIONCAM.enabled = true;
 
-                    for (int i = VCANVAS.transform.childCount; i > VCANVAS.transform.childCount - 5; i--)
+                    for (int i = VCANVAS.transform.childCount; i > VCANVAS.transform.childCount - 6; i--)
                     {
                       //  Debug.Log("i is " + i);
                         VCANVAS.transform.GetChild(i - 1).gameObject.SetActive(true);
@@ -332,6 +335,7 @@ public class CastleScript : MonoBehaviour
         CYCLECAM("REDCINEMATICCAM");
         wintext.text = "Le joueur bleu a gagné!";
         GameObject.Find("BlueCinematicSfx").transform.GetComponent<AudioSource>().Play();
+        ParticleSystem.transform.GetComponent<ParticleUpLaunch>().LaunchParticle();
         
     }
 
@@ -340,6 +344,7 @@ public class CastleScript : MonoBehaviour
         CYCLECAM("BLUECINEMATICCAM");
         wintext.text = "Le joueur rouge a gagné!";
         GameObject.Find("RedCinematicSfx").transform.GetComponent<AudioSource>().Play();
+        ParticleSystem.transform.GetComponent<ParticleUpLaunch>().LaunchParticle();
 
     }
 
